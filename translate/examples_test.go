@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/smyte/google-cloud-go/go/translate"
+	"github.com/smyte/google-cloud-go/translate"
 	"golang.org/x/text/language"
 )
 

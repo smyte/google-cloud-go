@@ -19,7 +19,7 @@ package pubsub_test
 import (
 	"context"
 
-	pubsub "github.com/smyte/google-cloud-go/go/pubsub/apiv1"
+	pubsub "github.com/smyte/google-cloud-go/pubsub/apiv1"
 	"google.golang.org/api/iterator"
 	pubsubpb "google.golang.org/genproto/googleapis/pubsub/v1"
 )

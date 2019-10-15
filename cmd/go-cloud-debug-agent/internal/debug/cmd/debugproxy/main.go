@@ -26,7 +26,7 @@ import (
 	"net/rpc"
 	"os"
 
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/server"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/server"
 )
 
 var (

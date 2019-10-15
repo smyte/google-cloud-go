@@ -17,13 +17,13 @@
 
 // Package logadmin contains a Stackdriver Logging client that can be used
 // for reading logs and working with sinks, metrics and monitored resources.
-// For a client that can write logs, see package github.com/smyte/google-cloud-go/go/logging.
+// For a client that can write logs, see package github.com/smyte/google-cloud-go/logging.
 //
 // The client uses Logging API v2.
 // See https://github.com/smyte/google-cloud-go/logging/docs/api/v2/ for an introduction to the API.
 //
 // Note: This package is in beta.  Some backwards-incompatible changes may occur.
-package logadmin // import "github.com/smyte/google-cloud-go/go/logging/logadmin"
+package logadmin // import "github.com/smyte/google-cloud-go/logging/logadmin"
 
 import (
 	"context"
@@ -33,10 +33,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/version"
-	"github.com/smyte/google-cloud-go/go/logging"
-	vkit "github.com/smyte/google-cloud-go/go/logging/apiv2"
-	"github.com/smyte/google-cloud-go/go/logging/internal"
+	"github.com/smyte/google-cloud-go/internal/version"
+	"github.com/smyte/google-cloud-go/logging"
+	vkit "github.com/smyte/google-cloud-go/logging/apiv2"
+	"github.com/smyte/google-cloud-go/logging/internal"
 	"github.com/golang/protobuf/ptypes"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"

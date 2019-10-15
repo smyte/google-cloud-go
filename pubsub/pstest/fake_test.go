@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"github.com/golang/protobuf/ptypes"
 	pb "google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"

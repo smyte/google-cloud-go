@@ -30,8 +30,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/github.com/smyte/google-cloud-go/go.
-package asset // import "github.com/smyte/google-cloud-go/go/asset/apiv1p2beta1"
+// please visit godoc.org/github.com/smyte/google-cloud-go.
+package asset // import "github.com/smyte/google-cloud-go/asset/apiv1p2beta1"
 
 import (
 	"context"

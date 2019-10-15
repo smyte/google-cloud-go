@@ -19,7 +19,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 )
 
 func TestPolicy(t *testing.T) {

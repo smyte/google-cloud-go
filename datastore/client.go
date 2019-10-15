@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal"
-	"github.com/smyte/google-cloud-go/go/internal/version"
+	"github.com/smyte/google-cloud-go/internal"
+	"github.com/smyte/google-cloud-go/internal/version"
 	gax "github.com/googleapis/gax-go/v2"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
 	"google.golang.org/grpc"

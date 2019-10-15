@@ -40,7 +40,7 @@ variable and use the regular spanner.NewClient:
 	...
 
 The same server also supports database admin operations for use with
-the github.com/smyte/google-cloud-go/go/spanner/admin/database/apiv1 package.
+the github.com/smyte/google-cloud-go/spanner/admin/database/apiv1 package.
 */
 package spannertest
 
@@ -69,7 +69,7 @@ import (
 	adminpb "google.golang.org/genproto/googleapis/spanner/admin/database/v1"
 	spannerpb "google.golang.org/genproto/googleapis/spanner/v1"
 
-	"github.com/smyte/google-cloud-go/go/spanner/spansql"
+	"github.com/smyte/google-cloud-go/spanner/spansql"
 )
 
 // Server is an in-memory Cloud Spanner fake.

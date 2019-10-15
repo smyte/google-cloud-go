@@ -19,7 +19,7 @@ package scheduler_test
 import (
 	"context"
 
-	scheduler "github.com/smyte/google-cloud-go/go/scheduler/apiv1"
+	scheduler "github.com/smyte/google-cloud-go/scheduler/apiv1"
 	"google.golang.org/api/iterator"
 	schedulerpb "google.golang.org/genproto/googleapis/cloud/scheduler/v1"
 )

@@ -24,7 +24,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/storage"
+	"github.com/smyte/google-cloud-go/storage"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 )

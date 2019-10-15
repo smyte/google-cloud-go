@@ -17,8 +17,8 @@ package storage
 import (
 	"context"
 
-	"github.com/smyte/google-cloud-go/go/iam"
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/iam"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	raw "google.golang.org/api/storage/v1"
 	iampb "google.golang.org/genproto/googleapis/iam/v1"
 )
@@ -38,7 +38,7 @@ type iamClient struct {
 }
 
 func (c *iamClient) Get(ctx context.Context, resource string) (p *iampb.Policy, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.IAM.Get")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.IAM.Get")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	call := c.raw.Buckets.GetIamPolicy(resource)
@@ -58,7 +58,7 @@ func (c *iamClient) Get(ctx context.Context, resource string) (p *iampb.Policy, 
 }
 
 func (c *iamClient) Set(ctx context.Context, resource string, p *iampb.Policy) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.IAM.Set")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.IAM.Set")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	rp := iamToStoragePolicy(p)
@@ -74,7 +74,7 @@ func (c *iamClient) Set(ctx context.Context, resource string, p *iampb.Policy) (
 }
 
 func (c *iamClient) Test(ctx context.Context, resource string, perms []string) (permissions []string, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.IAM.Test")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.IAM.Test")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	call := c.raw.Buckets.TestIamPermissions(resource, perms)

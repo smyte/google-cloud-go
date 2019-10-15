@@ -19,7 +19,7 @@ package automl_test
 import (
 	"context"
 
-	automl "github.com/smyte/google-cloud-go/go/automl/apiv1"
+	automl "github.com/smyte/google-cloud-go/automl/apiv1"
 	automlpb "google.golang.org/genproto/googleapis/cloud/automl/v1"
 )
 

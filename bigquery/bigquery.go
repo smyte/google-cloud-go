@@ -21,8 +21,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal"
-	"github.com/smyte/google-cloud-go/go/internal/version"
+	"github.com/smyte/google-cloud-go/internal"
+	"github.com/smyte/google-cloud-go/internal/version"
 	gax "github.com/googleapis/gax-go/v2"
 	bq "google.golang.org/api/bigquery/v2"
 	"google.golang.org/api/googleapi"

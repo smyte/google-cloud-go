@@ -25,8 +25,8 @@ import (
 	"net"
 	"os"
 
-	"github.com/smyte/google-cloud-go/go/storage"
-	pb "github.com/smyte/google-cloud-go/go/storage/internal/benchwrapper/proto"
+	"github.com/smyte/google-cloud-go/storage"
+	pb "github.com/smyte/google-cloud-go/storage/internal/benchwrapper/proto"
 	"google.golang.org/grpc"
 )
 

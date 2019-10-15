@@ -15,7 +15,7 @@
 package rpcreplay_test
 
 import (
-	"github.com/smyte/google-cloud-go/go/rpcreplay"
+	"github.com/smyte/google-cloud-go/rpcreplay"
 	"google.golang.org/grpc"
 )
 

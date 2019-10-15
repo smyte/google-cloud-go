@@ -19,7 +19,7 @@ package securitycenter_test
 import (
 	"context"
 
-	securitycenter "github.com/smyte/google-cloud-go/go/securitycenter/apiv1beta1"
+	securitycenter "github.com/smyte/google-cloud-go/securitycenter/apiv1beta1"
 	"google.golang.org/api/iterator"
 	securitycenterpb "google.golang.org/genproto/googleapis/cloud/securitycenter/v1beta1"
 	iampb "google.golang.org/genproto/googleapis/iam/v1"

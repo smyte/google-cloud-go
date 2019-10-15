@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/pubsub"
+	"github.com/smyte/google-cloud-go/pubsub"
 	"google.golang.org/api/iterator"
 )
 

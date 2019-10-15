@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/optional"
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -48,7 +48,7 @@ func (m *Model) FullyQualifiedName() string {
 
 // Metadata fetches the metadata for a model, which includes ML training statistics.
 func (m *Model) Metadata(ctx context.Context) (mm *ModelMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Model.Metadata")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Model.Metadata")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := m.c.bqs.Models.Get(m.ProjectID, m.DatasetID, m.ModelID).Context(ctx)
@@ -66,7 +66,7 @@ func (m *Model) Metadata(ctx context.Context) (mm *ModelMetadata, err error) {
 
 // Update updates mutable fields in an ML model.
 func (m *Model) Update(ctx context.Context, mm ModelMetadataToUpdate, etag string) (md *ModelMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Model.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Model.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	bqm, err := mm.toBQ()
@@ -90,7 +90,7 @@ func (m *Model) Update(ctx context.Context, mm ModelMetadataToUpdate, etag strin
 
 // Delete deletes an ML model.
 func (m *Model) Delete(ctx context.Context) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Model.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Model.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := m.c.bqs.Models.Delete(m.ProjectID, m.DatasetID, m.ModelID).Context(ctx)

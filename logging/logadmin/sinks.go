@@ -19,7 +19,7 @@ import (
 	"errors"
 	"fmt"
 
-	vkit "github.com/smyte/google-cloud-go/go/logging/apiv2"
+	vkit "github.com/smyte/google-cloud-go/logging/apiv2"
 	"google.golang.org/api/iterator"
 	logpb "google.golang.org/genproto/googleapis/logging/v2"
 	maskpb "google.golang.org/genproto/protobuf/field_mask"

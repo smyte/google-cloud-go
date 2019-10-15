@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -96,7 +96,7 @@ type Transaction struct {
 
 // NewTransaction starts a new transaction.
 func (c *Client) NewTransaction(ctx context.Context, opts ...TransactionOption) (t *Transaction, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.NewTransaction")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.NewTransaction")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	for _, o := range opts {
@@ -156,7 +156,7 @@ func (c *Client) newTransaction(ctx context.Context, s *transactionSettings) (*T
 // Transaction.Get will append when unmarshalling slice fields, so it is not
 // necessarily idempotent.
 func (c *Client) RunInTransaction(ctx context.Context, f func(tx *Transaction) error, opts ...TransactionOption) (cmt *Commit, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.RunInTransaction")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.RunInTransaction")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	settings := newTransactionSettings(opts)
@@ -183,7 +183,7 @@ func (c *Client) RunInTransaction(ctx context.Context, f func(tx *Transaction) e
 
 // Commit applies the enqueued operations atomically.
 func (t *Transaction) Commit() (c *Commit, err error) {
-	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/go/datastore.Transaction.Commit")
+	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/datastore.Transaction.Commit")
 	defer func() { trace.EndSpan(t.ctx, err) }()
 
 	if t.id == nil {
@@ -222,7 +222,7 @@ func (t *Transaction) Commit() (c *Commit, err error) {
 
 // Rollback abandons a pending transaction.
 func (t *Transaction) Rollback() (err error) {
-	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/go/datastore.Transaction.Rollback")
+	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/datastore.Transaction.Rollback")
 	defer func() { trace.EndSpan(t.ctx, err) }()
 
 	if t.id == nil {
@@ -243,7 +243,7 @@ func (t *Transaction) Rollback() (err error) {
 // level, another transaction cannot concurrently modify the data that is read
 // or modified by this transaction.
 func (t *Transaction) Get(key *Key, dst interface{}) (err error) {
-	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/go/datastore.Transaction.Get")
+	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/datastore.Transaction.Get")
 	defer func() { trace.EndSpan(t.ctx, err) }()
 
 	opts := &pb.ReadOptions{
@@ -258,7 +258,7 @@ func (t *Transaction) Get(key *Key, dst interface{}) (err error) {
 
 // GetMulti is a batch version of Get.
 func (t *Transaction) GetMulti(keys []*Key, dst interface{}) (err error) {
-	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/go/datastore.Transaction.GetMulti")
+	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/datastore.Transaction.GetMulti")
 	defer func() { trace.EndSpan(t.ctx, err) }()
 
 	if t.id == nil {

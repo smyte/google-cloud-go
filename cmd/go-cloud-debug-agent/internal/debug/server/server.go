@@ -31,11 +31,11 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/arch"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/elf"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/server/protocol"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/arch"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/elf"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/server/protocol"
 )
 
 type breakpoint struct {

@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/smyte/google-cloud-go/go/bigtable"
-	"github.com/smyte/google-cloud-go/go/bigtable/bttest"
+	"github.com/smyte/google-cloud-go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable/bttest"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 )

@@ -21,7 +21,7 @@ database.
 See https://github.com/smyte/google-cloud-go/firestore/docs for an introduction
 to Cloud Firestore and additional help on using the Firestore API.
 
-See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 Note: you can't use both Cloud Firestore and Cloud Datastore in the same

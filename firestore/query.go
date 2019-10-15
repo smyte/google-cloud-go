@@ -23,7 +23,7 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/btree"
+	"github.com/smyte/google-cloud-go/internal/btree"
 	"github.com/golang/protobuf/ptypes/wrappers"
 	"google.golang.org/api/iterator"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"

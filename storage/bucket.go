@@ -21,8 +21,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/optional"
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/iterator"
 	raw "google.golang.org/api/storage/v1"
@@ -65,7 +65,7 @@ func (c *Client) Bucket(name string) *BucketHandle {
 // Create creates the Bucket in the project.
 // If attrs is nil the API defaults will be used.
 func (b *BucketHandle) Create(ctx context.Context, projectID string, attrs *BucketAttrs) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	var bkt *raw.Bucket
@@ -93,7 +93,7 @@ func (b *BucketHandle) Create(ctx context.Context, projectID string, attrs *Buck
 
 // Delete deletes the Bucket.
 func (b *BucketHandle) Delete(ctx context.Context) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req, err := b.newDeleteCall()
@@ -153,7 +153,7 @@ func (b *BucketHandle) Object(name string) *ObjectHandle {
 
 // Attrs returns the metadata for the bucket.
 func (b *BucketHandle) Attrs(ctx context.Context) (attrs *BucketAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.Attrs")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Attrs")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req, err := b.newGetCall()
@@ -188,7 +188,7 @@ func (b *BucketHandle) newGetCall() (*raw.BucketsGetCall, error) {
 
 // Update updates a bucket's attributes.
 func (b *BucketHandle) Update(ctx context.Context, uattrs BucketAttrsToUpdate) (attrs *BucketAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req, err := b.newPatchCall(&uattrs)

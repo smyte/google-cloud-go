@@ -19,7 +19,7 @@ Package bigtable is an API to Google Cloud Bigtable.
 
 See https://github.com/smyte/google-cloud-go/bigtable/docs/ for general product documentation.
 
-See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -97,7 +97,7 @@ reached. Non-idempotent writes (where the timestamp is set to ServerTime) will
 not be retried. In the case of ReadRows, retried calls will not re-scan rows
 that have already been processed.
 */
-package bigtable // import "github.com/smyte/google-cloud-go/go/bigtable"
+package bigtable // import "github.com/smyte/google-cloud-go/bigtable"
 
 // Scope constants for authentication credentials. These should be used when
 // using credential creation functions such as oauth.NewServiceAccountFromFile.

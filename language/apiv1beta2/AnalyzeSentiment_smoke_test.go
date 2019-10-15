@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	languagepb "google.golang.org/genproto/googleapis/cloud/language/v1beta2"

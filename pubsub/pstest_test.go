@@ -20,9 +20,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
-	"github.com/smyte/google-cloud-go/go/pubsub"
-	"github.com/smyte/google-cloud-go/go/pubsub/pstest"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/pubsub"
+	"github.com/smyte/google-cloud-go/pubsub/pstest"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 )

@@ -25,7 +25,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/smyte/google-cloud-go/go/spanner/internal/testutil"
+	. "github.com/smyte/google-cloud-go/spanner/internal/testutil"
 	"github.com/golang/protobuf/proto"
 	proto3 "github.com/golang/protobuf/ptypes/struct"
 	"github.com/googleapis/gax-go/v2"

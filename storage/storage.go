@@ -38,9 +38,9 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/smyte/google-cloud-go/go/internal/optional"
-	"github.com/smyte/google-cloud-go/go/internal/trace"
-	"github.com/smyte/google-cloud-go/go/internal/version"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/version"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/option"
 	raw "google.golang.org/api/storage/v1"
@@ -621,7 +621,7 @@ func (o *ObjectHandle) Key(encryptionKey []byte) *ObjectHandle {
 // Attrs returns meta information about the object.
 // ErrObjectNotExist will be returned if the object is not found.
 func (o *ObjectHandle) Attrs(ctx context.Context) (attrs *ObjectAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Object.Attrs")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Object.Attrs")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := o.validate(); err != nil {
@@ -653,7 +653,7 @@ func (o *ObjectHandle) Attrs(ctx context.Context) (attrs *ObjectAttrs, err error
 // All zero-value attributes are ignored.
 // ErrObjectNotExist will be returned if the object is not found.
 func (o *ObjectHandle) Update(ctx context.Context, uattrs ObjectAttrsToUpdate) (oa *ObjectAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Object.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Object.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := o.validate(); err != nil {

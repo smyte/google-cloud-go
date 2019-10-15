@@ -20,7 +20,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/googleapis/gax-go/v2"

@@ -15,7 +15,7 @@
 package profiler_test
 
 import (
-	"github.com/smyte/google-cloud-go/go/profiler"
+	"github.com/smyte/google-cloud-go/profiler"
 )
 
 func ExampleStart() {

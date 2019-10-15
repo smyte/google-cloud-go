@@ -19,7 +19,7 @@ package instance_test
 import (
 	"context"
 
-	instance "github.com/smyte/google-cloud-go/go/spanner/admin/instance/apiv1"
+	instance "github.com/smyte/google-cloud-go/spanner/admin/instance/apiv1"
 	"google.golang.org/api/iterator"
 	iampb "google.golang.org/genproto/googleapis/iam/v1"
 	instancepb "google.golang.org/genproto/googleapis/spanner/admin/instance/v1"

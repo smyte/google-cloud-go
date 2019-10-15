@@ -22,7 +22,7 @@ and instances.
 See https://github.com/smyte/google-cloud-go/spanner/docs/getting-started/go/ for an
 introduction to Cloud Spanner and additional help on using this API.
 
-See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -352,4 +352,4 @@ This client has been instrumented to use OpenCensus tracing
 at https://godoc.org/go.opencensus.io/trace. OpenCensus tracing requires Go 1.8
 or higher.
 */
-package spanner // import "github.com/smyte/google-cloud-go/go/spanner"
+package spanner // import "github.com/smyte/google-cloud-go/spanner"

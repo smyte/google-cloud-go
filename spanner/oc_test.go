@@ -19,8 +19,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
-	stestutil "github.com/smyte/google-cloud-go/go/spanner/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	stestutil "github.com/smyte/google-cloud-go/spanner/internal/testutil"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 )

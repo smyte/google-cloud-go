@@ -23,7 +23,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/wrappers"
 	btspb "google.golang.org/genproto/googleapis/bigtable/v2"

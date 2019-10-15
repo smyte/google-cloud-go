@@ -23,8 +23,8 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/civil"
-	"github.com/smyte/google-cloud-go/go/internal/fields"
+	"github.com/smyte/google-cloud-go/civil"
+	"github.com/smyte/google-cloud-go/internal/fields"
 	bq "google.golang.org/api/bigquery/v2"
 )
 

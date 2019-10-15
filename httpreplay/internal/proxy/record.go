@@ -13,8 +13,8 @@
 // limitations under the License.
 
 // Package proxy provides a record/replay HTTP proxy. It is designed to support
-// both an in-memory API (github.com/smyte/google-cloud-go/go/httpreplay) and a standalone server
-// (github.com/smyte/google-cloud-go/go/httpreplay/cmd/httpr).
+// both an in-memory API (github.com/smyte/google-cloud-go/httpreplay) and a standalone server
+// (github.com/smyte/google-cloud-go/httpreplay/cmd/httpr).
 package proxy
 
 // See github.com/google/martian/cmd/proxy/main.go for the origin of much of this.
@@ -104,7 +104,7 @@ func newProxy(filename string) (*Proxy, error) {
 	configOnce.Do(func() {
 		// Set up a man-in-the-middle configuration with a CA certificate so the proxy can
 		// participate in TLS.
-		x509c, priv, err := mitm.NewAuthority("github.com/smyte/google-cloud-go/go/httpreplay", "HTTPReplay Authority", 100*time.Hour)
+		x509c, priv, err := mitm.NewAuthority("github.com/smyte/google-cloud-go/httpreplay", "HTTPReplay Authority", 100*time.Hour)
 		if err != nil {
 			configErr = err
 			return
@@ -113,7 +113,7 @@ func newProxy(filename string) (*Proxy, error) {
 		config, configErr = mitm.NewConfig(x509c, priv)
 		if config != nil {
 			config.SetValidity(100 * time.Hour)
-			config.SetOrganization("github.com/smyte/google-cloud-go/go/httpreplay")
+			config.SetOrganization("github.com/smyte/google-cloud-go/httpreplay")
 			config.SkipTLSVerify(false)
 		}
 	})

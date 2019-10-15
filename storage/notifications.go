@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	raw "google.golang.org/api/storage/v1"
 )
 
@@ -120,7 +120,7 @@ func toRawNotification(n *Notification) *raw.Notification {
 // and PayloadFormat, and must not set its ID. The other fields are all optional. The
 // returned Notification's ID can be used to refer to it.
 func (b *BucketHandle) AddNotification(ctx context.Context, n *Notification) (ret *Notification, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.AddNotification")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.AddNotification")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if n.ID != "" {
@@ -147,7 +147,7 @@ func (b *BucketHandle) AddNotification(ctx context.Context, n *Notification) (re
 // Notifications returns all the Notifications configured for this bucket, as a map
 // indexed by notification ID.
 func (b *BucketHandle) Notifications(ctx context.Context) (n map[string]*Notification, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.Notifications")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Notifications")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	call := b.c.raw.Notifications.List(b.name)
@@ -176,7 +176,7 @@ func notificationsToMap(rns []*raw.Notification) map[string]*Notification {
 
 // DeleteNotification deletes the notification with the given ID.
 func (b *BucketHandle) DeleteNotification(ctx context.Context, id string) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Bucket.DeleteNotification")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.DeleteNotification")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	call := b.c.raw.Notifications.Delete(b.name, id)

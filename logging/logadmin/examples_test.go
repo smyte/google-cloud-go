@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/smyte/google-cloud-go/go/logging/logadmin"
+	"github.com/smyte/google-cloud-go/logging/logadmin"
 )
 
 func ExampleNewClient() {

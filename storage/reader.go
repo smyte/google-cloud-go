@@ -28,7 +28,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"google.golang.org/api/googleapi"
 )
 
@@ -87,7 +87,7 @@ func (o *ObjectHandle) NewReader(ctx context.Context) (*Reader, error) {
 // from the end, and length must also be negative to indicate all remaining
 // bytes will be read.
 func (o *ObjectHandle) NewRangeReader(ctx context.Context, offset, length int64) (r *Reader, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Object.NewRangeReader")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Object.NewRangeReader")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := o.validate(); err != nil {

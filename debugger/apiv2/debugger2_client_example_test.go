@@ -19,7 +19,7 @@ package debugger_test
 import (
 	"context"
 
-	debugger "github.com/smyte/google-cloud-go/go/debugger/apiv2"
+	debugger "github.com/smyte/google-cloud-go/debugger/apiv2"
 	clouddebuggerpb "google.golang.org/genproto/googleapis/devtools/clouddebugger/v2"
 )
 

@@ -20,7 +20,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/bigquery"
+	"github.com/smyte/google-cloud-go/bigquery"
 	"google.golang.org/api/iterator"
 )
 

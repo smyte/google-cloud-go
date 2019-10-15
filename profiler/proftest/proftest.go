@@ -30,7 +30,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/storage"
+	"github.com/smyte/google-cloud-go/storage"
 	gax "github.com/googleapis/gax-go/v2"
 	compute "google.golang.org/api/compute/v1"
 	container "google.golang.org/api/container/v1"

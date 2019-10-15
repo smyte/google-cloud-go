@@ -21,7 +21,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/civil"
+	"github.com/smyte/google-cloud-go/civil"
 	proto3 "github.com/golang/protobuf/ptypes/struct"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 )

@@ -20,7 +20,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/datastore"
+	"github.com/smyte/google-cloud-go/datastore"
 	"google.golang.org/api/iterator"
 )
 

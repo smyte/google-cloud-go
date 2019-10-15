@@ -18,7 +18,7 @@
 //
 // Usage example:
 //
-//   import "github.com/smyte/google-cloud-go/go/profiler"
+//   import "github.com/smyte/google-cloud-go/profiler"
 //   ...
 //   if err := profiler.Start(profiler.Config{Service: "my-service"}); err != nil {
 //       // TODO: Handle error.
@@ -49,8 +49,8 @@ import (
 	"sync"
 	"time"
 
-	gcemd "github.com/smyte/google-cloud-go/go/compute/metadata"
-	"github.com/smyte/google-cloud-go/go/internal/version"
+	gcemd "github.com/smyte/google-cloud-go/compute/metadata"
+	"github.com/smyte/google-cloud-go/internal/version"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/google/pprof/profile"

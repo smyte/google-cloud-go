@@ -22,7 +22,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/option"
 )

@@ -24,7 +24,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/iam"
+	"github.com/smyte/google-cloud-go/iam"
 	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	"go.opencensus.io/stats"

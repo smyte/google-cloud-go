@@ -20,7 +20,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/pretty"
+	"github.com/smyte/google-cloud-go/internal/pretty"
 	tspb "github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/golang/protobuf/ptypes/wrappers"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"

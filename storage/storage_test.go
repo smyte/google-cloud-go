@@ -32,8 +32,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/iam"
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/iam"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	raw "google.golang.org/api/storage/v1"

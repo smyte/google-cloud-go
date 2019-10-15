@@ -31,9 +31,9 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/github.com/smyte/google-cloud-go/go.
+// please visit godoc.org/github.com/smyte/google-cloud-go.
 
-package texttospeech // import "github.com/smyte/google-cloud-go/go/texttospeech/apiv1"
+package texttospeech // import "github.com/smyte/google-cloud-go/texttospeech/apiv1"
 
 import (
 	"context"

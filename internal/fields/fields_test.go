@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 )
 

@@ -23,8 +23,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/smyte/google-cloud-go/go/logging"
-	"github.com/smyte/google-cloud-go/go/logging/logadmin"
+	"github.com/smyte/google-cloud-go/logging"
+	"github.com/smyte/google-cloud-go/logging/logadmin"
 	"google.golang.org/api/iterator"
 )
 

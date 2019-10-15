@@ -18,7 +18,7 @@ import (
 	"context"
 	"io"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -137,7 +137,7 @@ func (t *Table) LoaderFrom(src LoadSource) *Loader {
 
 // Run initiates a load job.
 func (l *Loader) Run(ctx context.Context) (j *Job, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Load.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Load.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	job, media := l.newJob()

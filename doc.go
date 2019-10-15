@@ -14,7 +14,7 @@
 
 /*
 Package cloud is the root of the packages used to access Google Cloud
-Services. See https://godoc.org/github.com/smyte/google-cloud-go/go for a full list
+Services. See https://godoc.org/github.com/smyte/google-cloud-go for a full list
 of sub-packages.
 
 
@@ -97,4 +97,4 @@ making breaking changes, including removal.
 These parts of the surface will be labeled with the note, "It is EXPERIMENTAL
 and subject to change or removal without notice."
 */
-package cloud // import "github.com/smyte/google-cloud-go/go"
+package cloud // import "github.com/smyte/google-cloud-go"

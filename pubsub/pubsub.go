@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package pubsub // import "github.com/smyte/google-cloud-go/go/pubsub"
+package pubsub // import "github.com/smyte/google-cloud-go/pubsub"
 
 import (
 	"context"
@@ -21,8 +21,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/version"
-	vkit "github.com/smyte/google-cloud-go/go/pubsub/apiv1"
+	"github.com/smyte/google-cloud-go/internal/version"
+	vkit "github.com/smyte/google-cloud-go/pubsub/apiv1"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"

@@ -20,7 +20,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/smyte/google-cloud-go/go/rpcreplay/proto/intstore"
+	pb "github.com/smyte/google-cloud-go/rpcreplay/proto/intstore"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

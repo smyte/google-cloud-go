@@ -17,7 +17,7 @@ package metadata_test
 import (
 	"net/http"
 
-	"github.com/smyte/google-cloud-go/go/compute/metadata"
+	"github.com/smyte/google-cloud-go/compute/metadata"
 )
 
 // This example demonstrates how to use your own transport when using this package.

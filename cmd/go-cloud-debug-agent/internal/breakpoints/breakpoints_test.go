@@ -17,8 +17,8 @@ package breakpoints
 import (
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	cd "google.golang.org/api/clouddebugger/v2"
 )
 

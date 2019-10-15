@@ -36,8 +36,8 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/bigtable"
-	"github.com/smyte/google-cloud-go/go/bigtable/internal/cbtconfig"
+	"github.com/smyte/google-cloud-go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable/internal/cbtconfig"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"

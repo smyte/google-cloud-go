@@ -20,7 +20,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 	"google.golang.org/api/googleapi"
 	raw "google.golang.org/api/storage/v1"

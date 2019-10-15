@@ -19,7 +19,7 @@ package vision_test
 import (
 	"context"
 
-	vision "github.com/smyte/google-cloud-go/go/vision/apiv1"
+	vision "github.com/smyte/google-cloud-go/vision/apiv1"
 	"google.golang.org/api/iterator"
 	visionpb "google.golang.org/genproto/googleapis/cloud/vision/v1"
 )

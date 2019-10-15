@@ -17,7 +17,7 @@ package datastore
 import (
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
 )
 

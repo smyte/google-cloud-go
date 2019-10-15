@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -88,7 +88,7 @@ func (t *Table) Uploader() *Inserter { return t.Inserter() }
 // the call will run indefinitely. Pass a context with a timeout to prevent
 // hanging calls.
 func (u *Inserter) Put(ctx context.Context, src interface{}) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Inserter.Put")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Inserter.Put")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	savers, err := valueSavers(src)

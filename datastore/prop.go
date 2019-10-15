@@ -20,7 +20,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/smyte/google-cloud-go/go/internal/fields"
+	"github.com/smyte/google-cloud-go/internal/fields"
 )
 
 // Entities with more than this many indexed properties will not be saved.

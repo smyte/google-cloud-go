@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/optional"
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -297,7 +297,7 @@ func (t *Table) implicitTable() bool {
 // After table creation, a view can be modified only if its table was initially created
 // with a view.
 func (t *Table) Create(ctx context.Context, tm *TableMetadata) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Table.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	table, err := tm.toBQ()
@@ -391,7 +391,7 @@ func (tm *TableMetadata) toBQ() (*bq.Table, error) {
 
 // Metadata fetches the metadata for the table.
 func (t *Table) Metadata(ctx context.Context) (md *TableMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Metadata")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Table.Metadata")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := t.c.bqs.Tables.Get(t.ProjectID, t.DatasetID, t.TableID).Context(ctx)
@@ -452,7 +452,7 @@ func bqToTableMetadata(t *bq.Table) (*TableMetadata, error) {
 
 // Delete deletes the table.
 func (t *Table) Delete(ctx context.Context) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Table.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := t.c.bqs.Tables.Delete(t.ProjectID, t.DatasetID, t.TableID).Context(ctx)
@@ -474,7 +474,7 @@ var NeverExpire = time.Time{}.Add(-1)
 
 // Update modifies specific Table metadata fields.
 func (t *Table) Update(ctx context.Context, tm TableMetadataToUpdate, etag string) (md *TableMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Table.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	bqt, err := tm.toBQ()

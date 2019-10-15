@@ -22,7 +22,7 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"google.golang.org/api/option"
 	"google.golang.org/api/transport"
 	gtransport "google.golang.org/api/transport/grpc"
@@ -328,7 +328,7 @@ func (c *Client) Close() error {
 // unexported in the destination struct. ErrFieldMismatch is only returned if
 // dst is a struct pointer.
 func (c *Client) Get(ctx context.Context, key *Key, dst interface{}) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.Get")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.Get")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if dst == nil { // get catches nil interfaces; we need to catch nil ptr here
@@ -354,7 +354,7 @@ func (c *Client) Get(ctx context.Context, key *Key, dst interface{}) (err error)
 //
 // err may be a MultiError. See ExampleMultiError to check it.
 func (c *Client) GetMulti(ctx context.Context, keys []*Key, dst interface{}) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.GetMulti")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.GetMulti")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	return c.get(ctx, keys, dst, nil)
@@ -491,7 +491,7 @@ func (c *Client) Put(ctx context.Context, key *Key, src interface{}) (*Key, erro
 // err may be a MultiError. See ExampleMultiError to check it.
 func (c *Client) PutMulti(ctx context.Context, keys []*Key, src interface{}) (ret []*Key, err error) {
 	// TODO(jba): rewrite in terms of Mutate.
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.PutMulti")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.PutMulti")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	mutations, err := putMutations(keys, src)
@@ -585,7 +585,7 @@ func (c *Client) Delete(ctx context.Context, key *Key) error {
 // err may be a MultiError. See ExampleMultiError to check it.
 func (c *Client) DeleteMulti(ctx context.Context, keys []*Key) (err error) {
 	// TODO(jba): rewrite in terms of Mutate.
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.DeleteMulti")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.DeleteMulti")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	mutations, err := deleteMutations(keys)
@@ -637,7 +637,7 @@ func deleteMutations(keys []*Key) ([]*pb.Mutation, error) {
 // Mutate returns a MultiError in this case even if there is only one Mutation.
 // See ExampleMultiError to check it.
 func (c *Client) Mutate(ctx context.Context, muts ...*Mutation) (ret []*Key, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/datastore.Mutate")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.Mutate")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	pmuts, err := mutationProtos(muts)

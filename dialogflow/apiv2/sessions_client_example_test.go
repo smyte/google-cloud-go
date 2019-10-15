@@ -20,7 +20,7 @@ import (
 	"context"
 	"io"
 
-	dialogflow "github.com/smyte/google-cloud-go/go/dialogflow/apiv2"
+	dialogflow "github.com/smyte/google-cloud-go/dialogflow/apiv2"
 	dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2"
 )
 

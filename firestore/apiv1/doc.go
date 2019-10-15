@@ -20,8 +20,8 @@
 //   NOTE: This package is in beta. It is not stable, and may be subject to changes.
 //
 //
-// Use the client at github.com/smyte/google-cloud-go/go/firestore in preference to this.
-package firestore // import "github.com/smyte/google-cloud-go/go/firestore/apiv1"
+// Use the client at github.com/smyte/google-cloud-go/firestore in preference to this.
+package firestore // import "github.com/smyte/google-cloud-go/firestore/apiv1"
 
 import (
 	"context"

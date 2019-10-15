@@ -24,7 +24,7 @@ import (
 	"testing"
 	"time"
 
-	storage_v1_tests "github.com/smyte/google-cloud-go/go/storage/internal/test/conformance"
+	storage_v1_tests "github.com/smyte/google-cloud-go/storage/internal/test/conformance"
 	"github.com/golang/protobuf/jsonpb"
 )
 

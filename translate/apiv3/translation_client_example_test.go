@@ -19,7 +19,7 @@ package translate_test
 import (
 	"context"
 
-	translate "github.com/smyte/google-cloud-go/go/translate/apiv3"
+	translate "github.com/smyte/google-cloud-go/translate/apiv3"
 	"google.golang.org/api/iterator"
 	translatepb "google.golang.org/genproto/googleapis/cloud/translate/v3"
 )

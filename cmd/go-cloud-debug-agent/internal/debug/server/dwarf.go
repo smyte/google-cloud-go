@@ -20,7 +20,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 func (s *Server) functionStartAddress(name string) (uint64, error) {

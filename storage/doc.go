@@ -19,7 +19,7 @@ Google Cloud Storage stores data in named objects, which are grouped into bucket
 More information about Google Cloud Storage is available at
 https://github.com/smyte/google-cloud-go/storage/docs.
 
-See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 All of the methods of this package use exponential backoff to retry calls that fail
@@ -173,4 +173,4 @@ These errors can be introspected for more information by type asserting to the r
 		  if e.Code == 409 { ... }
 	}
 */
-package storage // import "github.com/smyte/google-cloud-go/go/storage"
+package storage // import "github.com/smyte/google-cloud-go/storage"

@@ -21,7 +21,7 @@ and receivers.
 More information about Google Cloud Pub/Sub is available at
 https://github.com/smyte/google-cloud-go/pubsub/docs
 
-See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -135,6 +135,6 @@ Slow Message Processing
 
 For use cases where message processing exceeds 30 minutes, we recommend using
 the base client in a pull model, since long-lived streams are periodically killed
-by firewalls. See the example at https://godoc.org/github.com/smyte/google-cloud-go/go/pubsub/apiv1#example-SubscriberClient-Pull-LengthyClientProcessing
+by firewalls. See the example at https://godoc.org/github.com/smyte/google-cloud-go/pubsub/apiv1#example-SubscriberClient-Pull-LengthyClientProcessing
 */
-package pubsub // import "github.com/smyte/google-cloud-go/go/pubsub"
+package pubsub // import "github.com/smyte/google-cloud-go/pubsub"

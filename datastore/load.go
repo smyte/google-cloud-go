@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/fields"
+	"github.com/smyte/google-cloud-go/internal/fields"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
 )
 

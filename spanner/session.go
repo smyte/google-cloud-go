@@ -27,8 +27,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
-	vkit "github.com/smyte/google-cloud-go/go/spanner/apiv1"
+	"github.com/smyte/google-cloud-go/internal/trace"
+	vkit "github.com/smyte/google-cloud-go/spanner/apiv1"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"

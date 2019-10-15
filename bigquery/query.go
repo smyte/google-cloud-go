@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -292,7 +292,7 @@ func (c *Client) Query(q string) *Query {
 
 // Run initiates a query job.
 func (q *Query) Run(ctx context.Context) (j *Job, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Query.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Query.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	job, err := q.newJob()

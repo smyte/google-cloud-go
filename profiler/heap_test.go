@@ -19,7 +19,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/profiler/testdata"
+	"github.com/smyte/google-cloud-go/profiler/testdata"
 	"github.com/google/pprof/profile"
 )
 

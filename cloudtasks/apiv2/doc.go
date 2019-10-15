@@ -29,8 +29,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/github.com/smyte/google-cloud-go/go.
-package cloudtasks // import "github.com/smyte/google-cloud-go/go/cloudtasks/apiv2"
+// please visit godoc.org/github.com/smyte/google-cloud-go.
+package cloudtasks // import "github.com/smyte/google-cloud-go/cloudtasks/apiv2"
 
 import (
 	"context"

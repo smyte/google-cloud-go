@@ -19,7 +19,7 @@ package recommender_test
 import (
 	"context"
 
-	recommender "github.com/smyte/google-cloud-go/go/recommender/apiv1beta1"
+	recommender "github.com/smyte/google-cloud-go/recommender/apiv1beta1"
 	"google.golang.org/api/iterator"
 	recommenderpb "google.golang.org/genproto/googleapis/cloud/recommender/v1beta1"
 )

@@ -24,7 +24,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/smyte/google-cloud-go/go/spanner/spansql"
+	"github.com/smyte/google-cloud-go/spanner/spansql"
 )
 
 // evalContext represents the context for evaluating an expression.

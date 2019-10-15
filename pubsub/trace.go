@@ -45,7 +45,7 @@ var (
 	keyError  = tag.MustNewKey("error")
 )
 
-const statsPrefix = "github.com/smyte/google-cloud-go/go/pubsub/"
+const statsPrefix = "github.com/smyte/google-cloud-go/pubsub/"
 
 // The following are measures recorded in publish/subscribe flows.
 var (

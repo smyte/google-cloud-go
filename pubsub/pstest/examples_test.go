@@ -17,8 +17,8 @@ package pstest_test
 import (
 	"context"
 
-	"github.com/smyte/google-cloud-go/go/pubsub"
-	"github.com/smyte/google-cloud-go/go/pubsub/pstest"
+	"github.com/smyte/google-cloud-go/pubsub"
+	"github.com/smyte/google-cloud-go/pubsub/pstest"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 )

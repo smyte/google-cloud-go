@@ -23,7 +23,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/spanner"
+	"github.com/smyte/google-cloud-go/spanner"
 	"google.golang.org/api/iterator"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 )

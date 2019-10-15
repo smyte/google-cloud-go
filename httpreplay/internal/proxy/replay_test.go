@@ -18,7 +18,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 )
 
 func TestParseRequestBody(t *testing.T) {

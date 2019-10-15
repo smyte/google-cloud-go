@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/iam"
-	"github.com/smyte/google-cloud-go/go/internal/optional"
+	"github.com/smyte/google-cloud-go/iam"
+	"github.com/smyte/google-cloud-go/internal/optional"
 	"github.com/golang/protobuf/ptypes"
 	durpb "github.com/golang/protobuf/ptypes/duration"
 	gax "github.com/googleapis/gax-go/v2"

@@ -29,8 +29,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/github.com/smyte/google-cloud-go/go.
-package phishingprotection // import "github.com/smyte/google-cloud-go/go/phishingprotection/apiv1beta1"
+// please visit godoc.org/github.com/smyte/google-cloud-go.
+package phishingprotection // import "github.com/smyte/google-cloud-go/phishingprotection/apiv1beta1"
 
 import (
 	"context"

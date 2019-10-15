@@ -20,7 +20,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/version"
+	"github.com/smyte/google-cloud-go/internal/version"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/transport"

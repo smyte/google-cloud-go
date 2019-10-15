@@ -20,7 +20,7 @@ import (
 	"context"
 	"io"
 
-	spanner "github.com/smyte/google-cloud-go/go/spanner/apiv1"
+	spanner "github.com/smyte/google-cloud-go/spanner/apiv1"
 	"google.golang.org/api/iterator"
 	spannerpb "google.golang.org/genproto/googleapis/spanner/v1"
 )

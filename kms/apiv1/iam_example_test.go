@@ -17,7 +17,7 @@ package kms_test
 import (
 	"context"
 
-	kms "github.com/smyte/google-cloud-go/go/kms/apiv1"
+	kms "github.com/smyte/google-cloud-go/kms/apiv1"
 )
 
 func ExampleKeyManagementClient_ResourceIAM() {

@@ -22,7 +22,7 @@
 // The Google Kubernetes Engine API is used for building and managing
 // container
 // based applications, powered by the open source Kubernetes technology.
-package container // import "github.com/smyte/google-cloud-go/go/container/apiv1"
+package container // import "github.com/smyte/google-cloud-go/container/apiv1"
 
 import (
 	"context"

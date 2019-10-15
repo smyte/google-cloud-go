@@ -26,7 +26,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/profiler/proftest"
+	"github.com/smyte/google-cloud-go/profiler/proftest"
 	"golang.org/x/oauth2/google"
 	compute "google.golang.org/api/compute/v1"
 )
@@ -66,7 +66,7 @@ retry eval "$(gimme {{.GoVersion}})"
 # Set $GOPATH
 export GOPATH="$HOME/go"
 
-export GOCLOUD_HOME=$GOPATH/src/github.com/smyte/google-cloud-go/go
+export GOCLOUD_HOME=$GOPATH/src/github.com/smyte/google-cloud-go
 mkdir -p $GOCLOUD_HOME
 
 # Install agent

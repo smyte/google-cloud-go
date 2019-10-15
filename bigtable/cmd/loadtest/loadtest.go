@@ -32,9 +32,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/bigtable"
-	"github.com/smyte/google-cloud-go/go/bigtable/internal/cbtconfig"
-	"github.com/smyte/google-cloud-go/go/bigtable/internal/stat"
+	"github.com/smyte/google-cloud-go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable/internal/cbtconfig"
+	"github.com/smyte/google-cloud-go/bigtable/internal/stat"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 )

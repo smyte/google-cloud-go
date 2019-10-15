@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"testing"
 
-	containeranalysis "github.com/smyte/google-cloud-go/go/containeranalysis/apiv1"
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	containeranalysis "github.com/smyte/google-cloud-go/containeranalysis/apiv1"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"google.golang.org/api/iterator"
 	grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
 	iampb "google.golang.org/genproto/googleapis/iam/v1"

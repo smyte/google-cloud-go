@@ -24,8 +24,8 @@ import (
 	"testing"
 	"time"
 
-	itestutil "github.com/smyte/google-cloud-go/go/internal/testutil"
-	. "github.com/smyte/google-cloud-go/go/spanner/internal/testutil"
+	itestutil "github.com/smyte/google-cloud-go/internal/testutil"
+	. "github.com/smyte/google-cloud-go/spanner/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc/codes"

@@ -19,7 +19,7 @@ package apiv1_test
 import (
 	"context"
 
-	apiv1 "github.com/smyte/google-cloud-go/go/firestore/apiv1/admin"
+	apiv1 "github.com/smyte/google-cloud-go/firestore/apiv1/admin"
 	"google.golang.org/api/iterator"
 	adminpb "google.golang.org/genproto/googleapis/firestore/admin/v1"
 )

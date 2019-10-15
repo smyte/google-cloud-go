@@ -22,8 +22,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 // peekBytes reads len(buf) bytes at addr.

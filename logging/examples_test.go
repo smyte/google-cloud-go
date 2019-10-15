@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/smyte/google-cloud-go/go/logging"
+	"github.com/smyte/google-cloud-go/logging"
 	"go.opencensus.io/trace"
 )
 

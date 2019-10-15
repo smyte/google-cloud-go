@@ -23,8 +23,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/longrunning"
-	lroauto "github.com/smyte/google-cloud-go/go/longrunning/autogen"
+	"github.com/smyte/google-cloud-go/longrunning"
+	lroauto "github.com/smyte/google-cloud-go/longrunning/autogen"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/transport"

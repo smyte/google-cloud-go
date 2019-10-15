@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/optional"
-	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -44,7 +44,7 @@ func (r *Routine) FullyQualifiedName() string {
 // Create creates a Routine in the BigQuery service.
 // Pass in a RoutineMetadata to define the routine.
 func (r *Routine) Create(ctx context.Context, rm *RoutineMetadata) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Routine.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Routine.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	routine, err := rm.toBQ()
@@ -64,7 +64,7 @@ func (r *Routine) Create(ctx context.Context, rm *RoutineMetadata) (err error) {
 
 // Metadata fetches the metadata for a given Routine.
 func (r *Routine) Metadata(ctx context.Context) (rm *RoutineMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Routine.Metadata")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Routine.Metadata")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := r.c.bqs.Routines.Get(r.ProjectID, r.DatasetID, r.RoutineID).Context(ctx)
@@ -82,7 +82,7 @@ func (r *Routine) Metadata(ctx context.Context) (rm *RoutineMetadata, err error)
 
 // Update modifies properties of a Routine using the API.
 func (r *Routine) Update(ctx context.Context, upd *RoutineMetadataToUpdate, etag string) (rm *RoutineMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Routine.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Routine.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	bqr, err := upd.toBQ()
@@ -113,7 +113,7 @@ func (r *Routine) Update(ctx context.Context, upd *RoutineMetadataToUpdate, etag
 
 // Delete removes a Routine from a dataset.
 func (r *Routine) Delete(ctx context.Context) (err error) {
-	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Model.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Model.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := r.c.bqs.Routines.Delete(r.ProjectID, r.DatasetID, r.RoutineID).Context(ctx)

@@ -20,8 +20,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/internal/testutil"
-	"github.com/smyte/google-cloud-go/go/internal/uid"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/uid"
 	"google.golang.org/api/iterator"
 )
 

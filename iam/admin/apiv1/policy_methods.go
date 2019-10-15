@@ -20,7 +20,7 @@ package admin
 import (
 	"context"
 
-	"github.com/smyte/google-cloud-go/go/iam"
+	"github.com/smyte/google-cloud-go/iam"
 	iampb "google.golang.org/genproto/googleapis/iam/v1"
 )
 

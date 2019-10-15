@@ -25,7 +25,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/smyte/google-cloud-go/go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable"
 )
 
 // Parse a GC policy. Valid policies include

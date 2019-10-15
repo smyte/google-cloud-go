@@ -25,7 +25,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/smyte/google-cloud-go/go/profiler"
+	"github.com/smyte/google-cloud-go/profiler"
 )
 
 var (

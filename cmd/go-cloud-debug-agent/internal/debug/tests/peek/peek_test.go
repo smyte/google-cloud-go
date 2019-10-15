@@ -27,9 +27,9 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/local"
-	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/remote"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/local"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/remote"
 )
 
 var expectedVarValues = map[string]interface{}{
@@ -351,8 +351,8 @@ func matches(p, s string) bool {
 }
 
 const (
-	proxySrc  = "github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/cmd/debugproxy"
-	traceeSrc = "github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/tests/peek/testdata"
+	proxySrc  = "github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/cmd/debugproxy"
+	traceeSrc = "github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/tests/peek/testdata"
 )
 
 var (

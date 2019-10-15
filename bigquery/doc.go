@@ -18,7 +18,7 @@ Package bigquery provides a client for the BigQuery service.
 The following assumes a basic familiarity with BigQuery concepts.
 See https://github.com/smyte/google-cloud-go/bigquery/docs.
 
-See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -305,4 +305,4 @@ These errors can be introspected for more information by type asserting to the r
 		  if e.Code = 409 { ... }
 	}
 */
-package bigquery // import "github.com/smyte/google-cloud-go/go/bigquery"
+package bigquery // import "github.com/smyte/google-cloud-go/bigquery"
