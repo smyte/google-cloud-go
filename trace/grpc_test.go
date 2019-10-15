@@ -23,7 +23,7 @@ import (
 	"strings"
 	"testing"
 
-	pb "cloud.google.com/go/trace/testdata/helloworld"
+	pb "github.com/smyte/google-cloud-go/trace/testdata/helloworld"
 	"google.golang.org/grpc"
 )
 

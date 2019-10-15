@@ -17,8 +17,8 @@ package bigquery
 import (
 	"testing"
 
-	"cloud.google.com/go/internal/pretty"
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/pretty"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 )
 
 func TestExternalDataConfig(t *testing.T) {

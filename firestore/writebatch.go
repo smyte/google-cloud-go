@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"
 )
 
@@ -72,7 +72,7 @@ func (b *WriteBatch) Update(dr *DocumentRef, data []Update, opts ...Precondition
 // returns an error if there are no writes in the batch, if any errors occurred in
 // constructing the writes, or if the Commmit operation fails.
 func (b *WriteBatch) Commit(ctx context.Context) (_ []*WriteResult, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/firestore.WriteBatch.Commit")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/firestore.WriteBatch.Commit")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if b.err != nil {

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package pubsub // import "cloud.google.com/go/pubsub"
+package pubsub // import "github.com/smyte/google-cloud-go/pubsub"
 
 import (
 	"context"
@@ -21,8 +21,8 @@ import (
 	"runtime"
 	"time"
 
-	"cloud.google.com/go/internal/version"
-	vkit "cloud.google.com/go/pubsub/apiv1"
+	"github.com/smyte/google-cloud-go/internal/version"
+	vkit "github.com/smyte/google-cloud-go/pubsub/apiv1"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/keepalive"
@@ -54,7 +54,7 @@ type Client struct {
 func NewClient(ctx context.Context, projectID string, opts ...option.ClientOption) (c *Client, err error) {
 	var o []option.ClientOption
 	// Environment variables for gcloud emulator:
-	// https://cloud.google.com/sdk/gcloud/reference/beta/emulators/pubsub/
+	// https://github.com/smyte/google-cloud-go/sdk/gcloud/reference/beta/emulators/pubsub/
 	if addr := os.Getenv("PUBSUB_EMULATOR_HOST"); addr != "" {
 		conn, err := grpc.Dial(addr, grpc.WithInsecure())
 		if err != nil {

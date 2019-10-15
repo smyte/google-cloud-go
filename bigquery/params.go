@@ -23,16 +23,16 @@ import (
 	"regexp"
 	"time"
 
-	"cloud.google.com/go/civil"
-	"cloud.google.com/go/internal/fields"
+	"github.com/smyte/google-cloud-go/civil"
+	"github.com/smyte/google-cloud-go/internal/fields"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
 var (
-	// See https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#timestamp-type.
+	// See https://github.com/smyte/google-cloud-go/bigquery/docs/reference/standard-sql/data-types#timestamp-type.
 	timestampFormat = "2006-01-02 15:04:05.999999-07:00"
 
-	// See https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#schema.fields.name
+	// See https://github.com/smyte/google-cloud-go/bigquery/docs/reference/rest/v2/tables#schema.fields.name
 	validFieldName = regexp.MustCompile("^[a-zA-Z_][a-zA-Z0-9_]{0,127}$")
 )
 

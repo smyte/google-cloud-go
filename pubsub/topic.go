@@ -23,7 +23,7 @@ import (
 	"sync"
 	"time"
 
-	"cloud.google.com/go/iam"
+	"github.com/smyte/google-cloud-go/iam"
 	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/support/bundler"

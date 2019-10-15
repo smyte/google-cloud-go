@@ -28,9 +28,9 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/datastore"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/storage"
+	"github.com/smyte/google-cloud-go/datastore"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/storage"
 	api "google.golang.org/api/cloudtrace/v1"
 	compute "google.golang.org/api/compute/v1"
 	"google.golang.org/api/iterator"
@@ -336,30 +336,30 @@ func TestNewSpan(t *testing.T) {
 					{
 						Kind: "RPC_CLIENT",
 						Labels: map[string]string{
-							"trace.cloud.google.com/http/host":        "example.com",
-							"trace.cloud.google.com/http/method":      "GET",
-							"trace.cloud.google.com/http/status_code": "200",
-							"trace.cloud.google.com/http/url":         "http://example.com/bar",
+							"trace.github.com/smyte/google-cloud-go/http/host":        "example.com",
+							"trace.github.com/smyte/google-cloud-go/http/method":      "GET",
+							"trace.github.com/smyte/google-cloud-go/http/status_code": "200",
+							"trace.github.com/smyte/google-cloud-go/http/url":         "http://example.com/bar",
 						},
 						Name: "example.com/bar",
 					},
 					{
 						Kind: "RPC_CLIENT",
 						Labels: map[string]string{
-							"trace.cloud.google.com/http/host":        "www.googleapis.com",
-							"trace.cloud.google.com/http/method":      "GET",
-							"trace.cloud.google.com/http/status_code": "200",
-							"trace.cloud.google.com/http/url":         "https://www.googleapis.com/compute/v1/projects/testproject/zones",
+							"trace.github.com/smyte/google-cloud-go/http/host":        "www.googleapis.com",
+							"trace.github.com/smyte/google-cloud-go/http/method":      "GET",
+							"trace.github.com/smyte/google-cloud-go/http/status_code": "200",
+							"trace.github.com/smyte/google-cloud-go/http/url":         "https://www.googleapis.com/compute/v1/projects/testproject/zones",
 						},
 						Name: "www.googleapis.com/compute/v1/projects/testproject/zones",
 					},
 					{
 						Kind: "RPC_CLIENT",
 						Labels: map[string]string{
-							"trace.cloud.google.com/http/host":        "www.googleapis.com",
-							"trace.cloud.google.com/http/method":      "GET",
-							"trace.cloud.google.com/http/status_code": "200",
-							"trace.cloud.google.com/http/url":         "https://www.googleapis.com/storage/v1/b/testbucket/o",
+							"trace.github.com/smyte/google-cloud-go/http/host":        "www.googleapis.com",
+							"trace.github.com/smyte/google-cloud-go/http/method":      "GET",
+							"trace.github.com/smyte/google-cloud-go/http/status_code": "200",
+							"trace.github.com/smyte/google-cloud-go/http/url":         "https://www.googleapis.com/storage/v1/b/testbucket/o",
 						},
 						Name: "www.googleapis.com/storage/v1/b/testbucket/o",
 					},
@@ -429,7 +429,7 @@ func TestNewSpan(t *testing.T) {
 		for key, value := range *labels {
 			if v, ok := s.Labels[key]; !ok {
 				t.Errorf("Span %d is missing Label %q:%q", i, key, value)
-			} else if key == "trace.cloud.google.com/http/url" {
+			} else if key == "trace.github.com/smyte/google-cloud-go/http/url" {
 				if !strings.HasPrefix(v, value) {
 					t.Errorf("Span %d Label %q: got value %q want prefix %q", i, key, v, value)
 				}
@@ -438,7 +438,7 @@ func TestNewSpan(t *testing.T) {
 			}
 		}
 		for key := range s.Labels {
-			if _, ok := (*labels)[key]; key != "trace.cloud.google.com/stacktrace" && !ok {
+			if _, ok := (*labels)[key]; key != "trace.github.com/smyte/google-cloud-go/stacktrace" && !ok {
 				t.Errorf("Span %d: unexpected label %q", i, key)
 			}
 		}
@@ -476,9 +476,9 @@ func testTrace(t *testing.T, synchronous bool, fromRequest bool) {
 		req.Header.Set("X-Cloud-Trace-Context", header)
 		span = traceClient.SpanFromRequest(req)
 		headerOrReqLabels = map[string]string{
-			"trace.cloud.google.com/http/host":   "example.com",
-			"trace.cloud.google.com/http/method": "GET",
-			"trace.cloud.google.com/http/url":    "http://example.com/foo",
+			"trace.github.com/smyte/google-cloud-go/http/host":   "example.com",
+			"trace.github.com/smyte/google-cloud-go/http/method": "GET",
+			"trace.github.com/smyte/google-cloud-go/http/url":    "http://example.com/foo",
 		}
 		headerOrReqName = "example.com/foo"
 	}
@@ -496,30 +496,30 @@ func testTrace(t *testing.T, synchronous bool, fromRequest bool) {
 					{
 						Kind: "RPC_CLIENT",
 						Labels: map[string]string{
-							"trace.cloud.google.com/http/host":        "example.com",
-							"trace.cloud.google.com/http/method":      "GET",
-							"trace.cloud.google.com/http/status_code": "200",
-							"trace.cloud.google.com/http/url":         "http://example.com/bar",
+							"trace.github.com/smyte/google-cloud-go/http/host":        "example.com",
+							"trace.github.com/smyte/google-cloud-go/http/method":      "GET",
+							"trace.github.com/smyte/google-cloud-go/http/status_code": "200",
+							"trace.github.com/smyte/google-cloud-go/http/url":         "http://example.com/bar",
 						},
 						Name: "example.com/bar",
 					},
 					{
 						Kind: "RPC_CLIENT",
 						Labels: map[string]string{
-							"trace.cloud.google.com/http/host":        "www.googleapis.com",
-							"trace.cloud.google.com/http/method":      "GET",
-							"trace.cloud.google.com/http/status_code": "200",
-							"trace.cloud.google.com/http/url":         "https://www.googleapis.com/compute/v1/projects/testproject/zones",
+							"trace.github.com/smyte/google-cloud-go/http/host":        "www.googleapis.com",
+							"trace.github.com/smyte/google-cloud-go/http/method":      "GET",
+							"trace.github.com/smyte/google-cloud-go/http/status_code": "200",
+							"trace.github.com/smyte/google-cloud-go/http/url":         "https://www.googleapis.com/compute/v1/projects/testproject/zones",
 						},
 						Name: "www.googleapis.com/compute/v1/projects/testproject/zones",
 					},
 					{
 						Kind: "RPC_CLIENT",
 						Labels: map[string]string{
-							"trace.cloud.google.com/http/host":        "www.googleapis.com",
-							"trace.cloud.google.com/http/method":      "GET",
-							"trace.cloud.google.com/http/status_code": "200",
-							"trace.cloud.google.com/http/url":         "https://www.googleapis.com/storage/v1/b/testbucket/o",
+							"trace.github.com/smyte/google-cloud-go/http/host":        "www.googleapis.com",
+							"trace.github.com/smyte/google-cloud-go/http/method":      "GET",
+							"trace.github.com/smyte/google-cloud-go/http/status_code": "200",
+							"trace.github.com/smyte/google-cloud-go/http/url":         "https://www.googleapis.com/storage/v1/b/testbucket/o",
 						},
 						Name: "www.googleapis.com/storage/v1/b/testbucket/o",
 					},
@@ -589,7 +589,7 @@ func testTrace(t *testing.T, synchronous bool, fromRequest bool) {
 		for key, value := range *labels {
 			if v, ok := s.Labels[key]; !ok {
 				t.Errorf("Span %d is missing Label %q:%q", i, key, value)
-			} else if key == "trace.cloud.google.com/http/url" {
+			} else if key == "trace.github.com/smyte/google-cloud-go/http/url" {
 				if !strings.HasPrefix(v, value) {
 					t.Errorf("Span %d Label %q: got value %q want prefix %q", i, key, v, value)
 				}
@@ -598,7 +598,7 @@ func testTrace(t *testing.T, synchronous bool, fromRequest bool) {
 			}
 		}
 		for key := range s.Labels {
-			if _, ok := (*labels)[key]; key != "trace.cloud.google.com/stacktrace" && !ok {
+			if _, ok := (*labels)[key]; key != "trace.github.com/smyte/google-cloud-go/stacktrace" && !ok {
 				t.Errorf("Span %d: unexpected label %q", i, key)
 			}
 		}

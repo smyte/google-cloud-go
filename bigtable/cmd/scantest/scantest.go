@@ -33,9 +33,9 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"cloud.google.com/go/bigtable"
-	"cloud.google.com/go/bigtable/internal/cbtconfig"
-	"cloud.google.com/go/bigtable/internal/stat"
+	"github.com/smyte/google-cloud-go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable/internal/cbtconfig"
+	"github.com/smyte/google-cloud-go/bigtable/internal/stat"
 )
 
 var (

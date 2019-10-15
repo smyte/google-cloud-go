@@ -19,7 +19,7 @@ package talent_test
 import (
 	"context"
 
-	talent "cloud.google.com/go/talent/apiv4beta1"
+	talent "github.com/smyte/google-cloud-go/talent/apiv4beta1"
 	talentpb "google.golang.org/genproto/googleapis/cloud/talent/v4beta1"
 )
 

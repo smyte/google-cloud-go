@@ -27,9 +27,9 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/httpreplay"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/storage"
+	"github.com/smyte/google-cloud-go/httpreplay"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/storage"
 	"google.golang.org/api/option"
 )
 
@@ -135,7 +135,7 @@ func run(t *testing.T, hc *http.Client) (*storage.BucketAttrs, []byte) {
 func testReadCRC(t *testing.T, hc *http.Client, mode string) {
 	const (
 		// This is an uncompressed file.
-		// See https://cloud.google.com/storage/docs/public-datasets/landsat
+		// See https://github.com/smyte/google-cloud-go/storage/docs/public-datasets/landsat
 		uncompressedBucket = "gcp-public-data-landsat"
 		uncompressedObject = "LC08/PRE/044/034/LC80440342016259LGN00/LC80440342016259LGN00_MTL.txt"
 

@@ -17,14 +17,14 @@ Package storage provides an easy way to work with Google Cloud Storage.
 Google Cloud Storage stores data in named objects, which are grouped into buckets.
 
 More information about Google Cloud Storage is available at
-https://cloud.google.com/storage/docs.
+https://github.com/smyte/google-cloud-go/storage/docs.
 
-See https://godoc.org/cloud.google.com/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 All of the methods of this package use exponential backoff to retry calls that fail
 with certain errors, as described in
-https://cloud.google.com/storage/docs/exponential-backoff. Retrying continues
+https://github.com/smyte/google-cloud-go/storage/docs/exponential-backoff. Retrying continues
 indefinitely unless the controlling context is canceled or the client is closed. See
 context.WithTimeout and context.WithCancel.
 
@@ -123,7 +123,7 @@ Both objects and buckets have ACLs (Access Control Lists). An ACL is a list of
 ACLRules, each of which specifies the role of a user, group or project. ACLs
 are suitable for fine-grained control, but you may prefer using IAM to control
 access at the project level (see
-https://cloud.google.com/storage/docs/access-control/iam).
+https://github.com/smyte/google-cloud-go/storage/docs/access-control/iam).
 
 To list the ACLs of a bucket or object, obtain an ACLHandle and call its List method:
 
@@ -173,4 +173,4 @@ These errors can be introspected for more information by type asserting to the r
 		  if e.Code == 409 { ... }
 	}
 */
-package storage // import "cloud.google.com/go/storage"
+package storage // import "github.com/smyte/google-cloud-go/storage"

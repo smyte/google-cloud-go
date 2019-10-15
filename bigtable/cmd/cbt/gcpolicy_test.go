@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable"
 	"github.com/google/go-cmp/cmp"
 )
 

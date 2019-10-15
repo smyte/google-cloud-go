@@ -18,7 +18,7 @@ import (
 	"context"
 	"io"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -55,7 +55,7 @@ type LoadConfig struct {
 	SchemaUpdateOptions []string
 
 	// For Avro-based loads, controls whether logical type annotations are used.
-	// See https://cloud.google.com/bigquery/docs/loading-data-cloud-storage-avro#logical_types
+	// See https://github.com/smyte/google-cloud-go/bigquery/docs/loading-data-cloud-storage-avro#logical_types
 	// for additional information.
 	UseAvroLogicalTypes bool
 }
@@ -137,7 +137,7 @@ func (t *Table) LoaderFrom(src LoadSource) *Loader {
 
 // Run initiates a load job.
 func (l *Loader) Run(ctx context.Context) (j *Job, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Load.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Load.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	job, media := l.newJob()

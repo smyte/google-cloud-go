@@ -21,8 +21,8 @@ import (
 	"reflect"
 	"time"
 
-	"cloud.google.com/go/internal/optional"
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/iterator"
 	raw "google.golang.org/api/storage/v1"
@@ -45,7 +45,7 @@ type BucketHandle struct {
 // The supplied name must contain only lowercase letters, numbers, dashes,
 // underscores, and dots. The full specification for valid bucket names can be
 // found at:
-//   https://cloud.google.com/storage/docs/bucket-naming
+//   https://github.com/smyte/google-cloud-go/storage/docs/bucket-naming
 func (c *Client) Bucket(name string) *BucketHandle {
 	return &BucketHandle{
 		c:    c,
@@ -65,7 +65,7 @@ func (c *Client) Bucket(name string) *BucketHandle {
 // Create creates the Bucket in the project.
 // If attrs is nil the API defaults will be used.
 func (b *BucketHandle) Create(ctx context.Context, projectID string, attrs *BucketAttrs) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Bucket.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	var bkt *raw.Bucket
@@ -93,7 +93,7 @@ func (b *BucketHandle) Create(ctx context.Context, projectID string, attrs *Buck
 
 // Delete deletes the Bucket.
 func (b *BucketHandle) Delete(ctx context.Context) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Bucket.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req, err := b.newDeleteCall()
@@ -134,7 +134,7 @@ func (b *BucketHandle) DefaultObjectACL() *ACLHandle {
 //
 // name must consist entirely of valid UTF-8-encoded runes. The full specification
 // for valid object names can be found at:
-//   https://cloud.google.com/storage/docs/bucket-naming
+//   https://github.com/smyte/google-cloud-go/storage/docs/bucket-naming
 func (b *BucketHandle) Object(name string) *ObjectHandle {
 	return &ObjectHandle{
 		c:      b.c,
@@ -153,7 +153,7 @@ func (b *BucketHandle) Object(name string) *ObjectHandle {
 
 // Attrs returns the metadata for the bucket.
 func (b *BucketHandle) Attrs(ctx context.Context) (attrs *BucketAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Bucket.Attrs")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Attrs")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req, err := b.newGetCall()
@@ -188,7 +188,7 @@ func (b *BucketHandle) newGetCall() (*raw.BucketsGetCall, error) {
 
 // Update updates a bucket's attributes.
 func (b *BucketHandle) Update(ctx context.Context, uattrs BucketAttrsToUpdate) (attrs *BucketAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Bucket.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Bucket.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req, err := b.newPatchCall(&uattrs)
@@ -247,14 +247,14 @@ type BucketAttrs struct {
 	// If not empty, applies a predefined set of access controls. It should be set
 	// only when creating a bucket.
 	// It is always empty for BucketAttrs returned from the service.
-	// See https://cloud.google.com/storage/docs/json_api/v1/buckets/insert
+	// See https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/buckets/insert
 	// for valid values.
 	PredefinedACL string
 
 	// If not empty, applies a predefined set of default object access controls.
 	// It should be set only when creating a bucket.
 	// It is always empty for BucketAttrs returned from the service.
-	// See https://cloud.google.com/storage/docs/json_api/v1/buckets/insert
+	// See https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/buckets/insert
 	// for valid values.
 	PredefinedDefaultObjectACL string
 
@@ -464,7 +464,7 @@ type BucketLogging struct {
 
 // BucketWebsite holds the bucket's website configuration, controlling how the
 // service behaves when accessing bucket contents as a web site. See
-// https://cloud.google.com/storage/docs/static-website for more information.
+// https://github.com/smyte/google-cloud-go/storage/docs/static-website for more information.
 type BucketWebsite struct {
 	// If the requested object path is missing, the service will ensure the path has
 	// a trailing '/', append this suffix, and attempt to retrieve the resulting
@@ -631,11 +631,11 @@ type BucketAttrsToUpdate struct {
 	Website *BucketWebsite
 
 	// If not empty, applies a predefined set of access controls.
-	// See https://cloud.google.com/storage/docs/json_api/v1/buckets/patch.
+	// See https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/buckets/patch.
 	PredefinedACL string
 
 	// If not empty, applies a predefined set of default object access controls.
-	// See https://cloud.google.com/storage/docs/json_api/v1/buckets/patch.
+	// See https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/buckets/patch.
 	PredefinedDefaultObjectACL string
 
 	setLabels    map[string]string

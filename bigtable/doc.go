@@ -17,9 +17,9 @@ limitations under the License.
 /*
 Package bigtable is an API to Google Cloud Bigtable.
 
-See https://cloud.google.com/bigtable/docs/ for general product documentation.
+See https://github.com/smyte/google-cloud-go/bigtable/docs/ for general product documentation.
 
-See https://godoc.org/cloud.google.com/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -35,7 +35,7 @@ is the simplest option. Those credentials will be used by default when NewClient
 
 To use alternate credentials, pass them to NewClient or NewAdminClient using option.WithTokenSource.
 For instance, you can use service account credentials by visiting
-https://cloud.google.com/console/project/_/apiui/credential,
+https://github.com/smyte/google-cloud-go/console/project/_/apiui/credential,
 creating a new OAuth "Client ID", storing the JSON key somewhere accessible, and writing
 	jsonKey, err := ioutil.ReadFile(pathToKeyFile)
 	...
@@ -97,7 +97,7 @@ response, an unretryable error or the context deadline is reached. Non-idempoten
 the timestamp is set to ServerTime) will not be retried. In the case of ReadRows, retried calls
 will not re-scan rows that have already been processed.
 */
-package bigtable // import "cloud.google.com/go/bigtable"
+package bigtable // import "github.com/smyte/google-cloud-go/bigtable"
 
 // Scope constants for authentication credentials.
 // These should be used when using credential creation functions such as oauth.NewServiceAccountFromFile.

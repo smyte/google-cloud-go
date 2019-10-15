@@ -18,7 +18,7 @@ import (
 	"log"
 	"net/http"
 
-	"cloud.google.com/go/trace"
+	"github.com/smyte/google-cloud-go/trace"
 )
 
 var traceClient *trace.Client

@@ -22,8 +22,8 @@ import (
 	"strings"
 	"time"
 
-	"cloud.google.com/go/internal/trace"
-	"cloud.google.com/go/spanner/internal/backoff"
+	"github.com/smyte/google-cloud-go/internal/trace"
+	"github.com/smyte/google-cloud-go/spanner/internal/backoff"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	edpb "google.golang.org/genproto/googleapis/rpc/errdetails"

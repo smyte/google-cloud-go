@@ -18,9 +18,9 @@ import (
 	"context"
 	"time"
 
-	"cloud.google.com/go/bigquery"
-	"cloud.google.com/go/datastore"
-	"cloud.google.com/go/pubsub"
+	"github.com/smyte/google-cloud-go/bigquery"
+	"github.com/smyte/google-cloud-go/datastore"
+	"github.com/smyte/google-cloud-go/pubsub"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/option"
 )

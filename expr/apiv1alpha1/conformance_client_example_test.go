@@ -19,7 +19,7 @@ package expr_test
 import (
 	"context"
 
-	expr "cloud.google.com/go/expr/apiv1alpha1"
+	expr "github.com/smyte/google-cloud-go/expr/apiv1alpha1"
 	exprpb "google.golang.org/genproto/googleapis/api/expr/v1alpha1"
 )
 

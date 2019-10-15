@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	tspb "github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"

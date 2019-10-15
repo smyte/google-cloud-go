@@ -17,7 +17,7 @@ package logadmin
 import (
 	"context"
 
-	vkit "cloud.google.com/go/logging/apiv2"
+	vkit "github.com/smyte/google-cloud-go/logging/apiv2"
 	"google.golang.org/api/iterator"
 	mrpb "google.golang.org/genproto/googleapis/api/monitoredres"
 	logpb "google.golang.org/genproto/googleapis/logging/v2"
@@ -25,9 +25,9 @@ import (
 
 // ResourceDescriptors returns a ResourceDescriptorIterator
 // for iterating over MonitoredResourceDescriptors. Requires ReadScope or AdminScope.
-// See https://cloud.google.com/logging/docs/api/v2/#monitored-resources for an explanation of
+// See https://github.com/smyte/google-cloud-go/logging/docs/api/v2/#monitored-resources for an explanation of
 // monitored resources.
-// See https://cloud.google.com/logging/docs/api/v2/resource-list for a list of monitored resources.
+// See https://github.com/smyte/google-cloud-go/logging/docs/api/v2/resource-list for a list of monitored resources.
 func (c *Client) ResourceDescriptors(ctx context.Context) *ResourceDescriptorIterator {
 	it := &ResourceDescriptorIterator{
 		it: c.lClient.ListMonitoredResourceDescriptors(ctx,

@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Package trace is OBSOLETE. See https://cloud.google.com/trace/docs/setup/go.
-package trace // import "cloud.google.com/go/trace"
+// Package trace is OBSOLETE. See https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
+package trace // import "github.com/smyte/google-cloud-go/trace"
 
 import (
 	"context"
@@ -45,45 +45,45 @@ const (
 	spanKindServer      = `RPC_SERVER`
 	spanKindUnspecified = `SPAN_KIND_UNSPECIFIED`
 	maxStackFrames      = 20
-	labelAgent          = `trace.cloud.google.com/agent`
+	labelAgent          = `trace.github.com/smyte/google-cloud-go/agent`
 )
 
 // Stackdriver Trace API predefined labels.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 const (
-	LabelComponent          = `trace.cloud.google.com/component`
-	LabelErrorMessage       = `trace.cloud.google.com/error/message`
-	LabelErrorName          = `trace.cloud.google.com/error/name`
-	LabelHTTPClientCity     = `trace.cloud.google.com/http/client_city`
-	LabelHTTPClientCountry  = `trace.cloud.google.com/http/client_country`
-	LabelHTTPClientProtocol = `trace.cloud.google.com/http/client_protocol`
-	LabelHTTPClientRegion   = `trace.cloud.google.com/http/client_region`
-	LabelHTTPHost           = `trace.cloud.google.com/http/host`
-	LabelHTTPMethod         = `trace.cloud.google.com/http/method`
-	LabelHTTPRedirectedURL  = `trace.cloud.google.com/http/redirected_url`
-	LabelHTTPRequestSize    = `trace.cloud.google.com/http/request/size`
-	LabelHTTPResponseSize   = `trace.cloud.google.com/http/response/size`
-	LabelHTTPStatusCode     = `trace.cloud.google.com/http/status_code`
-	LabelHTTPURL            = `trace.cloud.google.com/http/url`
-	LabelHTTPUserAgent      = `trace.cloud.google.com/http/user_agent`
-	LabelPID                = `trace.cloud.google.com/pid`
-	LabelSamplingPolicy     = `trace.cloud.google.com/sampling_policy`
-	LabelSamplingWeight     = `trace.cloud.google.com/sampling_weight`
-	LabelStackTrace         = `trace.cloud.google.com/stacktrace`
-	LabelTID                = `trace.cloud.google.com/tid`
+	LabelComponent          = `trace.github.com/smyte/google-cloud-go/component`
+	LabelErrorMessage       = `trace.github.com/smyte/google-cloud-go/error/message`
+	LabelErrorName          = `trace.github.com/smyte/google-cloud-go/error/name`
+	LabelHTTPClientCity     = `trace.github.com/smyte/google-cloud-go/http/client_city`
+	LabelHTTPClientCountry  = `trace.github.com/smyte/google-cloud-go/http/client_country`
+	LabelHTTPClientProtocol = `trace.github.com/smyte/google-cloud-go/http/client_protocol`
+	LabelHTTPClientRegion   = `trace.github.com/smyte/google-cloud-go/http/client_region`
+	LabelHTTPHost           = `trace.github.com/smyte/google-cloud-go/http/host`
+	LabelHTTPMethod         = `trace.github.com/smyte/google-cloud-go/http/method`
+	LabelHTTPRedirectedURL  = `trace.github.com/smyte/google-cloud-go/http/redirected_url`
+	LabelHTTPRequestSize    = `trace.github.com/smyte/google-cloud-go/http/request/size`
+	LabelHTTPResponseSize   = `trace.github.com/smyte/google-cloud-go/http/response/size`
+	LabelHTTPStatusCode     = `trace.github.com/smyte/google-cloud-go/http/status_code`
+	LabelHTTPURL            = `trace.github.com/smyte/google-cloud-go/http/url`
+	LabelHTTPUserAgent      = `trace.github.com/smyte/google-cloud-go/http/user_agent`
+	LabelPID                = `trace.github.com/smyte/google-cloud-go/pid`
+	LabelSamplingPolicy     = `trace.github.com/smyte/google-cloud-go/sampling_policy`
+	LabelSamplingWeight     = `trace.github.com/smyte/google-cloud-go/sampling_weight`
+	LabelStackTrace         = `trace.github.com/smyte/google-cloud-go/stacktrace`
+	LabelTID                = `trace.github.com/smyte/google-cloud-go/tid`
 )
 
 const (
 	// ScopeTraceAppend grants permissions to write trace data for a project.
 	//
-	// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+	// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 	ScopeTraceAppend = "https://www.googleapis.com/auth/trace.append"
 
 	// ScopeCloudPlatform grants permissions to view and manage your data
 	// across Google Cloud Platform services.
 	//
-	// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+	// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 	ScopeCloudPlatform = "https://www.googleapis.com/auth/cloud-platform"
 )
 
@@ -151,7 +151,7 @@ func nextTraceID() string {
 // Client is a client for uploading traces to the Google Stackdriver Trace service.
 // A nil Client will no-op for all of its methods.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 type Client struct {
 	service   *api.Service
 	projectID string
@@ -161,7 +161,7 @@ type Client struct {
 
 // NewClient creates a new Google Stackdriver Trace client.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func NewClient(ctx context.Context, projectID string, opts ...option.ClientOption) (*Client, error) {
 	o := []option.ClientOption{
 		option.WithScopes(cloudPlatformScope),
@@ -204,7 +204,7 @@ func NewClient(ctx context.Context, projectID string, opts ...option.ClientOptio
 // SetSamplingPolicy sets the SamplingPolicy that determines how often traces
 // are initiated by this client.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (c *Client) SetSamplingPolicy(p SamplingPolicy) {
 	if c != nil {
 		c.policy = p
@@ -217,7 +217,7 @@ func (c *Client) SetSamplingPolicy(p SamplingPolicy) {
 // The trace information and identifiers will be read from the header value.
 // Otherwise, a new trace ID is made and the parent span ID is zero.
 // For the exact format of the header value, see
-// https://cloud.google.com/trace/docs/troubleshooting#force-trace
+// https://github.com/smyte/google-cloud-go/trace/docs/troubleshooting#force-trace
 //
 // The name of the new span is provided as an argument.
 //
@@ -233,7 +233,7 @@ func (c *Client) SetSamplingPolicy(p SamplingPolicy) {
 // requests. In particular, it will set various pieces of request information
 // as labels on the *Span, which is not available from the header alone.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (c *Client) SpanFromHeader(name string, header string) *Span {
 	if c == nil {
 		return nil
@@ -272,7 +272,7 @@ func (c *Client) SpanFromHeader(name string, header string) *Span {
 // do nothing.  NewChild does nothing, and returns the same *Span.  TraceID
 // works as usual.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (c *Client) SpanFromRequest(r *http.Request) *Span {
 	if c == nil {
 		return nil
@@ -300,7 +300,7 @@ func (c *Client) SpanFromRequest(r *http.Request) *Span {
 // A new trace and span ID is generated to trace the span.
 // Returned span need to be finished by calling Finish or FinishWait.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (c *Client) NewSpan(name string) *Span {
 	if c == nil {
 		return nil
@@ -341,7 +341,7 @@ func configureSpanFromPolicy(s *Span, p SamplingPolicy, ok bool) {
 
 // NewContext returns a derived context containing the span.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func NewContext(ctx context.Context, s *Span) context.Context {
 	if s == nil {
 		return ctx
@@ -351,14 +351,14 @@ func NewContext(ctx context.Context, s *Span) context.Context {
 
 // FromContext returns the span contained in the context, or nil.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func FromContext(ctx context.Context) *Span {
 	s, _ := ctx.Value(contextKey{}).(*Span)
 	return s
 }
 
 func traceInfoFromHeader(h string) (traceID string, spanID uint64, options optionFlags, optionsOk bool, ok bool) {
-	// See https://cloud.google.com/trace/docs/faq for the header format.
+	// See https://github.com/smyte/google-cloud-go/trace/docs/faq for the header format.
 	// Return if the header is empty or missing, or if the header is unreasonably
 	// large, to avoid making unnecessary copies of a large string.
 	if h == "" || len(h) > 200 {
@@ -483,7 +483,7 @@ func (c *Client) upload(traces []*api.Trace) error {
 
 // Span contains information about one span of a trace.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 type Span struct {
 	trace *trace
 
@@ -502,7 +502,7 @@ type Span struct {
 
 // Traced reports whether the current span is sampled to be traced.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) Traced() bool {
 	if s == nil {
 		return false
@@ -513,7 +513,7 @@ func (s *Span) Traced() bool {
 // NewChild creates a new span with the given name as a child of s.
 // If s is nil, does nothing and returns nil.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) NewChild(name string) *Span {
 	if s == nil {
 		return nil
@@ -541,7 +541,7 @@ func (s *Span) NewChild(name string) *Span {
 //
 // If s is nil, does nothing and returns nil.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) NewRemoteChild(r *http.Request) *Span {
 	if s == nil {
 		return nil
@@ -563,7 +563,7 @@ func (s *Span) NewRemoteChild(r *http.Request) *Span {
 // propagation needs or want to control the naming of their span.
 // Header() does not create a new span.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) Header() string {
 	if s == nil {
 		return ""
@@ -607,7 +607,7 @@ func startNewChild(name string, trace *trace, parentSpanID uint64) *Span {
 
 // TraceID returns the ID of the trace to which s belongs.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) TraceID() string {
 	if s == nil {
 		return ""
@@ -623,7 +623,7 @@ func (s *Span) TraceID() string {
 //
 // SetLabel shouldn't be called after Finish or FinishWait.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) SetLabel(key, value string) {
 	if s == nil {
 		return
@@ -647,7 +647,7 @@ func (s *Span) SetLabel(key, value string) {
 }
 
 // FinishOption allows users to specify span finalizers.
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 type FinishOption interface {
 	modifySpan(s *Span)
 }
@@ -659,7 +659,7 @@ type withResponse struct {
 // WithResponse returns an option that can be passed to Finish that indicates
 // that some labels for the span should be set using the given *http.Response.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func WithResponse(resp *http.Response) FinishOption {
 	return withResponse{resp}
 }
@@ -683,7 +683,7 @@ func (u withResponse) modifySpan(s *Span) {
 // descendant spans that have finished, are uploaded to the Google Stackdriver
 // Trace server asynchronously.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) Finish(opts ...FinishOption) {
 	if s == nil {
 		return
@@ -697,7 +697,7 @@ func (s *Span) Finish(opts ...FinishOption) {
 // FinishWait is like Finish, but if s is a root span, it waits until uploading
 // is finished, then returns an error if one occurred.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (s *Span) FinishWait(opts ...FinishOption) error {
 	if s == nil {
 		return nil
@@ -709,7 +709,7 @@ func (s *Span) FinishWait(opts ...FinishOption) error {
 }
 
 func spanHeader(traceID string, spanID uint64, options optionFlags) string {
-	// See https://cloud.google.com/trace/docs/faq for the header format.
+	// See https://github.com/smyte/google-cloud-go/trace/docs/faq for the header format.
 	return fmt.Sprintf("%s/%d;o=%d", traceID, spanID, options)
 }
 
@@ -732,7 +732,7 @@ func (s *Span) setStackLabel() {
 		// stack frame.  For the second form, we set the Method field to "Foo" and
 		// the Class field to "path/to/package.(Type)".
 		name := fn.Name()
-		if inTraceLibrary && !strings.HasPrefix(name, "cloud.google.com/go/trace.") {
+		if inTraceLibrary && !strings.HasPrefix(name, "github.com/smyte/google-cloud-go/trace.") {
 			inTraceLibrary = false
 		}
 		var class string

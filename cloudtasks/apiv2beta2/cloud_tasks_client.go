@@ -228,7 +228,7 @@ func (c *Client) GetQueue(ctx context.Context, req *taskspb.GetQueueRequest, opt
 // using an App Engine queue.yaml or queue.xml file to manage your queues.
 // Read
 // Overview of Queue Management and
-// queue.yaml (at https://cloud.google.com/tasks/docs/queue-yaml) before using
+// queue.yaml (at https://github.com/smyte/google-cloud-go/tasks/docs/queue-yaml) before using
 // this method.
 func (c *Client) CreateQueue(ctx context.Context, req *taskspb.CreateQueueRequest, opts ...gax.CallOption) (*taskspb.Queue, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", req.GetParent()))
@@ -259,7 +259,7 @@ func (c *Client) CreateQueue(ctx context.Context, req *taskspb.CreateQueueReques
 // using an App Engine queue.yaml or queue.xml file to manage your queues.
 // Read
 // Overview of Queue Management and
-// queue.yaml (at https://cloud.google.com/tasks/docs/queue-yaml) before using
+// queue.yaml (at https://github.com/smyte/google-cloud-go/tasks/docs/queue-yaml) before using
 // this method.
 func (c *Client) UpdateQueue(ctx context.Context, req *taskspb.UpdateQueueRequest, opts ...gax.CallOption) (*taskspb.Queue, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "queue.name", req.GetQueue().GetName()))
@@ -288,7 +288,7 @@ func (c *Client) UpdateQueue(ctx context.Context, req *taskspb.UpdateQueueReques
 // using an App Engine queue.yaml or queue.xml file to manage your queues.
 // Read
 // Overview of Queue Management and
-// queue.yaml (at https://cloud.google.com/tasks/docs/queue-yaml) before using
+// queue.yaml (at https://github.com/smyte/google-cloud-go/tasks/docs/queue-yaml) before using
 // this method.
 func (c *Client) DeleteQueue(ctx context.Context, req *taskspb.DeleteQueueRequest, opts ...gax.CallOption) error {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", req.GetName()))
@@ -362,7 +362,7 @@ func (c *Client) PauseQueue(ctx context.Context, req *taskspb.PauseQueueRequest,
 // lead to target overloading. If you are resuming high-QPS
 // queues, follow the 500/50/5 pattern described in
 // Managing Cloud Tasks Scaling
-// Risks (at https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+// Risks (at https://github.com/smyte/google-cloud-go/tasks/docs/manage-cloud-task-scaling).
 func (c *Client) ResumeQueue(ctx context.Context, req *taskspb.ResumeQueueRequest, opts ...gax.CallOption) (*taskspb.Queue, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", req.GetName()))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
@@ -384,7 +384,7 @@ func (c *Client) ResumeQueue(ctx context.Context, req *taskspb.ResumeQueueReques
 // resource exists and does not have a policy set.
 //
 // Authorization requires the following
-// Google IAM (at https://cloud.google.com/iam) permission on the specified
+// Google IAM (at https://github.com/smyte/google-cloud-go/iam) permission on the specified
 // resource parent:
 //
 //   cloudtasks.queues.getIamPolicy
@@ -411,7 +411,7 @@ func (c *Client) GetIamPolicy(ctx context.Context, req *iampb.GetIamPolicyReques
 // Project-level permissions are required to use the Cloud Console.
 //
 // Authorization requires the following
-// Google IAM (at https://cloud.google.com/iam) permission on the specified
+// Google IAM (at https://github.com/smyte/google-cloud-go/iam) permission on the specified
 // resource parent:
 //
 //   cloudtasks.queues.setIamPolicy

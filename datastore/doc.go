@@ -15,7 +15,7 @@
 /*
 Package datastore provides a client for Google Cloud Datastore.
 
-See https://godoc.org/cloud.google.com/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -492,6 +492,6 @@ development. Environment variables are used to indicate that datastore traffic s
 directed to the emulator instead of the production Datastore service.
 
 To install and set up the emulator and its environment variables, see the documentation
-at https://cloud.google.com/datastore/docs/tools/datastore-emulator.
+at https://github.com/smyte/google-cloud-go/datastore/docs/tools/datastore-emulator.
 */
-package datastore // import "cloud.google.com/go/datastore"
+package datastore // import "github.com/smyte/google-cloud-go/datastore"

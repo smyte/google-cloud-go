@@ -29,8 +29,8 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/rpcreplay"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/rpcreplay"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
@@ -777,7 +777,7 @@ func TestIntegration_GetAllWithFieldMismatch(t *testing.T) {
 
 	// Ancestor queries (those within an entity group) are strongly consistent
 	// by default, which prevents a test from being flaky.
-	// See https://cloud.google.com/appengine/docs/go/datastore/queries#Go_Data_consistency
+	// See https://github.com/smyte/google-cloud-go/appengine/docs/go/datastore/queries#Go_Data_consistency
 	// for more information.
 	parent := NameKey("SQParent", "TestIntegration_GetAllWithFieldMismatch"+suffix, nil)
 	putKeys := make([]*Key, 3)

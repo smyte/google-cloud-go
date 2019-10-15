@@ -125,7 +125,7 @@ func (fc *FileConfig) populateExternalDataConfig(conf *bq.ExternalDataConfigurat
 }
 
 // Encoding specifies the character encoding of data to be loaded into BigQuery.
-// See https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.encoding
+// See https://github.com/smyte/google-cloud-go/bigquery/docs/reference/v2/jobs#configuration.load.encoding
 // for more details about how this is used.
 type Encoding string
 

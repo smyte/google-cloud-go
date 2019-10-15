@@ -27,7 +27,7 @@ import (
 	"sync"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	emptypb "github.com/golang/protobuf/ptypes/empty"
 	tspb "github.com/golang/protobuf/ptypes/timestamp"
 	lpb "google.golang.org/genproto/googleapis/api/label"

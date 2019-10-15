@@ -28,7 +28,7 @@ import (
 	"strings"
 	"testing"
 
-	. "cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	. "github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 var (

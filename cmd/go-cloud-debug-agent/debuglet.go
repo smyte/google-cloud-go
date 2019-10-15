@@ -28,12 +28,12 @@ import (
 	"sync"
 	"time"
 
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/breakpoints"
-	debuglet "cloud.google.com/go/cmd/go-cloud-debug-agent/internal/controller"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/local"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/valuecollector"
-	"cloud.google.com/go/compute/metadata"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/breakpoints"
+	debuglet "github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/controller"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/local"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/valuecollector"
+	"github.com/smyte/google-cloud-go/compute/metadata"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	cd "google.golang.org/api/clouddebugger/v2"
@@ -156,7 +156,7 @@ func usage() {
 	fmt.Fprintf(os.Stderr, "Flags:\n")
 	flag.PrintDefaults()
 	fmt.Fprintf(os.Stderr,
-		"See https://cloud.google.com/tools/cloud-debugger/setting-up-on-compute-engine for more information.\n")
+		"See https://github.com/smyte/google-cloud-go/tools/cloud-debugger/setting-up-on-compute-engine for more information.\n")
 	os.Exit(2)
 }
 

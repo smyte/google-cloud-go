@@ -18,7 +18,7 @@ import (
 	"context"
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	raw "google.golang.org/api/storage/v1"
 )
 

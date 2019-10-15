@@ -15,10 +15,10 @@
 /*
 Package logging contains a Stackdriver Logging client suitable for writing logs.
 For reading logs, and working with sinks, metrics and monitored resources,
-see package cloud.google.com/go/logging/logadmin.
+see package github.com/smyte/google-cloud-go/logging/logadmin.
 
 This client uses Logging API v2.
-See https://cloud.google.com/logging/docs/api/v2/ for an introduction to the API.
+See https://github.com/smyte/google-cloud-go/logging/docs/api/v2/ for an introduction to the API.
 
 
 Creating a Client
@@ -107,7 +107,7 @@ An Entry may have one of a number of severity levels associated with it.
 Viewing Logs
 
 You can view Stackdriver logs for projects at
-https://console.cloud.google.com/logs/viewer. Use the dropdown at the top left. When
+https://console.github.com/smyte/google-cloud-go/logs/viewer. Use the dropdown at the top left. When
 running from a Google Cloud Platform VM, select "GCE VM Instance". Otherwise, select
 "Google Project" and then the project ID. Logs for organizations, folders and billing
 accounts can be viewed on the command line with the "gcloud logging read" command.
@@ -131,4 +131,4 @@ You should observe the child log entries grouped under the parent on the console
 parent entry will not inherit the severity of its children; you must update the
 parent severity yourself.
 */
-package logging // import "cloud.google.com/go/logging"
+package logging // import "github.com/smyte/google-cloud-go/logging"

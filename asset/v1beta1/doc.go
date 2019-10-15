@@ -20,7 +20,7 @@
 //   NOTE: This package is in alpha. It is not stable, and is likely to change.
 //
 // The cloud asset API manages the history and inventory of cloud resources.
-package asset // import "cloud.google.com/go/asset/v1beta1"
+package asset // import "github.com/smyte/google-cloud-go/asset/v1beta1"
 
 import (
 	"context"

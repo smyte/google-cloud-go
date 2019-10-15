@@ -21,8 +21,8 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/bigtable/bttest"
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/bigtable/bttest"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"github.com/golang/protobuf/ptypes/wrappers"
 	"github.com/google/go-cmp/cmp"
 	"google.golang.org/api/option"

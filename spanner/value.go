@@ -24,8 +24,8 @@ import (
 	"strconv"
 	"time"
 
-	"cloud.google.com/go/civil"
-	"cloud.google.com/go/internal/fields"
+	"github.com/smyte/google-cloud-go/civil"
+	"github.com/smyte/google-cloud-go/internal/fields"
 	proto "github.com/golang/protobuf/proto"
 	proto3 "github.com/golang/protobuf/ptypes/struct"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
@@ -1076,7 +1076,7 @@ func decodeRowArray(ty *sppb.StructType, pb *proto3.ListValue) ([]NullRow, error
 				Valid: true,
 			}
 		// Null elements not currently supported by the server, see
-		// https://cloud.google.com/spanner/docs/query-syntax#using-structs-with-select
+		// https://github.com/smyte/google-cloud-go/spanner/docs/query-syntax#using-structs-with-select
 		case *proto3.Value_NullValue:
 			// no-op, a[i] is NullRow{} already
 		default:

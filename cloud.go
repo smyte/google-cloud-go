@@ -14,7 +14,7 @@
 
 /*
 Package cloud is the root of the packages used to access Google Cloud
-Services. See https://godoc.org/cloud.google.com/go for a full list
+Services. See https://godoc.org/github.com/smyte/google-cloud-go for a full list
 of sub-packages.
 
 
@@ -27,7 +27,7 @@ described here: https://godoc.org/google.golang.org/api/option.
 Authentication and Authorization
 
 All the clients in sub-packages support authentication via Google Application Default
-Credentials (see https://cloud.google.com/docs/authentication/production), or
+Credentials (see https://github.com/smyte/google-cloud-go/docs/authentication/production), or
 by providing a JSON key file for a Service Account. See the authentication examples
 in this package for details.
 
@@ -76,4 +76,4 @@ https://godoc.org/google.golang.org/grpc/grpclog for more information.
 For HTTP logging, set the GODEBUG environment variable to "http2debug=1" or "http2debug=2".
 
 */
-package cloud // import "cloud.google.com/go"
+package cloud // import "github.com/smyte/google-cloud-go"

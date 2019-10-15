@@ -21,8 +21,8 @@ import (
 	"net/http"
 	"time"
 
-	"cloud.google.com/go/internal"
-	"cloud.google.com/go/internal/version"
+	"github.com/smyte/google-cloud-go/internal"
+	"github.com/smyte/google-cloud-go/internal/version"
 	gax "github.com/googleapis/gax-go/v2"
 	bq "google.golang.org/api/bigquery/v2"
 	"google.golang.org/api/googleapi"
@@ -130,7 +130,7 @@ func unixMillisToTime(m int64) time.Time {
 // See the similar function in ../storage/invoke.go. The main difference is the
 // reason for retrying.
 func runWithRetry(ctx context.Context, call func() error) error {
-	// These parameters match the suggestions in https://cloud.google.com/bigquery/sla.
+	// These parameters match the suggestions in https://github.com/smyte/google-cloud-go/bigquery/sla.
 	backoff := gax.Backoff{
 		Initial:    1 * time.Second,
 		Max:        32 * time.Second,

@@ -23,9 +23,9 @@ import (
 	"strings"
 	"time"
 
-	vkit "cloud.google.com/go/firestore/apiv1"
-	"cloud.google.com/go/internal/trace"
-	"cloud.google.com/go/internal/version"
+	vkit "github.com/smyte/google-cloud-go/firestore/apiv1"
+	"github.com/smyte/google-cloud-go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/version"
 	"github.com/golang/protobuf/ptypes"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
@@ -62,7 +62,7 @@ type Client struct {
 func NewClient(ctx context.Context, projectID string, opts ...option.ClientOption) (*Client, error) {
 	var o []option.ClientOption
 	// Environment variables for gcloud emulator:
-	// https://cloud.google.com/sdk/gcloud/reference/beta/emulators/firestore/
+	// https://github.com/smyte/google-cloud-go/sdk/gcloud/reference/beta/emulators/firestore/
 	if addr := os.Getenv("FIRESTORE_EMULATOR_HOST"); addr != "" {
 		conn, err := grpc.Dial(addr, grpc.WithInsecure())
 		if err != nil {
@@ -174,7 +174,7 @@ func (c *Client) idsToRef(IDs []string, dbPath string) (*CollectionRef, *Documen
 //
 // If a document is not present, the corresponding DocumentSnapshot's Exists method will return false.
 func (c *Client) GetAll(ctx context.Context, docRefs []*DocumentRef) (_ []*DocumentSnapshot, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/firestore.GetAll")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/firestore.GetAll")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	return c.getAll(ctx, docRefs, nil)

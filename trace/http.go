@@ -22,7 +22,7 @@ import (
 //
 // Transport is safe for concurrent usage.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 type Transport struct {
 	// Base is the base http.RoundTripper to be used to do the actual request.
 	//
@@ -34,7 +34,7 @@ type Transport struct {
 // The created span can follow a parent span, if a parent is presented in
 // the request's context.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (t Transport) RoundTrip(req *http.Request) (*http.Response, error) {
 	span := FromContext(req.Context()).NewRemoteChild(req)
 	resp, err := t.base().RoundTrip(req)
@@ -47,7 +47,7 @@ func (t Transport) RoundTrip(req *http.Request) (*http.Response, error) {
 
 // CancelRequest cancels an in-flight request by closing its connection.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (t Transport) CancelRequest(req *http.Request) {
 	type canceler interface {
 		CancelRequest(*http.Request)
@@ -73,7 +73,7 @@ func (t Transport) base() http.RoundTripper {
 //
 // The span will be auto finished by the handler.
 //
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (c *Client) HTTPHandler(h http.Handler) http.Handler {
 	if c == nil {
 		return h
@@ -86,7 +86,7 @@ type handler struct {
 	handler     http.Handler
 }
 
-// Deprecated: see https://cloud.google.com/trace/docs/setup/go.
+// Deprecated: see https://github.com/smyte/google-cloud-go/trace/docs/setup/go.
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	traceID, parentSpanID, options, optionsOk, ok := traceInfoFromHeader(r.Header.Get(httpHeader))
 	if !ok {

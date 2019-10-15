@@ -28,9 +28,9 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/pretty"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
+	"github.com/smyte/google-cloud-go/internal/pretty"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/uid"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"google.golang.org/api/option"

@@ -105,9 +105,9 @@ func (c *EventClient) setGoogleClientInfo(keyval ...string) {
 // CreateClientEvent report events issued when end user interacts with customer's application
 // that uses Cloud Talent Solution. You may inspect the created events in
 // self service
-// tools (at https://console.cloud.google.com/talent-solution/overview).
+// tools (at https://console.github.com/smyte/google-cloud-go/talent-solution/overview).
 // Learn
-// more (at https://cloud.google.com/talent-solution/docs/management-tools)
+// more (at https://github.com/smyte/google-cloud-go/talent-solution/docs/management-tools)
 // about self service tools.
 func (c *EventClient) CreateClientEvent(ctx context.Context, req *talentpb.CreateClientEventRequest, opts ...gax.CallOption) (*talentpb.ClientEvent, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", req.GetParent()))

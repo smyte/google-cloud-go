@@ -16,4 +16,4 @@
 // objects with Google Cloud Functions metadata.
 //
 // NOTE: This package is in alpha. It is not stable, and is likely to change.
-package metadata // import "cloud.google.com/go/functions/metadata"
+package metadata // import "github.com/smyte/google-cloud-go/functions/metadata"

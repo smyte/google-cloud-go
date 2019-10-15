@@ -14,8 +14,8 @@
 
 // Package container contains a deprecated Google Container Engine client.
 //
-// Deprecated: Use cloud.google.com/go/container/apiv1 instead.
-package container // import "cloud.google.com/go/container"
+// Deprecated: Use github.com/smyte/google-cloud-go/container/apiv1 instead.
+package container // import "github.com/smyte/google-cloud-go/container"
 
 import (
 	"context"

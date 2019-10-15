@@ -29,8 +29,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
-package irm // import "cloud.google.com/go/irm/apiv1alpha2"
+// please visit godoc.org/github.com/smyte/google-cloud-go.
+package irm // import "github.com/smyte/google-cloud-go/irm/apiv1alpha2"
 
 import (
 	"context"

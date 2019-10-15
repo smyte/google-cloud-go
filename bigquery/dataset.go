@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"time"
 
-	"cloud.google.com/go/internal/optional"
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 	"google.golang.org/api/iterator"
 )
@@ -86,7 +86,7 @@ func (c *Client) DatasetInProject(projectID, datasetID string) *Dataset {
 // Create creates a dataset in the BigQuery service. An error will be returned if the
 // dataset already exists. Pass in a DatasetMetadata value to configure the dataset.
 func (d *Dataset) Create(ctx context.Context, md *DatasetMetadata) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Dataset.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Dataset.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	ds, err := md.toBQ()
@@ -157,7 +157,7 @@ func (d *Dataset) DeleteWithContents(ctx context.Context) (err error) {
 }
 
 func (d *Dataset) deleteInternal(ctx context.Context, deleteContents bool) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Dataset.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Dataset.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	call := d.c.bqs.Datasets.Delete(d.ProjectID, d.DatasetID).Context(ctx).DeleteContents(deleteContents)
@@ -167,7 +167,7 @@ func (d *Dataset) deleteInternal(ctx context.Context, deleteContents bool) (err 
 
 // Metadata fetches the metadata for the dataset.
 func (d *Dataset) Metadata(ctx context.Context) (md *DatasetMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Dataset.Metadata")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Dataset.Metadata")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	call := d.c.bqs.Datasets.Get(d.ProjectID, d.DatasetID).Context(ctx)
@@ -209,7 +209,7 @@ func bqToDatasetMetadata(d *bq.Dataset) (*DatasetMetadata, error) {
 // set the etag argument to the DatasetMetadata.ETag field from the read.
 // Pass the empty string for etag for a "blind write" that will always succeed.
 func (d *Dataset) Update(ctx context.Context, dm DatasetMetadataToUpdate, etag string) (md *DatasetMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Dataset.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Dataset.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	ds, err := dm.toBQ()
@@ -470,7 +470,7 @@ type DatasetIterator struct {
 	ListHidden bool
 
 	// Filter restricts the datasets returned by label. The filter syntax is described in
-	// https://cloud.google.com/bigquery/docs/labeling-datasets#filtering_datasets_using_labels
+	// https://github.com/smyte/google-cloud-go/bigquery/docs/labeling-datasets#filtering_datasets_using_labels
 	// Set before the first call to Next.
 	Filter string
 

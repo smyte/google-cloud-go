@@ -26,7 +26,7 @@ import (
 	"os"
 	"sync"
 
-	pb "cloud.google.com/go/rpcreplay/proto/rpcreplay"
+	pb "github.com/smyte/google-cloud-go/rpcreplay/proto/rpcreplay"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/any"

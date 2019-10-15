@@ -22,7 +22,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"google.golang.org/api/iterator"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc"
@@ -88,7 +88,7 @@ type ReadOptions struct {
 // ReadWithOptions returns a RowIterator for reading multiple rows from the
 // database. Pass a ReadOptions to modify the read operation.
 func (t *txReadOnly) ReadWithOptions(ctx context.Context, table string, keys KeySet, columns []string, opts *ReadOptions) (ri *RowIterator) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.Read")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/spanner.Read")
 	defer func() { trace.EndSpan(ctx, ri.err) }()
 	var (
 		sh  *sessionHandle
@@ -197,7 +197,7 @@ func (t *txReadOnly) AnalyzeQuery(ctx context.Context, statement Statement) (*sp
 }
 
 func (t *txReadOnly) query(ctx context.Context, statement Statement, mode sppb.ExecuteSqlRequest_QueryMode) (ri *RowIterator) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.Query")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/spanner.Query")
 	defer func() { trace.EndSpan(ctx, ri.err) }()
 	req, sh, err := t.prepareExecuteSQL(ctx, statement, mode)
 	if err != nil {
@@ -696,7 +696,7 @@ func (t *ReadWriteTransaction) BufferWrite(ms []*Mutation) error {
 // However, the query is executed, and any data read will be validated upon
 // commit.
 func (t *ReadWriteTransaction) Update(ctx context.Context, stmt Statement) (rowCount int64, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/spanner.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 	req, sh, err := t.prepareExecuteSQL(ctx, stmt, sppb.ExecuteSqlRequest_NORMAL)
 	if err != nil {
@@ -719,7 +719,7 @@ func (t *ReadWriteTransaction) Update(ctx context.Context, stmt Statement) (rowC
 // affected rows for the given query at the same index. If an error occurs,
 // counts will be returned up to the query that encountered the error.
 func (t *ReadWriteTransaction) BatchUpdate(ctx context.Context, stmts []Statement) (_ []int64, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.BatchUpdate")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/spanner.BatchUpdate")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	sh, ts, err := t.acquire(ctx)

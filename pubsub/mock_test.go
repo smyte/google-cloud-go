@@ -22,7 +22,7 @@ import (
 	"sync"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	emptypb "github.com/golang/protobuf/ptypes/empty"
 	pb "google.golang.org/genproto/googleapis/pubsub/v1"
 )

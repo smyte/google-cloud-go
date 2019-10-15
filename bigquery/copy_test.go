@@ -17,7 +17,7 @@ package bigquery
 import (
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	bq "google.golang.org/api/bigquery/v2"
 )

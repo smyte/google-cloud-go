@@ -29,7 +29,7 @@ import (
 	"testing"
 	"time"
 
-	pb "cloud.google.com/go/firestore/genproto"
+	pb "github.com/smyte/google-cloud-go/firestore/genproto"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	ts "github.com/golang/protobuf/ptypes/timestamp"

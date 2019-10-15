@@ -19,7 +19,7 @@ package trace_test
 import (
 	"context"
 
-	trace "cloud.google.com/go/trace/apiv2"
+	trace "github.com/smyte/google-cloud-go/trace/apiv2"
 	cloudtracepb "google.golang.org/genproto/googleapis/devtools/cloudtrace/v2"
 )
 

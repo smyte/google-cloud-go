@@ -25,7 +25,7 @@ import (
 	"os"
 	"strings"
 
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 // seekStart, seekCurrent, seekEnd are copies of

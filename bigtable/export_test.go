@@ -24,7 +24,7 @@ import (
 	"strings"
 	"time"
 
-	"cloud.google.com/go/bigtable/bttest"
+	"github.com/smyte/google-cloud-go/bigtable/bttest"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 )

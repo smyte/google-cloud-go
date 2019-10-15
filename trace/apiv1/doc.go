@@ -34,10 +34,10 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
+// please visit godoc.org/github.com/smyte/google-cloud-go.
 //
-// Use the client at cloud.google.com/go/trace in preference to this.
-package trace // import "cloud.google.com/go/trace/apiv1"
+// Use the client at github.com/smyte/google-cloud-go/trace in preference to this.
+package trace // import "github.com/smyte/google-cloud-go/trace/apiv1"
 
 import (
 	"context"

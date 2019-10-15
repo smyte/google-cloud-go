@@ -39,10 +39,10 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/httpreplay"
-	"cloud.google.com/go/iam"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
+	"github.com/smyte/google-cloud-go/httpreplay"
+	"github.com/smyte/google-cloud-go/iam"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/uid"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"google.golang.org/api/googleapi"
@@ -1982,7 +1982,7 @@ func TestIntegration_Notifications(t *testing.T) {
 
 func TestIntegration_PublicBucket(t *testing.T) {
 	// Confirm that an unauthenticated client can access a public bucket.
-	// See https://cloud.google.com/storage/docs/public-datasets/landsat
+	// See https://github.com/smyte/google-cloud-go/storage/docs/public-datasets/landsat
 	if testing.Short() && !replaying {
 		t.Skip("Integration tests skipped in short mode")
 	}
@@ -2057,7 +2057,7 @@ func TestIntegration_ReadCRC(t *testing.T) {
 
 	const (
 		// This is an uncompressed file.
-		// See https://cloud.google.com/storage/docs/public-datasets/landsat
+		// See https://github.com/smyte/google-cloud-go/storage/docs/public-datasets/landsat
 		uncompressedBucket = "gcp-public-data-landsat"
 		uncompressedObject = "LC08/PRE/044/034/LC80440342016259LGN00/LC80440342016259LGN00_MTL.txt"
 

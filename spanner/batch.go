@@ -210,7 +210,7 @@ func (t *BatchReadOnlyTransaction) Close() {
 // Calling Cleanup is optional, but recommended. If Cleanup is not called, the
 // transaction's resources will be freed when the session expires on the backend
 // and is deleted. For more information about recycled sessions, see
-// https://cloud.google.com/spanner/docs/sessions.
+// https://github.com/smyte/google-cloud-go/spanner/docs/sessions.
 func (t *BatchReadOnlyTransaction) Cleanup(ctx context.Context) {
 	t.Close()
 	t.mu.Lock()

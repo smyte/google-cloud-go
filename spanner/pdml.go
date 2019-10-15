@@ -18,7 +18,7 @@ import (
 	"context"
 	"time"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	"google.golang.org/api/iterator"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc/codes"
@@ -33,7 +33,7 @@ import (
 // PartitionedUpdate returns an estimated count of the number of rows affected.
 // The actual number of affected rows may be greater than the estimate.
 func (c *Client) PartitionedUpdate(ctx context.Context, statement Statement) (count int64, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.PartitionedUpdate")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/spanner.PartitionedUpdate")
 	defer func() { trace.EndSpan(ctx, err) }()
 	if err := checkNestedTxn(ctx); err != nil {
 		return 0, err

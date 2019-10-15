@@ -26,9 +26,9 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/logging"
-	ltesting "cloud.google.com/go/logging/internal/testing"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/logging"
+	ltesting "github.com/smyte/google-cloud-go/logging/internal/testing"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	durpb "github.com/golang/protobuf/ptypes/duration"

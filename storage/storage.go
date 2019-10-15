@@ -37,9 +37,9 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"cloud.google.com/go/internal/optional"
-	"cloud.google.com/go/internal/trace"
-	"cloud.google.com/go/internal/version"
+	"github.com/smyte/google-cloud-go/internal/optional"
+	"github.com/smyte/google-cloud-go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/version"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/option"
 	raw "google.golang.org/api/storage/v1"
@@ -217,7 +217,7 @@ var (
 )
 
 // v2SanitizeHeaders applies the specifications for canonical extension headers at
-// https://cloud.google.com/storage/docs/access-control/signed-urls#about-canonical-extension-headers.
+// https://github.com/smyte/google-cloud-go/storage/docs/access-control/signed-urls#about-canonical-extension-headers.
 func v2SanitizeHeaders(hdrs []string) []string {
 	headerMap := map[string][]string{}
 	for _, hdr := range hdrs {
@@ -265,7 +265,7 @@ func v2SanitizeHeaders(hdrs []string) []string {
 }
 
 // v4SanitizeHeaders applies the specifications for canonical extension headers
-// at https://cloud.google.com/storage/docs/access-control/signed-urls#about-canonical-extension-headers.
+// at https://github.com/smyte/google-cloud-go/storage/docs/access-control/signed-urls#about-canonical-extension-headers.
 //
 // V4 does a couple things differently from V2:
 // - Headers get sorted by key, instead of by key:value. We do this in
@@ -320,7 +320,7 @@ func v4SanitizeHeaders(hdrs []string) []string {
 // SignedURL returns a URL for the specified object. Signed URLs allow
 // the users access to a restricted resource for a limited time without having a
 // Google account or signing in. For more information about the signed
-// URLs, see https://cloud.google.com/storage/docs/accesscontrol#Signed-URLs.
+// URLs, see https://github.com/smyte/google-cloud-go/storage/docs/accesscontrol#Signed-URLs.
 func SignedURL(bucket, name string, opts *SignedURLOptions) (string, error) {
 	now := utcNow()
 	if err := validateOptions(opts, now); err != nil {
@@ -571,7 +571,7 @@ func (o *ObjectHandle) ACL() *ACLHandle {
 // of the object.
 // By default, the handle operates on the latest generation. Not
 // all operations work when given a specific generation; check the API
-// endpoints at https://cloud.google.com/storage/docs/json_api/ for details.
+// endpoints at https://github.com/smyte/google-cloud-go/storage/docs/json_api/ for details.
 func (o *ObjectHandle) Generation(gen int64) *ObjectHandle {
 	o2 := *o
 	o2.gen = gen
@@ -581,7 +581,7 @@ func (o *ObjectHandle) Generation(gen int64) *ObjectHandle {
 // If returns a new ObjectHandle that applies a set of preconditions.
 // Preconditions already set on the ObjectHandle are ignored.
 // Operations on the new handle will return an error if the preconditions are not
-// satisfied. See https://cloud.google.com/storage/docs/generations-preconditions
+// satisfied. See https://github.com/smyte/google-cloud-go/storage/docs/generations-preconditions
 // for more details.
 func (o *ObjectHandle) If(conds Conditions) *ObjectHandle {
 	o2 := *o
@@ -593,7 +593,7 @@ func (o *ObjectHandle) If(conds Conditions) *ObjectHandle {
 // key to encrypt and decrypt the object's contents.
 //
 // Encryption key must be a 32-byte AES-256 key.
-// See https://cloud.google.com/storage/docs/encryption for details.
+// See https://github.com/smyte/google-cloud-go/storage/docs/encryption for details.
 func (o *ObjectHandle) Key(encryptionKey []byte) *ObjectHandle {
 	o2 := *o
 	o2.encryptionKey = encryptionKey
@@ -603,7 +603,7 @@ func (o *ObjectHandle) Key(encryptionKey []byte) *ObjectHandle {
 // Attrs returns meta information about the object.
 // ErrObjectNotExist will be returned if the object is not found.
 func (o *ObjectHandle) Attrs(ctx context.Context) (attrs *ObjectAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Object.Attrs")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Object.Attrs")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := o.validate(); err != nil {
@@ -635,7 +635,7 @@ func (o *ObjectHandle) Attrs(ctx context.Context) (attrs *ObjectAttrs, err error
 // All zero-value attributes are ignored.
 // ErrObjectNotExist will be returned if the object is not found.
 func (o *ObjectHandle) Update(ctx context.Context, uattrs ObjectAttrsToUpdate) (oa *ObjectAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Object.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Object.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := o.validate(); err != nil {
@@ -760,7 +760,7 @@ type ObjectAttrsToUpdate struct {
 	ACL                []ACLRule
 
 	// If not empty, applies a predefined set of access controls. ACL must be nil.
-	// See https://cloud.google.com/storage/docs/json_api/v1/objects/patch.
+	// See https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/objects/patch.
 	PredefinedACL string
 }
 
@@ -922,7 +922,7 @@ type ObjectAttrs struct {
 	// only when writing, copying or composing an object. When copying or composing,
 	// it acts as the destinationPredefinedAcl parameter.
 	// PredefinedACL is always empty for ObjectAttrs returned from the service.
-	// See https://cloud.google.com/storage/docs/json_api/v1/objects/insert
+	// See https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/objects/insert
 	// for valid values.
 	PredefinedACL string
 
@@ -995,7 +995,7 @@ type ObjectAttrs struct {
 	// CustomerKeySHA256 is the base64-encoded SHA-256 hash of the
 	// customer-supplied encryption key for the object. It is empty if there is
 	// no customer-supplied encryption key.
-	// See // https://cloud.google.com/storage/docs/encryption for more about
+	// See // https://github.com/smyte/google-cloud-go/storage/docs/encryption for more about
 	// encryption in Google Cloud Storage.
 	CustomerKeySHA256 string
 
@@ -1116,7 +1116,7 @@ type Query struct {
 //
 // The zero value is an empty set of constraints. Not all conditions or
 // combinations of conditions are applicable to all methods.
-// See https://cloud.google.com/storage/docs/generations-preconditions
+// See https://github.com/smyte/google-cloud-go/storage/docs/generations-preconditions
 // for details on how these operate.
 type Conditions struct {
 	// Generation constraints.

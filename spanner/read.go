@@ -24,9 +24,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"cloud.google.com/go/internal/protostruct"
-	"cloud.google.com/go/internal/trace"
-	"cloud.google.com/go/spanner/internal/backoff"
+	"github.com/smyte/google-cloud-go/internal/protostruct"
+	"github.com/smyte/google-cloud-go/internal/trace"
+	"github.com/smyte/google-cloud-go/spanner/internal/backoff"
 	proto "github.com/golang/protobuf/proto"
 	proto3 "github.com/golang/protobuf/ptypes/struct"
 	"google.golang.org/api/iterator"
@@ -50,7 +50,7 @@ func errEarlyReadEnd() error {
 // Spanner.
 func stream(ctx context.Context, rpc func(ct context.Context, resumeToken []byte) (streamingReceiver, error), setTimestamp func(time.Time), release func(error)) *RowIterator {
 	ctx, cancel := context.WithCancel(ctx)
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.RowIterator")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/spanner.RowIterator")
 	return &RowIterator{
 		streamd:      newResumableStreamDecoder(ctx, rpc),
 		rowd:         &partialResultSetDecoder{},

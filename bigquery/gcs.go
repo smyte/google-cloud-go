@@ -44,7 +44,7 @@ type GCSReference struct {
 // Data may also be split into mutiple files, if multiple URIs or URIs containing wildcards are provided.
 // Each URI may contain one '*' wildcard character, which (if present) must come after the bucket name.
 // For more information about the treatment of wildcards and multiple URIs,
-// see https://cloud.google.com/bigquery/exporting-data-from-bigquery#exportingmultiple
+// see https://github.com/smyte/google-cloud-go/bigquery/exporting-data-from-bigquery#exportingmultiple
 func NewGCSReference(uri ...string) *GCSReference {
 	return &GCSReference{URIs: uri}
 }

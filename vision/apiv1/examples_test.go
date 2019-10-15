@@ -19,7 +19,7 @@ import (
 	"fmt"
 	"os"
 
-	vision "cloud.google.com/go/vision/apiv1"
+	vision "github.com/smyte/google-cloud-go/vision/apiv1"
 	pb "google.golang.org/genproto/googleapis/cloud/vision/v1"
 )
 

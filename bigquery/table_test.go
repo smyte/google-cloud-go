@@ -18,7 +18,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/testutil"
 	bq "google.golang.org/api/bigquery/v2"
 )
 

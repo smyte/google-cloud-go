@@ -29,13 +29,13 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/civil"
-	"cloud.google.com/go/httpreplay"
-	"cloud.google.com/go/internal"
-	"cloud.google.com/go/internal/pretty"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
-	"cloud.google.com/go/storage"
+	"github.com/smyte/google-cloud-go/civil"
+	"github.com/smyte/google-cloud-go/httpreplay"
+	"github.com/smyte/google-cloud-go/internal"
+	"github.com/smyte/google-cloud-go/internal/pretty"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/uid"
+	"github.com/smyte/google-cloud-go/storage"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	gax "github.com/googleapis/gax-go/v2"
@@ -754,7 +754,7 @@ func TestIntegration_InsertAndRead(t *testing.T) {
 	}
 
 	// Wait until the data has been uploaded. This can take a few seconds, according
-	// to https://cloud.google.com/bigquery/streaming-data-into-bigquery.
+	// to https://github.com/smyte/google-cloud-go/bigquery/streaming-data-into-bigquery.
 	if err := waitForRow(ctx, table); err != nil {
 		t.Fatal(err)
 	}
@@ -974,7 +974,7 @@ func TestIntegration_InsertAndReadStructs(t *testing.T) {
 	}
 
 	// Wait until the data has been uploaded. This can take a few seconds, according
-	// to https://cloud.google.com/bigquery/streaming-data-into-bigquery.
+	// to https://github.com/smyte/google-cloud-go/bigquery/streaming-data-into-bigquery.
 	if err := waitForRow(ctx, table); err != nil {
 		t.Fatal(err)
 	}
@@ -1066,7 +1066,7 @@ func testInsertAndReadNullable(t *testing.T, ts testStructNullable, wantRow []Va
 		t.Fatal(putError(err))
 	}
 	// Wait until the data has been uploaded. This can take a few seconds, according
-	// to https://cloud.google.com/bigquery/streaming-data-into-bigquery.
+	// to https://github.com/smyte/google-cloud-go/bigquery/streaming-data-into-bigquery.
 	if err := waitForRow(ctx, table); err != nil {
 		t.Fatal(err)
 	}

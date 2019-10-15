@@ -19,7 +19,7 @@ package iot_test
 import (
 	"context"
 
-	iot "cloud.google.com/go/iot/apiv1"
+	iot "github.com/smyte/google-cloud-go/iot/apiv1"
 	"google.golang.org/api/iterator"
 	iotpb "google.golang.org/genproto/googleapis/cloud/iot/v1"
 	iampb "google.golang.org/genproto/googleapis/iam/v1"

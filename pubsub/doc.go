@@ -19,9 +19,9 @@ Pub/Sub is a many-to-many, asynchronous messaging system that decouples senders
 and receivers.
 
 More information about Google Cloud Pub/Sub is available at
-https://cloud.google.com/pubsub/docs
+https://github.com/smyte/google-cloud-go/pubsub/docs
 
-See https://godoc.org/cloud.google.com/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -82,7 +82,7 @@ Note: It is possible for Messages to be redelivered, even if Message.Ack has
 been called. Client code must be robust to multiple deliveries of messages.
 
 Note: This uses pubsub's streaming pull feature. This feature properties that
-may be surprising. Please take a look at https://cloud.google.com/pubsub/docs/pull#streamingpull
+may be surprising. Please take a look at https://github.com/smyte/google-cloud-go/pubsub/docs/pull#streamingpull
 for more details on how streaming pull behaves compared to the synchronous
 pull method.
 
@@ -132,6 +132,6 @@ Slow Message Processing
 
 For use cases where message processing exceeds 30 minutes, we recommend using
 the base client in a pull model, since long-lived streams are periodically killed
-by firewalls. See the example at https://godoc.org/cloud.google.com/go/pubsub/apiv1#example-SubscriberClient-Pull-LengthyClientProcessing
+by firewalls. See the example at https://godoc.org/github.com/smyte/google-cloud-go/pubsub/apiv1#example-SubscriberClient-Pull-LengthyClientProcessing
 */
-package pubsub // import "cloud.google.com/go/pubsub"
+package pubsub // import "github.com/smyte/google-cloud-go/pubsub"

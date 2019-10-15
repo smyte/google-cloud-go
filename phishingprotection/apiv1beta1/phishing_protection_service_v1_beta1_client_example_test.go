@@ -19,7 +19,7 @@ package phishingprotection_test
 import (
 	"context"
 
-	phishingprotection "cloud.google.com/go/phishingprotection/apiv1beta1"
+	phishingprotection "github.com/smyte/google-cloud-go/phishingprotection/apiv1beta1"
 	phishingprotectionpb "google.golang.org/genproto/googleapis/cloud/phishingprotection/v1beta1"
 )
 

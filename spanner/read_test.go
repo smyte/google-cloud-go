@@ -25,8 +25,8 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/spanner/internal/backoff"
-	"cloud.google.com/go/spanner/internal/testutil"
+	"github.com/smyte/google-cloud-go/spanner/internal/backoff"
+	"github.com/smyte/google-cloud-go/spanner/internal/testutil"
 	"github.com/golang/protobuf/proto"
 	proto3 "github.com/golang/protobuf/ptypes/struct"
 	"google.golang.org/api/iterator"

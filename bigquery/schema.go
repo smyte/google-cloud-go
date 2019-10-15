@@ -176,7 +176,7 @@ var typeOfByteSlice = reflect.TypeOf([]byte{})
 //
 // The big.Rat type supports numbers of arbitrary size and precision. Values
 // will be rounded to 9 digits after the decimal point before being transmitted
-// to BigQuery. See https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#numeric-type
+// to BigQuery. See https://github.com/smyte/google-cloud-go/bigquery/docs/reference/standard-sql/data-types#numeric-type
 // for more on NUMERIC.
 //
 // A Go slice or array type is inferred to be a BigQuery repeated field of the

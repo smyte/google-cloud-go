@@ -132,7 +132,7 @@ type KeyManagementClient struct {
 //   [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
 //
 // If you are using manual gRPC libraries, see
-// Using gRPC with Cloud KMS (at https://cloud.google.com/kms/docs/grpc).
+// Using gRPC with Cloud KMS (at https://github.com/smyte/google-cloud-go/kms/docs/grpc).
 func NewKeyManagementClient(ctx context.Context, opts ...option.ClientOption) (*KeyManagementClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultKeyManagementClientOptions(), opts...)...)
 	if err != nil {

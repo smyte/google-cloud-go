@@ -22,8 +22,8 @@ import (
 	"math"
 	"time"
 
-	"cloud.google.com/go/longrunning"
-	lroauto "cloud.google.com/go/longrunning/autogen"
+	"github.com/smyte/google-cloud-go/longrunning"
+	lroauto "github.com/smyte/google-cloud-go/longrunning/autogen"
 	"github.com/golang/protobuf/proto"
 	anypb "github.com/golang/protobuf/ptypes/any"
 	gax "github.com/googleapis/gax-go/v2"

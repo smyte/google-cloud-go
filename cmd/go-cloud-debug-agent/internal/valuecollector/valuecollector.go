@@ -21,7 +21,7 @@ import (
 	"strconv"
 	"strings"
 
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug"
 	cd "google.golang.org/api/clouddebugger/v2"
 )
 

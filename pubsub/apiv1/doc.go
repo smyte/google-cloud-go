@@ -30,10 +30,10 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
+// please visit godoc.org/github.com/smyte/google-cloud-go.
 //
-// Use the client at cloud.google.com/go/pubsub in preference to this.
-package pubsub // import "cloud.google.com/go/pubsub/apiv1"
+// Use the client at github.com/smyte/google-cloud-go/pubsub in preference to this.
+package pubsub // import "github.com/smyte/google-cloud-go/pubsub/apiv1"
 
 import (
 	"context"

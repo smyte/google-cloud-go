@@ -19,7 +19,7 @@
 /*
 Cbt is a tool for doing basic interactions with Cloud Bigtable. To learn how to
 install the cbt tool, see the
-[cbt overview](https://cloud.google.com/bigtable/docs/cbt-overview).
+[cbt overview](https://github.com/smyte/google-cloud-go/bigtable/docs/cbt-overview).
 
 Usage:
 

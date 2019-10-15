@@ -18,10 +18,10 @@
 Package firestore provides a client for reading and writing to a Cloud Firestore
 database.
 
-See https://cloud.google.com/firestore/docs for an introduction
+See https://github.com/smyte/google-cloud-go/firestore/docs for an introduction
 to Cloud Firestore and additional help on using the Firestore API.
 
-See https://godoc.org/cloud.google.com/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 Note: you can't use both Cloud Firestore and Cloud Datastore in the same
@@ -222,7 +222,7 @@ development. Environment variables are used to indicate that Firestore traffic s
 directed to the emulator instead of the production Firestore service.
 
 To install and run the emulator and its environment variables, see the documentation
-at https://cloud.google.com/sdk/gcloud/reference/beta/emulators/firestore/. Once the
+at https://github.com/smyte/google-cloud-go/sdk/gcloud/reference/beta/emulators/firestore/. Once the
 emulator is running, set FIRESTORE_EMULATOR_HOST to the API endpoint.
 */
 package firestore

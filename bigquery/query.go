@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -28,7 +28,7 @@ type QueryConfig struct {
 	// If this field is nil, a temporary table will be created.
 	Dst *Table
 
-	// The query to execute. See https://cloud.google.com/bigquery/query-reference for details.
+	// The query to execute. See https://github.com/smyte/google-cloud-go/bigquery/query-reference for details.
 	Q string
 
 	// DefaultProjectID and DefaultDatasetID specify the dataset to use for unqualified table names in the query.
@@ -55,24 +55,24 @@ type QueryConfig struct {
 	// If this field is false, results are fetched from the cache if they are available.
 	// The query cache is a best-effort cache that is flushed whenever tables in the query are modified.
 	// Cached results are only available when TableID is unspecified in the query's destination Table.
-	// For more information, see https://cloud.google.com/bigquery/querying-data#querycaching
+	// For more information, see https://github.com/smyte/google-cloud-go/bigquery/querying-data#querycaching
 	DisableQueryCache bool
 
 	// DisableFlattenedResults prevents results being flattened.
 	// If this field is false, results from nested and repeated fields are flattened.
 	// DisableFlattenedResults implies AllowLargeResults
-	// For more information, see https://cloud.google.com/bigquery/docs/data#nested
+	// For more information, see https://github.com/smyte/google-cloud-go/bigquery/docs/data#nested
 	DisableFlattenedResults bool
 
 	// AllowLargeResults allows the query to produce arbitrarily large result tables.
 	// The destination must be a table.
 	// When using this option, queries will take longer to execute, even if the result set is small.
-	// For additional limitations, see https://cloud.google.com/bigquery/querying-data#largequeryresults
+	// For additional limitations, see https://github.com/smyte/google-cloud-go/bigquery/querying-data#largequeryresults
 	AllowLargeResults bool
 
 	// Priority specifies the priority with which to schedule the query.
 	// The default priority is InteractivePriority.
-	// For more information, see https://cloud.google.com/bigquery/querying-data#batchqueries
+	// For more information, see https://github.com/smyte/google-cloud-go/bigquery/querying-data#batchqueries
 	Priority QueryPriority
 
 	// MaxBillingTier sets the maximum billing tier for a Query.
@@ -262,7 +262,7 @@ const (
 	// count towards your concurrent rate limit, which can make it easier to
 	// start many queries at once.
 	//
-	// More information can be found at https://cloud.google.com/bigquery/docs/running-queries#batchqueries.
+	// More information can be found at https://github.com/smyte/google-cloud-go/bigquery/docs/running-queries#batchqueries.
 	BatchPriority QueryPriority = "BATCH"
 	// InteractivePriority specifies that the query should be scheduled with
 	// interactive priority, which means that the query is executed as soon as
@@ -270,7 +270,7 @@ const (
 	// and your daily limit. It is the default priority with which queries get
 	// executed.
 	//
-	// More information can be found at https://cloud.google.com/bigquery/docs/running-queries#queries.
+	// More information can be found at https://github.com/smyte/google-cloud-go/bigquery/docs/running-queries#queries.
 	InteractivePriority QueryPriority = "INTERACTIVE"
 )
 
@@ -292,7 +292,7 @@ func (c *Client) Query(q string) *Query {
 
 // Run initiates a query job.
 func (q *Query) Run(ctx context.Context) (j *Job, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Query.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/bigquery.Query.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	job, err := q.newJob()

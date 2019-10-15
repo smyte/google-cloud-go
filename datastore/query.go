@@ -24,7 +24,7 @@ import (
 	"strconv"
 	"strings"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	wrapperspb "github.com/golang/protobuf/ptypes/wrappers"
 	"google.golang.org/api/iterator"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
@@ -150,7 +150,7 @@ func (q *Query) EventualConsistency() *Query {
 // namespace.
 //
 // A namespace may be used to partition data for multi-tenant applications.
-// For details, see https://cloud.google.com/datastore/docs/concepts/multitenancy.
+// For details, see https://github.com/smyte/google-cloud-go/datastore/docs/concepts/multitenancy.
 func (q *Query) Namespace(ns string) *Query {
 	q = q.clone()
 	q.namespace = ns
@@ -447,7 +447,7 @@ func (q *Query) toProto(req *pb.RunQueryRequest) error {
 // expected to be small, it is best to specify a limit; otherwise Count will
 // continue until it finishes counting or the provided context expires.
 func (c *Client) Count(ctx context.Context, q *Query) (n int, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/datastore.Query.Count")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.Query.Count")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	// Check that the query is well-formed.
@@ -496,7 +496,7 @@ func (c *Client) Count(ctx context.Context, q *Query) (n int, err error) {
 // continue until it finishes collecting results or the provided context
 // expires.
 func (c *Client) GetAll(ctx context.Context, q *Query, dst interface{}) (keys []*Key, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/datastore.Query.GetAll")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/datastore.Query.GetAll")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	var (
@@ -736,7 +736,7 @@ func (t *Iterator) nextBatch() error {
 
 // Cursor returns a cursor for the iterator's current location.
 func (t *Iterator) Cursor() (c Cursor, err error) {
-	t.ctx = trace.StartSpan(t.ctx, "cloud.google.com/go/datastore.Query.Cursor")
+	t.ctx = trace.StartSpan(t.ctx, "github.com/smyte/google-cloud-go/datastore.Query.Cursor")
 	defer func() { trace.EndSpan(t.ctx, err) }()
 
 	// If there is still an offset, we need to the skip those results first.

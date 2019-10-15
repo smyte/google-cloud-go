@@ -38,10 +38,10 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"cloud.google.com/go/compute/metadata"
-	"cloud.google.com/go/internal/version"
-	vkit "cloud.google.com/go/logging/apiv2"
-	"cloud.google.com/go/logging/internal"
+	"github.com/smyte/google-cloud-go/compute/metadata"
+	"github.com/smyte/google-cloud-go/internal/version"
+	vkit "github.com/smyte/google-cloud-go/logging/apiv2"
+	"github.com/smyte/google-cloud-go/logging/internal"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	structpb "github.com/golang/protobuf/ptypes/struct"
@@ -556,7 +556,7 @@ func ParseSeverity(s string) Severity {
 }
 
 // Entry is a log entry.
-// See https://cloud.google.com/logging/docs/view/logs_index for more about entries.
+// See https://github.com/smyte/google-cloud-go/logging/docs/view/logs_index for more about entries.
 type Entry struct {
 	// Timestamp is the time of the entry. If zero, the current time is used.
 	Timestamp time.Time
@@ -844,7 +844,7 @@ func (l *Logger) toLogEntry(e Entry) (*logpb.LogEntry, error) {
 		traceHeader := e.HTTPRequest.Request.Header.Get("X-Cloud-Trace-Context")
 		if traceHeader != "" {
 			// Set to a relative resource name, as described at
-			// https://cloud.google.com/appengine/docs/flexible/go/writing-application-logs.
+			// https://github.com/smyte/google-cloud-go/appengine/docs/flexible/go/writing-application-logs.
 			e.Trace = fmt.Sprintf("%s/traces/%s", l.client.parent, traceHeader)
 		}
 	}

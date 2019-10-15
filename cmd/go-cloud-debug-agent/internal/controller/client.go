@@ -72,8 +72,8 @@ type Controller struct {
 }
 
 // Options controls how the Debuglet Controller client identifies itself to the server.
-// See https://cloud.google.com/storage/docs/projects and
-// https://cloud.google.com/tools/cloud-debugger/setting-up-on-compute-engine
+// See https://github.com/smyte/google-cloud-go/storage/docs/projects and
+// https://github.com/smyte/google-cloud-go/tools/cloud-debugger/setting-up-on-compute-engine
 // for further documentation of these parameters.
 type Options struct {
 	ProjectNumber  string              // GCP Project Number.

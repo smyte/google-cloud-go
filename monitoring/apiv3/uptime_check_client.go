@@ -99,7 +99,7 @@ type UptimeCheckClient struct {
 // check is a piece of configuration that determines which resources and
 // services to monitor for availability. These configurations can also be
 // configured interactively by navigating to the [Cloud Console]
-// (http://console.cloud.google.com), selecting the appropriate project,
+// (http://console.github.com/smyte/google-cloud-go), selecting the appropriate project,
 // clicking on "Monitoring" on the left-hand side to navigate to Stackdriver,
 // and then clicking on "Uptime".
 func NewUptimeCheckClient(ctx context.Context, opts ...option.ClientOption) (*UptimeCheckClient, error) {

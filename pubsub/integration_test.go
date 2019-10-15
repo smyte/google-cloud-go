@@ -21,10 +21,10 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/iam"
-	"cloud.google.com/go/internal"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
+	"github.com/smyte/google-cloud-go/iam"
+	"github.com/smyte/google-cloud-go/internal"
+	"github.com/smyte/google-cloud-go/internal/testutil"
+	"github.com/smyte/google-cloud-go/internal/uid"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
@@ -247,7 +247,7 @@ func testPublishAndReceive(t *testing.T, topic *Topic, sub *Subscription, maxMsg
 // NOTE: for these to succeed, the test runner identity must have the Pub/Sub Admin or Owner roles.
 // To set, visit https://console.developers.google.com, select "IAM & Admin" from the top-left
 // menu, choose the account, click the Roles dropdown, and select "Pub/Sub > Pub/Sub Admin".
-// TODO(jba): move this to a testing package within cloud.google.com/iam, so we can re-use it.
+// TODO(jba): move this to a testing package within github.com/smyte/google-cloud-go/iam, so we can re-use it.
 func testIAM(ctx context.Context, h *iam.Handle, permission string) (msg string, ok bool) {
 	// Attempting to add an non-existent identity  (e.g. "alice@example.com") causes the service
 	// to return an internal error, so use a real identity.

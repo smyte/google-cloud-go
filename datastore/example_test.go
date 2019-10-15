@@ -20,7 +20,7 @@ import (
 	"log"
 	"time"
 
-	"cloud.google.com/go/datastore"
+	"github.com/smyte/google-cloud-go/datastore"
 	"google.golang.org/api/iterator"
 )
 
@@ -285,7 +285,7 @@ func ExampleClient_NewTransaction() {
 	const retries = 3
 
 	// Increment a counter.
-	// See https://cloud.google.com/appengine/articles/sharding_counters for
+	// See https://github.com/smyte/google-cloud-go/appengine/articles/sharding_counters for
 	// a more scalable solution.
 	type Counter struct {
 		Count int
@@ -326,7 +326,7 @@ func ExampleClient_RunInTransaction() {
 	}
 
 	// Increment a counter.
-	// See https://cloud.google.com/appengine/articles/sharding_counters for
+	// See https://github.com/smyte/google-cloud-go/appengine/articles/sharding_counters for
 	// a more scalable solution.
 	type Counter struct {
 		Count int

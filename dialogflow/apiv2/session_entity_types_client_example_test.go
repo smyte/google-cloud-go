@@ -19,7 +19,7 @@ package dialogflow_test
 import (
 	"context"
 
-	dialogflow "cloud.google.com/go/dialogflow/apiv2"
+	dialogflow "github.com/smyte/google-cloud-go/dialogflow/apiv2"
 	"google.golang.org/api/iterator"
 	dialogflowpb "google.golang.org/genproto/googleapis/cloud/dialogflow/v2"
 )

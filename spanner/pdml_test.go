@@ -19,7 +19,7 @@ import (
 	"io"
 	"testing"
 
-	"cloud.google.com/go/spanner/internal/testutil"
+	"github.com/smyte/google-cloud-go/spanner/internal/testutil"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc/codes"
 )

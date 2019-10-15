@@ -20,7 +20,7 @@ import (
 	"strings"
 	"time"
 
-	"cloud.google.com/go/internal/fields"
+	"github.com/smyte/google-cloud-go/internal/fields"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
 )
 
@@ -348,7 +348,7 @@ func setVal(v reflect.Value, p Property) (s string) {
 			// (for example when used with projects). So, here we check first
 			// whether this value is an int64, and next whether it's time.
 			//
-			// See more at https://cloud.google.com/datastore/docs/concepts/queries#limitations_on_projections
+			// See more at https://github.com/smyte/google-cloud-go/datastore/docs/concepts/queries#limitations_on_projections
 			micros, ok := pValue.(int64)
 			if ok {
 				s := micros / 1e6

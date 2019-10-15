@@ -19,7 +19,7 @@ package irm_test
 import (
 	"context"
 
-	irm "cloud.google.com/go/irm/apiv1alpha2"
+	irm "github.com/smyte/google-cloud-go/irm/apiv1alpha2"
 	"google.golang.org/api/iterator"
 	irmpb "google.golang.org/genproto/googleapis/cloud/irm/v1alpha2"
 )

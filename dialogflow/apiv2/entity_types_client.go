@@ -22,8 +22,8 @@ import (
 	"math"
 	"time"
 
-	"cloud.google.com/go/longrunning"
-	lroauto "cloud.google.com/go/longrunning/autogen"
+	"github.com/smyte/google-cloud-go/longrunning"
+	lroauto "github.com/smyte/google-cloud-go/longrunning/autogen"
 	"github.com/golang/protobuf/proto"
 	structpbpb "github.com/golang/protobuf/ptypes/struct"
 	gax "github.com/googleapis/gax-go/v2"
@@ -138,7 +138,7 @@ type EntityTypesClient struct {
 //
 // For more information about entity types, see the
 // [Dialogflow
-// documentation](https://cloud.google.com/dialogflow-enterprise/docs/entities-overview).
+// documentation](https://github.com/smyte/google-cloud-go/dialogflow-enterprise/docs/entities-overview).
 func NewEntityTypesClient(ctx context.Context, opts ...option.ClientOption) (*EntityTypesClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultEntityTypesClientOptions(), opts...)...)
 	if err != nil {

@@ -18,7 +18,7 @@ import (
 	"encoding/base64"
 	"strings"
 
-	"cloud.google.com/go/datastore/internal/gaepb"
+	"github.com/smyte/google-cloud-go/datastore/internal/gaepb"
 	"github.com/golang/protobuf/proto"
 )
 

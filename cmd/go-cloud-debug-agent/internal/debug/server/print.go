@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"fmt"
 
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/arch"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/arch"
+	"github.com/smyte/google-cloud-go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 // typeAndAddress associates an address in the target with a DWARF type.

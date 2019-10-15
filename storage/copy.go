@@ -19,7 +19,7 @@ import (
 	"errors"
 	"fmt"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/internal/trace"
 	raw "google.golang.org/api/storage/v1"
 )
 
@@ -48,7 +48,7 @@ type Copier struct {
 	// ProgressFunc can be used to monitor the progress of a multi-RPC copy
 	// operation. If ProgressFunc is not nil and copying requires multiple
 	// calls to the underlying service (see
-	// https://cloud.google.com/storage/docs/json_api/v1/objects/rewrite), then
+	// https://github.com/smyte/google-cloud-go/storage/docs/json_api/v1/objects/rewrite), then
 	// ProgressFunc will be invoked after each call with the number of bytes of
 	// content copied so far and the total size in bytes of the source object.
 	//
@@ -74,7 +74,7 @@ type Copier struct {
 
 // Run performs the copy.
 func (c *Copier) Run(ctx context.Context) (attrs *ObjectAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Copier.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Copier.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := c.src.validate(); err != nil {
@@ -172,7 +172,7 @@ type Composer struct {
 
 // Run performs the compose operation.
 func (c *Composer) Run(ctx context.Context) (attrs *ObjectAttrs, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Composer.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/storage.Composer.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := c.dst.validate(); err != nil {

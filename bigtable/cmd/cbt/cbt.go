@@ -36,8 +36,8 @@ import (
 	"text/template"
 	"time"
 
-	"cloud.google.com/go/bigtable"
-	"cloud.google.com/go/bigtable/internal/cbtconfig"
+	"github.com/smyte/google-cloud-go/bigtable"
+	"github.com/smyte/google-cloud-go/bigtable/internal/cbtconfig"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
@@ -816,7 +816,7 @@ var docTemplate = template.Must(template.New("doc").Funcs(template.FuncMap{
 /*
 Cbt is a tool for doing basic interactions with Cloud Bigtable. To learn how to
 install the cbt tool, see the
-[cbt overview](https://cloud.google.com/bigtable/docs/cbt-overview).
+[cbt overview](https://github.com/smyte/google-cloud-go/bigtable/docs/cbt-overview).
 
 Usage:
 
@@ -1019,7 +1019,7 @@ var mddocTemplate = template.Must(template.New("mddoc").Funcs(template.FuncMap{
 	Parse(`
 Cbt is a tool for doing basic interactions with Cloud Bigtable. To learn how to
 install the cbt tool, see the
-[cbt overview](https://cloud.google.com/bigtable/docs/cbt-overview).
+[cbt overview](https://github.com/smyte/google-cloud-go/bigtable/docs/cbt-overview).
 
 Usage:
 
