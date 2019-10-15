@@ -200,9 +200,6 @@ func (u *Inserter) newInsertRequest(savers []ValueSaver) (*bq.TableDataInsertAll
 		if err != nil {
 			return nil, err
 		}
-		if insertID == "" {
-			insertID = randomIDFn()
-		}
 		m := make(map[string]bq.JsonValue)
 		for k, v := range row {
 			m[k] = bq.JsonValue(v)
