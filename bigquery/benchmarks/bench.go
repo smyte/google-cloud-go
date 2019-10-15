@@ -24,7 +24,7 @@ import (
 	"log"
 	"time"
 
-	"cloud.google.com/go/bigquery"
+	"github.com/smyte/google-cloud-go/go/bigquery"
 	"google.golang.org/api/iterator"
 )
 

@@ -21,8 +21,8 @@ import (
 	"math"
 	"time"
 
-	"cloud.google.com/go/longrunning"
-	lroauto "cloud.google.com/go/longrunning/autogen"
+	"github.com/smyte/google-cloud-go/go/longrunning"
+	lroauto "github.com/smyte/google-cloud-go/go/longrunning/autogen"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/transport"
@@ -150,7 +150,7 @@ func (c *Client) Recognize(ctx context.Context, req *speechpb.RecognizeRequest, 
 // Operation.error or an Operation.response which contains
 // a LongRunningRecognizeResponse message.
 // For more information on asynchronous speech recognition, see the
-// how-to (at https://cloud.google.com/speech-to-text/docs/async-recognize).
+// how-to (at https://github.com/smyte/google-cloud-go/speech-to-text/docs/async-recognize).
 func (c *Client) LongRunningRecognize(ctx context.Context, req *speechpb.LongRunningRecognizeRequest, opts ...gax.CallOption) (*LongRunningRecognizeOperation, error) {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append(c.CallOptions.LongRunningRecognize[0:len(c.CallOptions.LongRunningRecognize):len(c.CallOptions.LongRunningRecognize)], opts...)

@@ -22,7 +22,7 @@ import (
 	"fmt"
 	"log"
 
-	"cloud.google.com/go/bigtable/bttest"
+	"github.com/smyte/google-cloud-go/go/bigtable/bttest"
 	"google.golang.org/grpc"
 )
 

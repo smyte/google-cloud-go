@@ -22,7 +22,7 @@ import (
 	"sort"
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"github.com/golang/protobuf/proto"
 	"github.com/google/go-cmp/cmp"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"

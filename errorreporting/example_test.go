@@ -19,7 +19,7 @@ import (
 	"errors"
 	"log"
 
-	"cloud.google.com/go/errorreporting"
+	"github.com/smyte/google-cloud-go/go/errorreporting"
 )
 
 func Example() {

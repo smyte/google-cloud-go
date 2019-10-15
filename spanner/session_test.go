@@ -25,8 +25,8 @@ import (
 	"testing"
 	"time"
 
-	vkit "cloud.google.com/go/spanner/apiv1"
-	. "cloud.google.com/go/spanner/internal/testutil"
+	vkit "github.com/smyte/google-cloud-go/go/spanner/apiv1"
+	. "github.com/smyte/google-cloud-go/go/spanner/internal/testutil"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

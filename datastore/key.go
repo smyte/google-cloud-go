@@ -41,7 +41,7 @@ type Key struct {
 	// Namespace provides the ability to partition your data for multiple
 	// tenants. In most cases, it is not necessary to specify a namespace.
 	// See docs on datastore multitenancy for details:
-	// https://cloud.google.com/datastore/docs/concepts/multitenancy
+	// https://github.com/smyte/google-cloud-go/datastore/docs/concepts/multitenancy
 	Namespace string
 }
 

@@ -25,8 +25,8 @@ import (
 	"os"
 	"strings"
 
-	"cloud.google.com/go/pubsub"
-	pb "cloud.google.com/go/pubsub/internal/benchwrapper/proto"
+	"github.com/smyte/google-cloud-go/go/pubsub"
+	pb "github.com/smyte/google-cloud-go/go/pubsub/internal/benchwrapper/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/status"
 )

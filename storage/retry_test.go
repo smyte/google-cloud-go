@@ -27,7 +27,7 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"cloud.google.com/go/storage"
+	"github.com/smyte/google-cloud-go/go/storage"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/option"
 )

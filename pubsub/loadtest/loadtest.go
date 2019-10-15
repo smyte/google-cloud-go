@@ -29,8 +29,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"cloud.google.com/go/pubsub"
-	pb "cloud.google.com/go/pubsub/loadtest/pb"
+	"github.com/smyte/google-cloud-go/go/pubsub"
+	pb "github.com/smyte/google-cloud-go/go/pubsub/loadtest/pb"
 	"github.com/golang/protobuf/ptypes"
 	"golang.org/x/time/rate"
 )

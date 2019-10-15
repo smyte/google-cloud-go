@@ -29,9 +29,9 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
-	"cloud.google.com/go/rpcreplay"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/uid"
+	"github.com/smyte/google-cloud-go/go/rpcreplay"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
@@ -795,7 +795,7 @@ func TestIntegration_GetAllWithFieldMismatch(t *testing.T) {
 
 	// Ancestor queries (those within an entity group) are strongly consistent
 	// by default, which prevents a test from being flaky.
-	// See https://cloud.google.com/appengine/docs/go/datastore/queries#Go_Data_consistency
+	// See https://github.com/smyte/google-cloud-go/appengine/docs/go/datastore/queries#Go_Data_consistency
 	// for more information.
 	parent := NameKey("SQParent", "TestIntegration_GetAllWithFieldMismatch"+suffix, nil)
 	putKeys := make([]*Key, 3)
@@ -1319,7 +1319,7 @@ func TestIntegration_Project_TimestampStoreAndRetrieve(t *testing.T) {
 
 	// Without .Ancestor, this query is eventually consistent (so this test
 	// would be flakey). Ancestor queries, however, are strongly consistent.
-	// See more at https://cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore/.
+	// See more at https://github.com/smyte/google-cloud-go/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore/.
 	q := NewQuery(k.Kind).Ancestor(k)
 	res := []T{}
 	if _, err := client.GetAll(ctx, q, &res); err != nil {

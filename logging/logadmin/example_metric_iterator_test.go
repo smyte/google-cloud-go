@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	"cloud.google.com/go/logging/logadmin"
+	"github.com/smyte/google-cloud-go/go/logging/logadmin"
 	"google.golang.org/api/iterator"
 )
 

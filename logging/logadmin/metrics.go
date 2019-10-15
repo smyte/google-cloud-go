@@ -18,7 +18,7 @@ import (
 	"context"
 	"fmt"
 
-	vkit "cloud.google.com/go/logging/apiv2"
+	vkit "github.com/smyte/google-cloud-go/go/logging/apiv2"
 	"google.golang.org/api/iterator"
 	logpb "google.golang.org/genproto/googleapis/logging/v2"
 )
@@ -27,7 +27,7 @@ import (
 // number of log entries that match a logs filter.
 //
 // Metrics are a feature of Stackdriver Monitoring.
-// See https://cloud.google.com/monitoring/api/v3/metrics for more about them.
+// See https://github.com/smyte/google-cloud-go/monitoring/api/v3/metrics for more about them.
 type Metric struct {
 	// ID is a client-assigned metric identifier. Example:
 	// "severe_errors".  Metric identifiers are limited to 1000
@@ -41,7 +41,7 @@ type Metric struct {
 	Description string
 
 	// Filter is an advanced logs filter (see
-	// https://cloud.google.com/logging/docs/view/advanced_filters).
+	// https://github.com/smyte/google-cloud-go/logging/docs/view/advanced_filters).
 	// Example: "logName:syslog AND severity>=ERROR".
 	Filter string
 }

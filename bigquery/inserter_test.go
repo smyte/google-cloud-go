@@ -19,8 +19,8 @@ import (
 	"strconv"
 	"testing"
 
-	"cloud.google.com/go/internal/pretty"
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/pretty"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 	bq "google.golang.org/api/bigquery/v2"
 )

@@ -36,8 +36,8 @@ import (
 	"text/template"
 	"time"
 
-	"cloud.google.com/go/bigtable"
-	"cloud.google.com/go/bigtable/internal/cbtconfig"
+	"github.com/smyte/google-cloud-go/go/bigtable"
+	"github.com/smyte/google-cloud-go/go/bigtable/internal/cbtconfig"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
@@ -217,7 +217,7 @@ All values are optional and can be overridden at the command prompt.
 `
 
 const docIntroTemplate = `The ` + "`cbt`" + ` tool is a command-line tool that allows you to interact with Cloud Bigtable.
-See the [cbt overview](https://cloud.google.com/bigtable/docs/cbt-overview) to learn how to install the ` + "`cbt`" + ` tool.
+See the [cbt overview](https://github.com/smyte/google-cloud-go/bigtable/docs/cbt-overview) to learn how to install the ` + "`cbt`" + ` tool.
 
 Usage:
 

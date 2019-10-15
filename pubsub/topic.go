@@ -24,7 +24,7 @@ import (
 	"sync"
 	"time"
 
-	"cloud.google.com/go/iam"
+	"github.com/smyte/google-cloud-go/go/iam"
 	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	"go.opencensus.io/stats"
@@ -113,7 +113,7 @@ var DefaultPublishSettings = PublishSettings{
 // ([A-Za-z]), numbers ([0-9]), dashes (-), underscores (_), periods (.),
 // tildes (~), plus (+) or percent signs (%). It must be between 3 and 255
 // characters in length, and must not start with "goog". For more information,
-// see: https://cloud.google.com/pubsub/docs/admin#resource_names
+// see: https://github.com/smyte/google-cloud-go/pubsub/docs/admin#resource_names
 //
 // If the topic already exists an error will be returned.
 func (c *Client) CreateTopic(ctx context.Context, topicID string) (*Topic, error) {
@@ -131,7 +131,7 @@ func (c *Client) CreateTopic(ctx context.Context, topicID string) (*Topic, error
 // ([A-Za-z]), numbers ([0-9]), dashes (-), underscores (_), periods (.),
 // tildes (~), plus (+) or percent signs (%). It must be between 3 and 255
 // characters in length, and must not start with "goog". For more information,
-// see: https://cloud.google.com/pubsub/docs/admin#resource_names.
+// see: https://github.com/smyte/google-cloud-go/pubsub/docs/admin#resource_names.
 //
 // If the topic already exists, an error will be returned.
 func (c *Client) CreateTopicWithConfig(ctx context.Context, topicID string, tc *TopicConfig) (*Topic, error) {
@@ -233,7 +233,7 @@ type MessageStoragePolicy struct {
 	// the regions back to the organization level Resource Location Restriction policy.
 	//
 	// For more information, see
-	// https://cloud.google.com/pubsub/docs/resource-location-restriction#pubsub-storage-locations.
+	// https://github.com/smyte/google-cloud-go/pubsub/docs/resource-location-restriction#pubsub-storage-locations.
 	AllowedPersistenceRegions []string
 }
 

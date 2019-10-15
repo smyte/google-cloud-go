@@ -17,7 +17,7 @@ package testutil_test_test
 import (
 	"strconv"
 
-	. "cloud.google.com/go/spanner/internal/testutil"
+	. "github.com/smyte/google-cloud-go/go/spanner/internal/testutil"
 
 	"context"
 	"flag"
@@ -32,7 +32,7 @@ import (
 	spannerpb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc/codes"
 
-	apiv1 "cloud.google.com/go/spanner/apiv1"
+	apiv1 "github.com/smyte/google-cloud-go/go/spanner/apiv1"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"

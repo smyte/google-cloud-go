@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"net/url"
 
-	grafeas "cloud.google.com/go/grafeas/apiv1"
+	grafeas "github.com/smyte/google-cloud-go/go/grafeas/apiv1"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	"google.golang.org/api/transport"

@@ -37,7 +37,7 @@ import (
 	"context"
 	"net/http"
 
-	"cloud.google.com/go/httpreplay/internal/proxy"
+	"github.com/smyte/google-cloud-go/go/httpreplay/internal/proxy"
 	"google.golang.org/api/option"
 	htransport "google.golang.org/api/transport/http"
 )

@@ -19,7 +19,7 @@ package grafeas_test
 import (
 	"context"
 
-	grafeas "cloud.google.com/go/grafeas/apiv1"
+	grafeas "github.com/smyte/google-cloud-go/go/grafeas/apiv1"
 	"google.golang.org/api/iterator"
 	grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
 )

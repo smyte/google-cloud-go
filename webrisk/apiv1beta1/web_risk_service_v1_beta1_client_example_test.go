@@ -19,7 +19,7 @@ package webrisk_test
 import (
 	"context"
 
-	webrisk "cloud.google.com/go/webrisk/apiv1beta1"
+	webrisk "github.com/smyte/google-cloud-go/go/webrisk/apiv1beta1"
 	webriskpb "google.golang.org/genproto/googleapis/cloud/webrisk/v1beta1"
 )
 

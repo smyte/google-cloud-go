@@ -19,7 +19,7 @@ package cloudbuild_test
 import (
 	"context"
 
-	cloudbuild "cloud.google.com/go/cloudbuild/apiv1"
+	cloudbuild "github.com/smyte/google-cloud-go/go/cloudbuild/apiv1"
 	"google.golang.org/api/iterator"
 	cloudbuildpb "google.golang.org/genproto/googleapis/devtools/cloudbuild/v1"
 )

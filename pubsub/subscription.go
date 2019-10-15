@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
-	"cloud.google.com/go/iam"
-	"cloud.google.com/go/internal/optional"
+	"github.com/smyte/google-cloud-go/go/iam"
+	"github.com/smyte/google-cloud-go/go/internal/optional"
 	"github.com/golang/protobuf/ptypes"
 	durpb "github.com/golang/protobuf/ptypes/duration"
 	gax "github.com/googleapis/gax-go/v2"
@@ -114,7 +114,7 @@ type PushConfig struct {
 	// A URL locating the endpoint to which messages should be pushed.
 	Endpoint string
 
-	// Endpoint configuration attributes. See https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.subscriptions#pushconfig for more details.
+	// Endpoint configuration attributes. See https://github.com/smyte/google-cloud-go/pubsub/docs/reference/rest/v1/projects.subscriptions#pushconfig for more details.
 	Attributes map[string]string
 
 	// AuthenticationMethod is used by push endpoints to verify the source
@@ -172,7 +172,7 @@ type OIDCToken struct {
 	//  * UpdateSubscription
 	//  * ModifyPushConfig
 	// calls must have the iam.serviceAccounts.actAs permission for the service account.
-	// See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+	// See https://github.com/smyte/google-cloud-go/iam/docs/understanding-roles#service-accounts-roles.
 	ServiceAccountEmail string
 }
 

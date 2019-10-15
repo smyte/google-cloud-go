@@ -27,7 +27,7 @@ To use a Server, create it, and then connect to it with no security:
 	        option.WithGRPCConn(conn))
 	...
 */
-package bttest // import "cloud.google.com/go/bigtable/bttest"
+package bttest // import "github.com/smyte/google-cloud-go/go/bigtable/bttest"
 
 import (
 	"bytes"

@@ -19,7 +19,7 @@ package credentials_test
 import (
 	"context"
 
-	credentials "cloud.google.com/go/iam/credentials/apiv1"
+	credentials "github.com/smyte/google-cloud-go/go/iam/credentials/apiv1"
 	credentialspb "google.golang.org/genproto/googleapis/iam/credentials/v1"
 )
 

@@ -30,8 +30,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
-package kms // import "cloud.google.com/go/kms/apiv1"
+// please visit godoc.org/github.com/smyte/google-cloud-go/go.
+package kms // import "github.com/smyte/google-cloud-go/go/kms/apiv1"
 
 import (
 	"context"

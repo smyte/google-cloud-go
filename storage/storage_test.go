@@ -32,8 +32,8 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/iam"
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/iam"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	raw "google.golang.org/api/storage/v1"
@@ -480,7 +480,7 @@ func dummyKey(kind string) []byte {
 
 func TestObjectNames(t *testing.T) {
 	t.Parallel()
-	// Naming requirements: https://cloud.google.com/storage/docs/bucket-naming
+	// Naming requirements: https://github.com/smyte/google-cloud-go/storage/docs/bucket-naming
 	const maxLegalLength = 1024
 
 	type testT struct {

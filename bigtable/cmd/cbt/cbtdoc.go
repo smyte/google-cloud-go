@@ -18,7 +18,7 @@
 
 /*
 The `cbt` tool is a command-line tool that allows you to interact with Cloud Bigtable.
-See the [cbt overview](https://cloud.google.com/bigtable/docs/cbt-overview) to learn how to install the `cbt` tool.
+See the [cbt overview](https://github.com/smyte/google-cloud-go/bigtable/docs/cbt-overview) to learn how to install the `cbt` tool.
 
 Usage:
 

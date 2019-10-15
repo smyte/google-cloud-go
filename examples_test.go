@@ -18,9 +18,9 @@ import (
 	"context"
 	"time"
 
-	"cloud.google.com/go/bigquery"
-	"cloud.google.com/go/datastore"
-	"cloud.google.com/go/pubsub"
+	"github.com/smyte/google-cloud-go/go/bigquery"
+	"github.com/smyte/google-cloud-go/go/datastore"
+	"github.com/smyte/google-cloud-go/go/pubsub"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/option"
 )
@@ -101,7 +101,7 @@ func Example_credentialsFile() {
 // the other client libraries underneath this package. Note that scopes can be
 // found at https://developers.google.com/identity/protocols/googlescopes, and
 // are also provided in all auto-generated libraries: for example,
-// cloud.google.com/go/pubsub/apiv1 provides DefaultAuthScopes.
+// github.com/smyte/google-cloud-go/go/pubsub/apiv1 provides DefaultAuthScopes.
 func Example_credentialsFromJSON() {
 	ctx := context.Background()
 	creds, err := google.CredentialsFromJSON(ctx, []byte("JSON creds"), pubsub.ScopePubSub)

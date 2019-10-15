@@ -23,7 +23,7 @@ import (
 )
 
 // CreateTable represents a CREATE TABLE statement.
-// https://cloud.google.com/spanner/docs/data-definition-language#create_table
+// https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language#create_table
 type CreateTable struct {
 	Name       string
 	Columns    []ColumnDef
@@ -38,7 +38,7 @@ type Interleave struct {
 }
 
 // CreateIndex represents a CREATE INDEX statement.
-// https://cloud.google.com/spanner/docs/data-definition-language#create-index
+// https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language#create-index
 type CreateIndex struct {
 	Name    string
 	Table   string
@@ -52,15 +52,15 @@ type CreateIndex struct {
 }
 
 // DropTable represents a DROP TABLE statement.
-// https://cloud.google.com/spanner/docs/data-definition-language#drop_table
+// https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language#drop_table
 type DropTable struct{ Name string }
 
 // DropIndex represents a DROP INDEX statement.
-// https://cloud.google.com/spanner/docs/data-definition-language#drop-index
+// https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language#drop-index
 type DropIndex struct{ Name string }
 
 // AlterTable represents an ALTER TABLE statement.
-// https://cloud.google.com/spanner/docs/data-definition-language#alter_table
+// https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language#alter_table
 type AlterTable struct {
 	Name       string
 	Alteration TableAlteration
@@ -131,7 +131,7 @@ type KeyPart struct {
 }
 
 // Query represents a query statement.
-// https://cloud.google.com/spanner/docs/query-syntax#sql-syntax
+// https://github.com/smyte/google-cloud-go/spanner/docs/query-syntax#sql-syntax
 type Query struct {
 	Select Select
 	Order  []Order
@@ -139,7 +139,7 @@ type Query struct {
 }
 
 // Select represents a SELECT statement.
-// https://cloud.google.com/spanner/docs/query-syntax#select-list
+// https://github.com/smyte/google-cloud-go/spanner/docs/query-syntax#select-list
 type Select struct {
 	List  []Expr
 	From  []SelectFrom
@@ -302,26 +302,26 @@ func (NullLiteral) isIsExpr() {}
 func (NullLiteral) isExpr()   {}
 
 // IntegerLiteral represents an integer literal.
-// https://cloud.google.com/spanner/docs/lexical#integer-literals
+// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#integer-literals
 type IntegerLiteral int64
 
 func (IntegerLiteral) isLimit() {}
 func (IntegerLiteral) isExpr()  {}
 
 // FloatLiteral represents a floating point literal.
-// https://cloud.google.com/spanner/docs/lexical#floating-point-literals
+// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#floating-point-literals
 type FloatLiteral float64
 
 func (FloatLiteral) isExpr() {}
 
 // StringLiteral represents a string literal.
-// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 type StringLiteral string
 
 func (StringLiteral) isExpr() {}
 
 // BytesLiteral represents a bytes literal.
-// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 type BytesLiteral string
 
 func (BytesLiteral) isExpr() {}
@@ -334,7 +334,7 @@ const Star = StarExpr(0)
 func (StarExpr) isExpr() {}
 
 // DDL
-// https://cloud.google.com/spanner/docs/data-definition-language#ddl_syntax
+// https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language#ddl_syntax
 
 // DDL represents a Data Definition Language (DDL) file.
 type DDL struct {

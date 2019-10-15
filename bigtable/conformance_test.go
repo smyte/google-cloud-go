@@ -26,8 +26,8 @@ import (
 	"testing"
 	"time"
 
-	pb "cloud.google.com/go/bigtable/internal/conformance"
-	"cloud.google.com/go/bigtable/internal/mockserver"
+	pb "github.com/smyte/google-cloud-go/go/bigtable/internal/conformance"
+	"github.com/smyte/google-cloud-go/go/bigtable/internal/mockserver"
 	"github.com/golang/protobuf/jsonpb"
 	"google.golang.org/api/option"
 	btpb "google.golang.org/genproto/googleapis/bigtable/v2"

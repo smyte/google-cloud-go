@@ -114,7 +114,7 @@ type ContextsClient struct {
 //
 // For more information about contexts, see the
 // Dialogflow
-// documentation (at https://cloud.google.com/dialogflow/docs/contexts-overview).
+// documentation (at https://github.com/smyte/google-cloud-go/dialogflow/docs/contexts-overview).
 func NewContextsClient(ctx context.Context, opts ...option.ClientOption) (*ContextsClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultContextsClientOptions(), opts...)...)
 	if err != nil {

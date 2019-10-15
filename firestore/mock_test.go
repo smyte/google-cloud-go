@@ -23,7 +23,7 @@ import (
 	"sort"
 	"strings"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/empty"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"

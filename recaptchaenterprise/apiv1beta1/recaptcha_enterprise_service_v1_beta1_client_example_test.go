@@ -19,7 +19,7 @@ package recaptchaenterprise_test
 import (
 	"context"
 
-	recaptchaenterprise "cloud.google.com/go/recaptchaenterprise/apiv1beta1"
+	recaptchaenterprise "github.com/smyte/google-cloud-go/go/recaptchaenterprise/apiv1beta1"
 	recaptchaenterprisepb "google.golang.org/genproto/googleapis/cloud/recaptchaenterprise/v1beta1"
 )
 

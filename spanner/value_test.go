@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/civil"
+	"github.com/smyte/google-cloud-go/go/civil"
 	"github.com/golang/protobuf/proto"
 	proto3 "github.com/golang/protobuf/ptypes/struct"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"

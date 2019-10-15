@@ -23,8 +23,8 @@ import (
 	"net/url"
 	"time"
 
-	"cloud.google.com/go/longrunning"
-	lroauto "cloud.google.com/go/longrunning/autogen"
+	"github.com/smyte/google-cloud-go/go/longrunning"
+	lroauto "github.com/smyte/google-cloud-go/go/longrunning/autogen"
 	"github.com/golang/protobuf/proto"
 	structpbpb "github.com/golang/protobuf/ptypes/struct"
 	gax "github.com/googleapis/gax-go/v2"
@@ -123,7 +123,7 @@ type AgentsClient struct {
 // You can create an agent using both Dialogflow Standard Edition and
 // Dialogflow Enterprise Edition. For details, see
 // Dialogflow
-// Editions (at https://cloud.google.com/dialogflow/docs/editions).
+// Editions (at https://github.com/smyte/google-cloud-go/dialogflow/docs/editions).
 //
 // You can save your agent for backup or versioning by exporting the agent by
 // using the [ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent] method. You can import a saved
@@ -131,13 +131,13 @@ type AgentsClient struct {
 //
 // Dialogflow provides several
 // prebuilt
-// agents (at https://cloud.google.com/dialogflow/docs/agents-prebuilt)
+// agents (at https://github.com/smyte/google-cloud-go/dialogflow/docs/agents-prebuilt)
 // for common conversation scenarios such as determining a date and time,
 // converting currency, and so on.
 //
 // For more information about agents, see the
 // Dialogflow
-// documentation (at https://cloud.google.com/dialogflow/docs/agents-overview).
+// documentation (at https://github.com/smyte/google-cloud-go/dialogflow/docs/agents-overview).
 func NewAgentsClient(ctx context.Context, opts ...option.ClientOption) (*AgentsClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultAgentsClientOptions(), opts...)...)
 	if err != nil {
@@ -237,7 +237,7 @@ func (c *AgentsClient) GetAgent(ctx context.Context, req *dialogflowpb.GetAgentR
 // useful primarily for listing all agents across projects the caller has
 // access to. One can achieve that with a wildcard project collection id "-".
 // Refer to List
-// Sub-Collections (at https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+// Sub-Collections (at https://github.com/smyte/google-cloud-go/apis/design/design_patterns#list_sub-collections).
 func (c *AgentsClient) SearchAgents(ctx context.Context, req *dialogflowpb.SearchAgentsRequest, opts ...gax.CallOption) *AgentIterator {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
 	ctx = insertMetadata(ctx, c.xGoogMetadata, md)

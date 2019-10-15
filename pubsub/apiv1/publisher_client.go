@@ -166,7 +166,7 @@ func (c *PublisherClient) SetGoogleClientInfo(keyval ...string) {
 }
 
 // CreateTopic creates the given topic with the given name. See the
-// <a href="https://cloud.google.com/pubsub/docs/admin#resource_names">
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/admin#resource_names">
 // resource name rules</a>.
 func (c *PublisherClient) CreateTopic(ctx context.Context, req *pubsubpb.Topic, opts ...gax.CallOption) (*pubsubpb.Topic, error) {
 	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))

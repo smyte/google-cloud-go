@@ -31,8 +31,8 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/spanner"
-	dbadmin "cloud.google.com/go/spanner/admin/database/apiv1"
+	"github.com/smyte/google-cloud-go/go/spanner"
+	dbadmin "github.com/smyte/google-cloud-go/go/spanner/admin/database/apiv1"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"

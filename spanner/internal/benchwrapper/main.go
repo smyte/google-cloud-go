@@ -24,8 +24,8 @@ import (
 	"net"
 	"os"
 
-	"cloud.google.com/go/spanner"
-	pb "cloud.google.com/go/spanner/internal/benchwrapper/proto"
+	"github.com/smyte/google-cloud-go/go/spanner"
+	pb "github.com/smyte/google-cloud-go/go/spanner/internal/benchwrapper/proto"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc"
 )

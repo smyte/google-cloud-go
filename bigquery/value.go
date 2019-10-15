@@ -25,7 +25,7 @@ import (
 	"strings"
 	"time"
 
-	"cloud.google.com/go/civil"
+	"github.com/smyte/google-cloud-go/go/civil"
 	bq "google.golang.org/api/bigquery/v2"
 )
 

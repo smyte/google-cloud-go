@@ -22,12 +22,12 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/iam"
-	"cloud.google.com/go/internal"
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
-	"cloud.google.com/go/internal/version"
-	kms "cloud.google.com/go/kms/apiv1"
+	"github.com/smyte/google-cloud-go/go/iam"
+	"github.com/smyte/google-cloud-go/go/internal"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/uid"
+	"github.com/smyte/google-cloud-go/go/internal/version"
+	kms "github.com/smyte/google-cloud-go/go/kms/apiv1"
 	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	"golang.org/x/oauth2/google"
@@ -285,7 +285,7 @@ func testPublishAndReceive(t *testing.T, topic *Topic, sub *Subscription, maxMsg
 // NOTE: for these to succeed, the test runner identity must have the Pub/Sub Admin or Owner roles.
 // To set, visit https://console.developers.google.com, select "IAM & Admin" from the top-left
 // menu, choose the account, click the Roles dropdown, and select "Pub/Sub > Pub/Sub Admin".
-// TODO(jba): move this to a testing package within cloud.google.com/iam, so we can re-use it.
+// TODO(jba): move this to a testing package within github.com/smyte/google-cloud-go/iam, so we can re-use it.
 func testIAM(ctx context.Context, h *iam.Handle, permission string) (msg string, ok bool) {
 	// Manually adding withGoogleClientInfo here because this code only takes
 	// a handle with a grpc.ClientConn that has the "x-goog-api-client" header enforcer,

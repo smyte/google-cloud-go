@@ -48,7 +48,7 @@ const (
 // HMACKey is the representation of a Google Cloud Storage HMAC key.
 //
 // HMAC keys are used to authenticate signed access to objects. To enable HMAC key
-// authentication, please visit https://cloud.google.com/storage/docs/migrating.
+// authentication, please visit https://github.com/smyte/google-cloud-go/storage/docs/migrating.
 //
 // This type is EXPERIMENTAL and subject to change or removal without notice.
 type HMACKey struct {

@@ -21,7 +21,7 @@ import (
 )
 
 // An Error contains detailed information about a failed bigquery operation.
-// Detailed description of possible Reasons can be found here: https://cloud.google.com/bigquery/troubleshooting-errors.
+// Detailed description of possible Reasons can be found here: https://github.com/smyte/google-cloud-go/bigquery/troubleshooting-errors.
 type Error struct {
 	// Mirrors bq.ErrorProto, but drops DebugInfo
 	Location, Message, Reason string

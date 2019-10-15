@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"time"
 
-	"cloud.google.com/go/internal"
-	"cloud.google.com/go/internal/version"
+	"github.com/smyte/google-cloud-go/go/internal"
+	"github.com/smyte/google-cloud-go/go/internal/version"
 	gax "github.com/googleapis/gax-go/v2"
 	pb "google.golang.org/genproto/googleapis/datastore/v1"
 	"google.golang.org/grpc"
@@ -113,6 +113,6 @@ func shouldRetry(err error) bool {
 	if !ok {
 		return false
 	}
-	// See https://cloud.google.com/datastore/docs/concepts/errors.
+	// See https://github.com/smyte/google-cloud-go/datastore/docs/concepts/errors.
 	return s.Code() == codes.Unavailable || s.Code() == codes.DeadlineExceeded
 }

@@ -101,9 +101,9 @@ type AlertPolicyClient struct {
 // system is considered to be "unhealthy" and the ways to notify
 // people or services about this state. In addition to using this API, alert
 // policies can also be managed through
-// Stackdriver Monitoring (at https://cloud.google.com/monitoring/docs/),
+// Stackdriver Monitoring (at https://github.com/smyte/google-cloud-go/monitoring/docs/),
 // which can be reached by clicking the "Monitoring" tab in
-// Cloud Console (at https://console.cloud.google.com/).
+// Cloud Console (at https://console.github.com/smyte/google-cloud-go/).
 func NewAlertPolicyClient(ctx context.Context, opts ...option.ClientOption) (*AlertPolicyClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultAlertPolicyClientOptions(), opts...)...)
 	if err != nil {

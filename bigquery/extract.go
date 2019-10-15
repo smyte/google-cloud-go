@@ -17,7 +17,7 @@ package bigquery
 import (
 	"context"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -105,7 +105,7 @@ func (t *Table) ExtractorTo(dst *GCSReference) *Extractor {
 
 // Run initiates an extract job.
 func (e *Extractor) Run(ctx context.Context) (j *Job, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Extractor.Run")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Extractor.Run")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	return e.c.insertJob(ctx, e.newJob(), nil)

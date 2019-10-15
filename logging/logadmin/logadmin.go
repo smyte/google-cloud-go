@@ -17,13 +17,13 @@
 
 // Package logadmin contains a Stackdriver Logging client that can be used
 // for reading logs and working with sinks, metrics and monitored resources.
-// For a client that can write logs, see package cloud.google.com/go/logging.
+// For a client that can write logs, see package github.com/smyte/google-cloud-go/go/logging.
 //
 // The client uses Logging API v2.
-// See https://cloud.google.com/logging/docs/api/v2/ for an introduction to the API.
+// See https://github.com/smyte/google-cloud-go/logging/docs/api/v2/ for an introduction to the API.
 //
 // Note: This package is in beta.  Some backwards-incompatible changes may occur.
-package logadmin // import "cloud.google.com/go/logging/logadmin"
+package logadmin // import "github.com/smyte/google-cloud-go/go/logging/logadmin"
 
 import (
 	"context"
@@ -33,10 +33,10 @@ import (
 	"strings"
 	"time"
 
-	"cloud.google.com/go/internal/version"
-	"cloud.google.com/go/logging"
-	vkit "cloud.google.com/go/logging/apiv2"
-	"cloud.google.com/go/logging/internal"
+	"github.com/smyte/google-cloud-go/go/internal/version"
+	"github.com/smyte/google-cloud-go/go/logging"
+	vkit "github.com/smyte/google-cloud-go/go/logging/apiv2"
+	"github.com/smyte/google-cloud-go/go/logging/internal"
 	"github.com/golang/protobuf/ptypes"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
@@ -197,7 +197,7 @@ func (rn resourceNames) set(r *logpb.ListLogEntriesRequest) {
 }
 
 // Filter sets an advanced logs filter for listing log entries (see
-// https://cloud.google.com/logging/docs/view/advanced_filters). The filter is
+// https://github.com/smyte/google-cloud-go/logging/docs/view/advanced_filters). The filter is
 // compared against all log entries in the projects specified by ProjectIDs.
 // Only entries that match the filter are retrieved. An empty filter (the
 // default) matches all log entries.

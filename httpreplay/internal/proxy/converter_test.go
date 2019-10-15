@@ -21,7 +21,7 @@ import (
 	"net/url"
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 )
 

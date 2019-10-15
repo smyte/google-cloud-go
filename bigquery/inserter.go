@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -51,7 +51,7 @@ type Inserter struct {
 	// called <table> + <suffix>.
 	//
 	// More information is available at
-	// https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables
+	// https://github.com/smyte/google-cloud-go/bigquery/streaming-data-into-bigquery#template-tables
 	TableTemplateSuffix string
 }
 
@@ -83,12 +83,12 @@ func (t *Table) Uploader() *Inserter { return t.Inserter() }
 // The PutMultiError contains a RowInsertionError for each failed row.
 //
 // Put will retry on temporary errors (see
-// https://cloud.google.com/bigquery/troubleshooting-errors). This can result
+// https://github.com/smyte/google-cloud-go/bigquery/troubleshooting-errors). This can result
 // in duplicate rows if you do not use insert IDs. Also, if the error persists,
 // the call will run indefinitely. Pass a context with a timeout to prevent
 // hanging calls.
 func (u *Inserter) Put(ctx context.Context, src interface{}) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Inserter.Put")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Inserter.Put")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	savers, err := valueSavers(src)

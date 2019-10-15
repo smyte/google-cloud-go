@@ -18,7 +18,7 @@ import (
 	"context"
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 )
 
 func TestOCTracing(t *testing.T) {

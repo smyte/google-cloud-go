@@ -20,7 +20,7 @@ import (
 	"context"
 	"io"
 
-	speech "cloud.google.com/go/speech/apiv1"
+	speech "github.com/smyte/google-cloud-go/go/speech/apiv1"
 	speechpb "google.golang.org/genproto/googleapis/cloud/speech/v1"
 )
 

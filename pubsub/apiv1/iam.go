@@ -15,7 +15,7 @@
 package pubsub
 
 import (
-	"cloud.google.com/go/iam"
+	"github.com/smyte/google-cloud-go/go/iam"
 	pubsubpb "google.golang.org/genproto/googleapis/pubsub/v1"
 )
 

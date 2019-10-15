@@ -190,7 +190,7 @@ func (c *SubscriberClient) SetGoogleClientInfo(keyval ...string) {
 }
 
 // CreateSubscription creates a subscription to a given topic. See the
-// <a href="https://cloud.google.com/pubsub/docs/admin#resource_names">
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/admin#resource_names">
 // resource name rules</a>.
 // If the subscription already exists, returns ALREADY_EXISTS.
 // If the corresponding topic doesn't exist, returns NOT_FOUND.
@@ -199,7 +199,7 @@ func (c *SubscriberClient) SetGoogleClientInfo(keyval ...string) {
 // name for this subscription on the same project as the topic, conforming
 // to the
 // resource name
-// format (at https://cloud.google.com/pubsub/docs/admin#resource_names). The
+// format (at https://github.com/smyte/google-cloud-go/pubsub/docs/admin#resource_names). The
 // generated name is populated in the returned Subscription object. Note that
 // for REST API requests, you must specify a name in the request.
 func (c *SubscriberClient) CreateSubscription(ctx context.Context, req *pubsubpb.Subscription, opts ...gax.CallOption) (*pubsubpb.Subscription, error) {
@@ -405,7 +405,7 @@ func (c *SubscriberClient) ModifyPushConfig(ctx context.Context, req *pubsubpb.M
 }
 
 // ListSnapshots lists the existing snapshots. Snapshots are used in
-// <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/replay-overview">Seek</a>
 // operations, which allow
 // you to manage message acknowledgments in bulk. That is, you can set the
 // acknowledgment state of messages in an existing subscription to the state
@@ -449,7 +449,7 @@ func (c *SubscriberClient) ListSnapshots(ctx context.Context, req *pubsubpb.List
 }
 
 // CreateSnapshot creates a snapshot from the requested subscription. Snapshots are used in
-// <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/replay-overview">Seek</a>
 // operations, which allow
 // you to manage message acknowledgments in bulk. That is, you can set the
 // acknowledgment state of messages in an existing subscription to the state
@@ -463,7 +463,7 @@ func (c *SubscriberClient) ListSnapshots(ctx context.Context, req *pubsubpb.List
 // name for this snapshot on the same project as the subscription, conforming
 // to the
 // resource name
-// format (at https://cloud.google.com/pubsub/docs/admin#resource_names). The
+// format (at https://github.com/smyte/google-cloud-go/pubsub/docs/admin#resource_names). The
 // generated name is populated in the returned Snapshot object. Note that for
 // REST API requests, you must specify a name in the request.
 func (c *SubscriberClient) CreateSnapshot(ctx context.Context, req *pubsubpb.CreateSnapshotRequest, opts ...gax.CallOption) (*pubsubpb.Snapshot, error) {
@@ -483,7 +483,7 @@ func (c *SubscriberClient) CreateSnapshot(ctx context.Context, req *pubsubpb.Cre
 }
 
 // UpdateSnapshot updates an existing snapshot. Snapshots are used in
-// <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/replay-overview">Seek</a>
 // operations, which allow
 // you to manage message acknowledgments in bulk. That is, you can set the
 // acknowledgment state of messages in an existing subscription to the state
@@ -505,7 +505,7 @@ func (c *SubscriberClient) UpdateSnapshot(ctx context.Context, req *pubsubpb.Upd
 }
 
 // DeleteSnapshot removes an existing snapshot. Snapshots are used in
-// <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/replay-overview">Seek</a>
 // operations, which allow
 // you to manage message acknowledgments in bulk. That is, you can set the
 // acknowledgment state of messages in an existing subscription to the state
@@ -528,7 +528,7 @@ func (c *SubscriberClient) DeleteSnapshot(ctx context.Context, req *pubsubpb.Del
 
 // Seek seeks an existing subscription to a point in time or to a given snapshot,
 // whichever is provided in the request. Snapshots are used in
-// <a href="https://cloud.google.com/pubsub/docs/replay-overview">Seek</a>
+// <a href="https://github.com/smyte/google-cloud-go/pubsub/docs/replay-overview">Seek</a>
 // operations, which allow
 // you to manage message acknowledgments in bulk. That is, you can set the
 // acknowledgment state of messages in an existing subscription to the state

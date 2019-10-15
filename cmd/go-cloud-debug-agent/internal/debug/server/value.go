@@ -19,8 +19,8 @@ package server
 import (
 	"fmt"
 
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 // value peeks the program's memory at the given address, parsing it as a value of type t.

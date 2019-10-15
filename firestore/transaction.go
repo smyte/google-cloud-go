@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
 	gax "github.com/googleapis/gax-go/v2"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"
 	"google.golang.org/grpc/codes"
@@ -90,7 +90,7 @@ type transactionInProgressKey struct{}
 // Since f may be called more than once, f should usually be idempotent – that is, it
 // should have the same result when called multiple times.
 func (c *Client) RunTransaction(ctx context.Context, f func(context.Context, *Transaction) error, opts ...TransactionOption) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/firestore.Client.RunTransaction")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/firestore.Client.RunTransaction")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if ctx.Value(transactionInProgressKey{}) != nil {

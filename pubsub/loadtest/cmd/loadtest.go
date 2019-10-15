@@ -22,8 +22,8 @@ import (
 	"net"
 	"strconv"
 
-	"cloud.google.com/go/pubsub/loadtest"
-	pb "cloud.google.com/go/pubsub/loadtest/pb"
+	"github.com/smyte/google-cloud-go/go/pubsub/loadtest"
+	pb "github.com/smyte/google-cloud-go/go/pubsub/loadtest/pb"
 	"google.golang.org/grpc"
 )
 

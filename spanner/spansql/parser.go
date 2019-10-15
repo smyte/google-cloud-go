@@ -20,9 +20,9 @@ Package spansql contains types and a parser for the Cloud Spanner SQL dialect.
 To parse, use one of the Parse functions (ParseDDL, ParseDDLStmt, ParseQuery, etc.).
 
 Sources:
-	https://cloud.google.com/spanner/docs/lexical
-	https://cloud.google.com/spanner/docs/query-syntax
-	https://cloud.google.com/spanner/docs/data-definition-language
+	https://github.com/smyte/google-cloud-go/spanner/docs/lexical
+	https://github.com/smyte/google-cloud-go/spanner/docs/query-syntax
+	https://github.com/smyte/google-cloud-go/spanner/docs/data-definition-language
 */
 package spansql
 
@@ -191,7 +191,7 @@ func (p *parser) errorf(format string, args ...interface{}) error {
 }
 
 func isInitialIdentifierChar(c byte) bool {
-	// https://cloud.google.com/spanner/docs/lexical#identifiers
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#identifiers
 	switch {
 	case 'A' <= c && c <= 'Z':
 		return true
@@ -204,7 +204,7 @@ func isInitialIdentifierChar(c byte) bool {
 }
 
 func isIdentifierChar(c byte) bool {
-	// https://cloud.google.com/spanner/docs/lexical#identifiers
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#identifiers
 	// This doesn't apply the restriction that an identifier cannot start with [0-9],
 	// nor does it check against reserved keywords.
 	switch {
@@ -254,7 +254,7 @@ func (p *parser) consumeNumber() {
 		i++
 	} else if p.s[i] == '+' {
 		// This isn't in the formal grammar, but is mentioned informally.
-		// https://cloud.google.com/spanner/docs/lexical#integer-literals
+		// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#integer-literals
 		i++
 	}
 	if strings.HasPrefix(p.s[i:], "0x") || strings.HasPrefix(p.s[i:], "0X") {
@@ -318,7 +318,7 @@ digitLoop:
 }
 
 func (p *parser) consumeString() {
-	// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 
 	delim := p.stringDelimiter()
 	if p.cur.err != nil {
@@ -330,7 +330,7 @@ func (p *parser) consumeString() {
 }
 
 func (p *parser) consumeRawString() {
-	// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 
 	p.s = p.s[1:] // consume 'R'
 	delim := p.stringDelimiter()
@@ -343,7 +343,7 @@ func (p *parser) consumeRawString() {
 }
 
 func (p *parser) consumeBytes() {
-	// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 
 	p.s = p.s[1:] // consume 'B'
 	delim := p.stringDelimiter()
@@ -356,7 +356,7 @@ func (p *parser) consumeBytes() {
 }
 
 func (p *parser) consumeRawBytes() {
-	// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 
 	p.s = p.s[2:] // consume 'RB'
 	delim := p.stringDelimiter()
@@ -391,7 +391,7 @@ func (p *parser) stringDelimiter() string {
 //
 // It is designed for consuming string, bytes literals, and also backquoted identifiers.
 func (p *parser) consumeStringContent(delim string, raw, unicode bool, name string) (string, error) {
-	// https://cloud.google.com/spanner/docs/lexical#string-and-bytes-literals
+	// https://github.com/smyte/google-cloud-go/spanner/docs/lexical#string-and-bytes-literals
 
 	if len(delim) == 3 {
 		name = "triple-quoted " + name
@@ -541,7 +541,7 @@ var operators = map[string]bool{
 }
 
 func isSpace(c byte) bool {
-	// Per https://cloud.google.com/spanner/docs/lexical, informally,
+	// Per https://github.com/smyte/google-cloud-go/spanner/docs/lexical, informally,
 	// whitespace is defined as "space, backspace, tab, newline".
 	switch c {
 	case ' ', '\b', '\t', '\n':
@@ -1371,7 +1371,7 @@ func (p *parser) parseOrder() (Order, error) {
 
 func (p *parser) parseLimitCount() (Limit, error) {
 	// "only literal or parameter values"
-	// https://cloud.google.com/spanner/docs/query-syntax#limit-clause-and-offset-clause
+	// https://github.com/smyte/google-cloud-go/spanner/docs/query-syntax#limit-clause-and-offset-clause
 
 	tok := p.next()
 	if tok.err != nil {
@@ -1405,7 +1405,7 @@ Expressions
 
 Cloud Spanner expressions are not formally specified.
 The set of operators and their precedence is listed in
-https://cloud.google.com/spanner/docs/functions-and-operators#operators.
+https://github.com/smyte/google-cloud-go/spanner/docs/functions-and-operators#operators.
 
 parseExpr works as a classical recursive descent parser, splitting
 precedence levels into separate methods, where the call stack is in

@@ -23,8 +23,8 @@ import (
 	"net/url"
 	"time"
 
-	"cloud.google.com/go/longrunning"
-	lroauto "cloud.google.com/go/longrunning/autogen"
+	"github.com/smyte/google-cloud-go/go/longrunning"
+	lroauto "github.com/smyte/google-cloud-go/go/longrunning/autogen"
 	"github.com/golang/protobuf/proto"
 	structpbpb "github.com/golang/protobuf/ptypes/struct"
 	gax "github.com/googleapis/gax-go/v2"
@@ -139,7 +139,7 @@ type IntentsClient struct {
 //
 // For more information about intents, see the
 // [Dialogflow
-// documentation](https://cloud.google.com/dialogflow/docs/intents-overview).
+// documentation](https://github.com/smyte/google-cloud-go/dialogflow/docs/intents-overview).
 func NewIntentsClient(ctx context.Context, opts ...option.ClientOption) (*IntentsClient, error) {
 	conn, err := transport.DialGRPC(ctx, append(defaultIntentsClientOptions(), opts...)...)
 	if err != nil {

@@ -154,4 +154,4 @@ the order they were recorded. No attempt is made to match message contents.
 At present, this package does not record or replay stream headers and trailers, or
 the result of the CloseSend method.
 */
-package rpcreplay // import "cloud.google.com/go/rpcreplay"
+package rpcreplay // import "github.com/smyte/google-cloud-go/go/rpcreplay"

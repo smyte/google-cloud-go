@@ -19,7 +19,7 @@ import (
 	"errors"
 	"fmt"
 
-	vkit "cloud.google.com/go/logging/apiv2"
+	vkit "github.com/smyte/google-cloud-go/go/logging/apiv2"
 	"google.golang.org/api/iterator"
 	logpb "google.golang.org/genproto/googleapis/logging/v2"
 	maskpb "google.golang.org/genproto/protobuf/field_mask"
@@ -30,7 +30,7 @@ import (
 // destination (a Cloud Storage bucket, BigQuery dataset or Cloud Pub/Sub
 // topic).
 //
-// For more information, see https://cloud.google.com/logging/docs/export/using_exported_logs.
+// For more information, see https://github.com/smyte/google-cloud-go/logging/docs/export/using_exported_logs.
 // (The Sinks in this package are what the documentation refers to as "project sinks".)
 type Sink struct {
 	// ID is a client-assigned sink identifier. Example:
@@ -41,13 +41,13 @@ type Sink struct {
 	ID string
 
 	// Destination is the export destination. See
-	// https://cloud.google.com/logging/docs/api/tasks/exporting-logs.
+	// https://github.com/smyte/google-cloud-go/logging/docs/api/tasks/exporting-logs.
 	// Examples: "storage.googleapis.com/a-bucket",
 	// "bigquery.googleapis.com/projects/a-project-id/datasets/a-dataset".
 	Destination string
 
 	// Filter optionally specifies an advanced logs filter (see
-	// https://cloud.google.com/logging/docs/view/advanced_filters) that
+	// https://github.com/smyte/google-cloud-go/logging/docs/view/advanced_filters) that
 	// defines the log entries to be exported. Example: "logName:syslog AND
 	// severity>=ERROR". If omitted, all entries are returned.
 	Filter string
@@ -66,7 +66,7 @@ type Sink struct {
 	// Caution: If you enable this feature, your aggregated export sink might export
 	// a very large number of log entries. To avoid exporting too many log entries,
 	// design your aggregated export sink filter carefully, as described on
-	// https://cloud.google.com/logging/docs/export/aggregated_exports.
+	// https://github.com/smyte/google-cloud-go/logging/docs/export/aggregated_exports.
 	IncludeChildren bool
 }
 

@@ -30,7 +30,7 @@ import (
 	"os"
 	"os/signal"
 
-	"cloud.google.com/go/httpreplay/internal/proxy"
+	"github.com/smyte/google-cloud-go/go/httpreplay/internal/proxy"
 	"github.com/google/martian/martianhttp"
 )
 

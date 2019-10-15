@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package bigtable // import "cloud.google.com/go/bigtable"
+package bigtable // import "github.com/smyte/google-cloud-go/go/bigtable"
 
 import (
 	"context"
@@ -24,9 +24,9 @@ import (
 	"strconv"
 	"time"
 
-	btopt "cloud.google.com/go/bigtable/internal/option"
-	"cloud.google.com/go/internal/trace"
-	"cloud.google.com/go/internal/version"
+	btopt "github.com/smyte/google-cloud-go/go/bigtable/internal/option"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
+	"github.com/smyte/google-cloud-go/go/internal/version"
 	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
@@ -175,7 +175,7 @@ func (c *Client) Open(table string) *Table {
 // Use RowFilter to limit the cells returned.
 func (t *Table) ReadRows(ctx context.Context, arg RowSet, f func(Row) bool, opts ...ReadOption) (err error) {
 	ctx = mergeOutgoingMetadata(ctx, withGoogleClientInfo(), t.md)
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigtable.ReadRows")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigtable.ReadRows")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	var prevRowKey string
@@ -500,7 +500,7 @@ const maxMutations = 100000
 // operation and at most 100000 operations.
 func (t *Table) Apply(ctx context.Context, row string, m *Mutation, opts ...ApplyOption) (err error) {
 	ctx = mergeOutgoingMetadata(ctx, withGoogleClientInfo(), t.md)
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigtable/Apply")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigtable/Apply")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	after := func(res proto.Message) {
@@ -676,7 +676,7 @@ type entryErr struct {
 // Conditional mutations cannot be applied in bulk and providing one will result in an error.
 func (t *Table) ApplyBulk(ctx context.Context, rowKeys []string, muts []*Mutation, opts ...ApplyOption) (errs []error, err error) {
 	ctx = mergeOutgoingMetadata(ctx, withGoogleClientInfo(), t.md)
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigtable/ApplyBulk")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigtable/ApplyBulk")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if len(rowKeys) != len(muts) {

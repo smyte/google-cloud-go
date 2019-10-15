@@ -17,7 +17,7 @@ package storage
 import (
 	"context"
 
-	"cloud.google.com/go/internal"
+	"github.com/smyte/google-cloud-go/go/internal"
 	gax "github.com/googleapis/gax-go/v2"
 )
 

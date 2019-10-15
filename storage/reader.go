@@ -28,7 +28,7 @@ import (
 	"strings"
 	"time"
 
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
 	"google.golang.org/api/googleapi"
 )
 
@@ -87,7 +87,7 @@ func (o *ObjectHandle) NewReader(ctx context.Context) (*Reader, error) {
 // from the end, and length must also be negative to indicate all remaining
 // bytes will be read.
 func (o *ObjectHandle) NewRangeReader(ctx context.Context, offset, length int64) (r *Reader, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/storage.Object.NewRangeReader")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/storage.Object.NewRangeReader")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	if err := o.validate(); err != nil {
@@ -295,7 +295,7 @@ var emptyBody = ioutil.NopCloser(strings.NewReader(""))
 //
 // Typically, a Reader computes the CRC of the downloaded content and compares it to
 // the stored CRC, returning an error from Read if there is a mismatch. This integrity check
-// is skipped if transcoding occurs. See https://cloud.google.com/storage/docs/transcoding.
+// is skipped if transcoding occurs. See https://github.com/smyte/google-cloud-go/storage/docs/transcoding.
 type Reader struct {
 	Attrs              ReaderObjectAttrs
 	body               io.ReadCloser

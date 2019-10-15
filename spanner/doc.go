@@ -19,10 +19,10 @@ Package spanner provides a client for reading and writing to Cloud Spanner
 databases. See the packages under admin for clients that operate on databases
 and instances.
 
-See https://cloud.google.com/spanner/docs/getting-started/go/ for an
+See https://github.com/smyte/google-cloud-go/spanner/docs/getting-started/go/ for an
 introduction to Cloud Spanner and additional help on using this API.
 
-See https://godoc.org/cloud.google.com/go for authentication, timeouts,
+See https://godoc.org/github.com/smyte/google-cloud-go/go for authentication, timeouts,
 connection pooling and similar aspects of this package.
 
 
@@ -308,7 +308,7 @@ mutations, which will all be executed at the end of the transaction:
 Structs
 
 Cloud Spanner STRUCT (aka STRUCT) values
-(https://cloud.google.com/spanner/docs/data-types#struct-type) can be
+(https://github.com/smyte/google-cloud-go/spanner/docs/data-types#struct-type) can be
 represented by a Go struct value.
 
 A proto StructType is built from the field types and field tag information of
@@ -352,4 +352,4 @@ This client has been instrumented to use OpenCensus tracing
 at https://godoc.org/go.opencensus.io/trace. OpenCensus tracing requires Go 1.8
 or higher.
 */
-package spanner // import "cloud.google.com/go/spanner"
+package spanner // import "github.com/smyte/google-cloud-go/go/spanner"

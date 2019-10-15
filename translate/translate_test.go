@@ -26,7 +26,7 @@ import (
 	"sync"
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"golang.org/x/text/language"
 	"google.golang.org/api/option"
 )

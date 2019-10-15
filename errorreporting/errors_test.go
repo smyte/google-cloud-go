@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
 	pb "google.golang.org/genproto/googleapis/devtools/clouderrorreporting/v1beta1"
@@ -146,20 +146,20 @@ func TestChopStack(t *testing.T) {
 			in: []byte(` goroutine 39 [running]:
 runtime/debug.Stack()
 	/gopath/runtime/debug/stack.go:24 +0x79
-cloud.google.com/go/errorreporting.(*Client).logInternal()
-	/gopath/cloud.google.com/go/errorreporting/errors.go:259 +0x18b
-cloud.google.com/go/errorreporting.(*Client).Report()
-	/gopath/cloud.google.com/go/errorreporting/errors.go:248 +0x4ed
-cloud.google.com/go/errorreporting.TestReport()
-	/gopath/cloud.google.com/go/errorreporting/errors_test.go:137 +0x2a1
+github.com/smyte/google-cloud-go/go/errorreporting.(*Client).logInternal()
+	/gopath/github.com/smyte/google-cloud-go/go/errorreporting/errors.go:259 +0x18b
+github.com/smyte/google-cloud-go/go/errorreporting.(*Client).Report()
+	/gopath/github.com/smyte/google-cloud-go/go/errorreporting/errors.go:248 +0x4ed
+github.com/smyte/google-cloud-go/go/errorreporting.TestReport()
+	/gopath/github.com/smyte/google-cloud-go/go/errorreporting/errors_test.go:137 +0x2a1
 testing.tRunner()
 	/gopath/testing/testing.go:610 +0x81
 created by testing.(*T).Run
 	/gopath/testing/testing.go:646 +0x2ec
 `),
 			expected: ` goroutine 39 [running]:
-cloud.google.com/go/errorreporting.TestReport()
-	/gopath/cloud.google.com/go/errorreporting/errors_test.go:137 +0x2a1
+github.com/smyte/google-cloud-go/go/errorreporting.TestReport()
+	/gopath/github.com/smyte/google-cloud-go/go/errorreporting/errors_test.go:137 +0x2a1
 testing.tRunner()
 	/gopath/testing/testing.go:610 +0x81
 created by testing.(*T).Run

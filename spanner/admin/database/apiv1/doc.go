@@ -29,8 +29,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
-package database // import "cloud.google.com/go/spanner/admin/database/apiv1"
+// please visit godoc.org/github.com/smyte/google-cloud-go/go.
+package database // import "github.com/smyte/google-cloud-go/go/spanner/admin/database/apiv1"
 
 import (
 	"context"

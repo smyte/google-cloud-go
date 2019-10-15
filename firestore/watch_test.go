@@ -20,7 +20,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/btree"
+	"github.com/smyte/google-cloud-go/go/internal/btree"
 	"github.com/golang/protobuf/proto"
 	gax "github.com/googleapis/gax-go/v2"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"

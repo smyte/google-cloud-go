@@ -19,7 +19,7 @@
 // Instead they will call functions returning Operations and call their methods.
 //
 // This package is still experimental and subject to change.
-package longrunning // import "cloud.google.com/go/longrunning"
+package longrunning // import "github.com/smyte/google-cloud-go/go/longrunning"
 
 import (
 	"context"
@@ -27,7 +27,7 @@ import (
 	"fmt"
 	"time"
 
-	autogen "cloud.google.com/go/longrunning/autogen"
+	autogen "github.com/smyte/google-cloud-go/go/longrunning/autogen"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 	gax "github.com/googleapis/gax-go/v2"

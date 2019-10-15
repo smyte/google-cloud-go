@@ -30,8 +30,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
-package oslogin // import "cloud.google.com/go/oslogin/apiv1beta"
+// please visit godoc.org/github.com/smyte/google-cloud-go/go.
+package oslogin // import "github.com/smyte/google-cloud-go/go/oslogin/apiv1beta"
 
 import (
 	"context"

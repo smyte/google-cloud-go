@@ -24,7 +24,7 @@ import (
 	"strings"
 	"sync"
 
-	"cloud.google.com/go/internal/fields"
+	"github.com/smyte/google-cloud-go/go/internal/fields"
 	pb "google.golang.org/genproto/googleapis/firestore/v1"
 )
 

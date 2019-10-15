@@ -13,7 +13,7 @@
 // limitations under the License.
 
 // Package translate is a client for the Google Translation API.
-// See https://cloud.google.com/translation for details.
+// See https://github.com/smyte/google-cloud-go/translation for details.
 package translate
 
 import (
@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"cloud.google.com/go/internal/version"
+	"github.com/smyte/google-cloud-go/go/internal/version"
 	"golang.org/x/text/language"
 	"google.golang.org/api/option"
 	raw "google.golang.org/api/translate/v2"
@@ -73,7 +73,7 @@ func (c *Client) Close() error { return nil }
 //
 // The target parameter supplies the language to translate to. The supported
 // languages are listed at
-// https://cloud.google.com/translation/v2/translate-reference#supported_languages.
+// https://github.com/smyte/google-cloud-go/translation/v2/translate-reference#supported_languages.
 // You can also call the SupportedLanguages method.
 //
 // The returned Translations appear in the same order as the inputs.

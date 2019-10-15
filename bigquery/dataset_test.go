@@ -22,7 +22,7 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 	bq "google.golang.org/api/bigquery/v2"
 	itest "google.golang.org/api/iterator/testing"

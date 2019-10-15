@@ -15,13 +15,13 @@
 // Package errorreporting is a Google Stackdriver Error Reporting library.
 //
 // Any provided stacktraces must match the format produced by https://golang.org/pkg/runtime/#Stack
-// or as per https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.events/report#ReportedErrorEvent
+// or as per https://github.com/smyte/google-cloud-go/error-reporting/reference/rest/v1beta1/projects.events/report#ReportedErrorEvent
 // for language specific stacktrace formats.
 //
 // This package is still experimental and subject to change.
 //
-// See https://cloud.google.com/error-reporting/ for more information.
-package errorreporting // import "cloud.google.com/go/errorreporting"
+// See https://github.com/smyte/google-cloud-go/error-reporting/ for more information.
+package errorreporting // import "github.com/smyte/google-cloud-go/go/errorreporting"
 
 import (
 	"bytes"
@@ -32,8 +32,8 @@ import (
 	"runtime"
 	"time"
 
-	vkit "cloud.google.com/go/errorreporting/apiv1beta1"
-	"cloud.google.com/go/internal/version"
+	vkit "github.com/smyte/google-cloud-go/go/errorreporting/apiv1beta1"
+	"github.com/smyte/google-cloud-go/go/internal/version"
 	"github.com/golang/protobuf/ptypes"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/option"
@@ -65,7 +65,7 @@ type Entry struct {
 
 	// Stack specifies the stacktrace and call sequence correlated with
 	// the error. Stack's content must match the format specified by
-	// https://cloud.google.com/error-reporting/reference/rest/v1beta1/projects.events/report#ReportedErrorEvent.message
+	// https://github.com/smyte/google-cloud-go/error-reporting/reference/rest/v1beta1/projects.events/report#ReportedErrorEvent.message
 	// or at least for Go programs, it must match the format produced
 	// by https://golang.org/pkg/runtime/debug/#Stack.
 	//
@@ -211,7 +211,7 @@ func (c *Client) newRequest(e Entry) *pb.ReportErrorEventRequest {
 // chopStack trims a stack trace so that the function which panics or calls
 // Report is first.
 func chopStack(s []byte) string {
-	f := []byte("cloud.google.com/go/errorreporting.(*Client).Report")
+	f := []byte("github.com/smyte/google-cloud-go/go/errorreporting.(*Client).Report")
 
 	lfFirst := bytes.IndexByte(s, '\n')
 	if lfFirst == -1 {

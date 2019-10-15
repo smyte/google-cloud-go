@@ -22,7 +22,7 @@ import (
 	"strconv"
 	"time"
 
-	"cloud.google.com/go/civil"
+	"github.com/smyte/google-cloud-go/go/civil"
 )
 
 // NullInt64 represents a BigQuery INT64 that may be NULL.

@@ -24,8 +24,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"cloud.google.com/go/internal/trace"
-	vkit "cloud.google.com/go/spanner/apiv1"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
+	vkit "github.com/smyte/google-cloud-go/go/spanner/apiv1"
 	"google.golang.org/api/option"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc"
@@ -86,7 +86,7 @@ type ClientConfig struct {
 	SessionPoolConfig
 
 	// SessionLabels for the sessions created by this client.
-	// See https://cloud.google.com/spanner/docs/reference/rpc/google.spanner.v1#session
+	// See https://github.com/smyte/google-cloud-go/spanner/docs/reference/rpc/google.spanner.v1#session
 	// for more info.
 	SessionLabels map[string]string
 }
@@ -145,7 +145,7 @@ func NewClientWithConfig(ctx context.Context, database string, config ClientConf
 		return nil, err
 	}
 
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.NewClient")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/spanner.NewClient")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	// Append emulator options if SPANNER_EMULATOR_HOST has been set.
@@ -361,10 +361,10 @@ func checkNestedTxn(ctx context.Context) error {
 // using a fixed limit on the number of attempts. ReadWriteTransaction will
 // retry as needed until that deadline is met.
 //
-// See https://godoc.org/cloud.google.com/go/spanner#ReadWriteTransaction for
+// See https://godoc.org/github.com/smyte/google-cloud-go/go/spanner#ReadWriteTransaction for
 // more details.
 func (c *Client) ReadWriteTransaction(ctx context.Context, f func(context.Context, *ReadWriteTransaction) error) (commitTimestamp time.Time, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.ReadWriteTransaction")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/spanner.ReadWriteTransaction")
 	defer func() { trace.EndSpan(ctx, err) }()
 	if err := checkNestedTxn(ctx); err != nil {
 		return time.Time{}, err
@@ -448,7 +448,7 @@ func (c *Client) Apply(ctx context.Context, ms []*Mutation, opts ...ApplyOption)
 		})
 	}
 
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.Apply")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/spanner.Apply")
 	defer func() { trace.EndSpan(ctx, err) }()
 	t := &writeOnlyTransaction{c.idleSessions}
 	return t.applyAtLeastOnce(ctx, ms...)

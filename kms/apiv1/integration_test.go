@@ -20,8 +20,8 @@ import (
 	"log"
 	"testing"
 
-	"cloud.google.com/go/internal/testutil"
-	kms "cloud.google.com/go/kms/apiv1"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	kms "github.com/smyte/google-cloud-go/go/kms/apiv1"
 	"google.golang.org/api/iterator"
 	kmspb "google.golang.org/genproto/googleapis/cloud/kms/v1"
 )

@@ -18,9 +18,9 @@
 package local
 
 import (
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/server"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/server/protocol"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/server"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/server/protocol"
 )
 
 var _ debug.Program = (*Program)(nil)

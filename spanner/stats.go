@@ -21,7 +21,7 @@ import (
 	"go.opencensus.io/stats/view"
 )
 
-const statsPrefix = "cloud.google.com/go/spanner/"
+const statsPrefix = "github.com/smyte/google-cloud-go/go/spanner/"
 
 func recordStat(ctx context.Context, m *stats.Int64Measure, n int64) {
 	stats.Record(ctx, m.M(n))

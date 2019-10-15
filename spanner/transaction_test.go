@@ -25,7 +25,7 @@ import (
 	"testing"
 	"time"
 
-	. "cloud.google.com/go/spanner/internal/testutil"
+	. "github.com/smyte/google-cloud-go/go/spanner/internal/testutil"
 	sppb "google.golang.org/genproto/googleapis/spanner/v1"
 	"google.golang.org/grpc/codes"
 	gstatus "google.golang.org/grpc/status"

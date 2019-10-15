@@ -19,7 +19,7 @@ package longrunning_test
 import (
 	"context"
 
-	longrunning "cloud.google.com/go/longrunning/autogen"
+	longrunning "github.com/smyte/google-cloud-go/go/longrunning/autogen"
 	"google.golang.org/api/iterator"
 	longrunningpb "google.golang.org/genproto/googleapis/longrunning"
 )

@@ -20,7 +20,7 @@ import (
 	"context"
 	"io"
 
-	storage "cloud.google.com/go/bigquery/storage/apiv1beta1"
+	storage "github.com/smyte/google-cloud-go/go/bigquery/storage/apiv1beta1"
 	storagepb "google.golang.org/genproto/googleapis/cloud/bigquery/storage/v1beta1"
 )
 

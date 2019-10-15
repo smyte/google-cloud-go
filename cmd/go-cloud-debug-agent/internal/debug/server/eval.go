@@ -33,8 +33,8 @@ import (
 	"math"
 	"math/big"
 
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug"
-	"cloud.google.com/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug"
+	"github.com/smyte/google-cloud-go/go/cmd/go-cloud-debug-agent/internal/debug/dwarf"
 )
 
 const prec = 256 // precision for untyped float and complex constants.

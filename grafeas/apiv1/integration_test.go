@@ -19,8 +19,8 @@ import (
 	"fmt"
 	"testing"
 
-	grafeas "cloud.google.com/go/grafeas/apiv1"
-	"cloud.google.com/go/internal/testutil"
+	grafeas "github.com/smyte/google-cloud-go/go/grafeas/apiv1"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"

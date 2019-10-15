@@ -31,8 +31,8 @@
 // To close the open connection, use the Close() method.
 //
 // For information about setting deadlines, reusing contexts, and more
-// please visit godoc.org/cloud.google.com/go.
-package automl // import "cloud.google.com/go/automl/apiv1beta1"
+// please visit godoc.org/github.com/smyte/google-cloud-go/go.
+package automl // import "github.com/smyte/google-cloud-go/go/automl/apiv1beta1"
 
 import (
 	"context"

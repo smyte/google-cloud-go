@@ -30,7 +30,7 @@ import (
 	"testing"
 	"time"
 
-	pb "cloud.google.com/go/firestore/internal/conformance"
+	pb "github.com/smyte/google-cloud-go/go/firestore/internal/conformance"
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"

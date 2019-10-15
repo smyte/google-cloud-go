@@ -24,10 +24,10 @@ import (
 	"testing"
 	"time"
 
-	"cloud.google.com/go/internal/testutil"
-	"cloud.google.com/go/internal/uid"
-	ltest "cloud.google.com/go/logging/internal/testing"
-	"cloud.google.com/go/storage"
+	"github.com/smyte/google-cloud-go/go/internal/testutil"
+	"github.com/smyte/google-cloud-go/go/internal/uid"
+	ltest "github.com/smyte/google-cloud-go/go/logging/internal/testing"
+	"github.com/smyte/google-cloud-go/go/storage"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 )

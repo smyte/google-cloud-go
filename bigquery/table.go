@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"time"
 
-	"cloud.google.com/go/internal/optional"
-	"cloud.google.com/go/internal/trace"
+	"github.com/smyte/google-cloud-go/go/internal/optional"
+	"github.com/smyte/google-cloud-go/go/internal/trace"
 	bq "google.golang.org/api/bigquery/v2"
 )
 
@@ -101,7 +101,7 @@ type TableMetadata struct {
 	NumBytes int64
 
 	// The number of bytes in the table considered "long-term storage" for reduced
-	// billing purposes.  See https://cloud.google.com/bigquery/pricing#long-term-storage
+	// billing purposes.  See https://github.com/smyte/google-cloud-go/bigquery/pricing#long-term-storage
 	// for more information.
 	NumLongTermBytes int64
 
@@ -157,16 +157,16 @@ const (
 	// RegularTable is a regular table.
 	RegularTable TableType = "TABLE"
 	// ViewTable is a table type describing that the table is view. See more
-	// information at https://cloud.google.com/bigquery/docs/views.
+	// information at https://github.com/smyte/google-cloud-go/bigquery/docs/views.
 	ViewTable TableType = "VIEW"
 	// ExternalTable is a table type describing that the table is an external
 	// table (also known as a federated data source). See more information at
-	// https://cloud.google.com/bigquery/external-data-sources.
+	// https://github.com/smyte/google-cloud-go/bigquery/external-data-sources.
 	ExternalTable TableType = "EXTERNAL"
 )
 
 // TimePartitioning describes the time-based date partitioning on a table.
-// For more information see: https://cloud.google.com/bigquery/docs/creating-partitioned-tables.
+// For more information see: https://github.com/smyte/google-cloud-go/bigquery/docs/creating-partitioned-tables.
 type TimePartitioning struct {
 	// The amount of time to keep the storage for a partition.
 	// If the duration is empty (0), the data in the partitions do not expire.
@@ -209,7 +209,7 @@ func bqToTimePartitioning(q *bq.TimePartitioning) *TimePartitioning {
 }
 
 // Clustering governs the organization of data within a partitioned table.
-// For more information, see https://cloud.google.com/bigquery/docs/clustered-tables
+// For more information, see https://github.com/smyte/google-cloud-go/bigquery/docs/clustered-tables
 type Clustering struct {
 	Fields []string
 }
@@ -297,7 +297,7 @@ func (t *Table) implicitTable() bool {
 // After table creation, a view can be modified only if its table was initially created
 // with a view.
 func (t *Table) Create(ctx context.Context, tm *TableMetadata) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Table.Create")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Create")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	table, err := tm.toBQ()
@@ -391,7 +391,7 @@ func (tm *TableMetadata) toBQ() (*bq.Table, error) {
 
 // Metadata fetches the metadata for the table.
 func (t *Table) Metadata(ctx context.Context) (md *TableMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Table.Metadata")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Metadata")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := t.c.bqs.Tables.Get(t.ProjectID, t.DatasetID, t.TableID).Context(ctx)
@@ -452,7 +452,7 @@ func bqToTableMetadata(t *bq.Table) (*TableMetadata, error) {
 
 // Delete deletes the table.
 func (t *Table) Delete(ctx context.Context) (err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Table.Delete")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Delete")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	req := t.c.bqs.Tables.Delete(t.ProjectID, t.DatasetID, t.TableID).Context(ctx)
@@ -474,7 +474,7 @@ var NeverExpire = time.Time{}.Add(-1)
 
 // Update modifies specific Table metadata fields.
 func (t *Table) Update(ctx context.Context, tm TableMetadataToUpdate, etag string) (md *TableMetadata, err error) {
-	ctx = trace.StartSpan(ctx, "cloud.google.com/go/bigquery.Table.Update")
+	ctx = trace.StartSpan(ctx, "github.com/smyte/google-cloud-go/go/bigquery.Table.Update")
 	defer func() { trace.EndSpan(ctx, err) }()
 
 	bqt, err := tm.toBQ()
